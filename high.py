@@ -1,9 +1,6 @@
 import os
 from PIL import Image
 
-with open("/Users/coltenparker/Downloads/Image-to-roblox/output/output_file.txt", "w") as f:
-    f.write("High processing result")
-
 factor = 3.2
 rate = 50
 
