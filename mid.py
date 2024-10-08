@@ -4,15 +4,15 @@ from PIL import Image
 factor = 6.4
 rate = 100
 
-for filename in os.listdir("input"):
-    image_path = os.path.join("input", filename)
+for filename in os.listdir("/tmp/input"):
+    image_path = os.path.join("/tmp/input", filename)
     if os.path.isfile(image_path):
         image = Image.open(image_path)
         image = image.resize((int(image.size[0] / factor), int(image.size[1] / factor)))
         pixels = image.load()
         output_filename = os.path.splitext(filename)[0]
 
-        with open(f"{os.path.join('output', output_filename)}.lua", 'w') as f:
+        with open(f"{os.path.join('/tmp/output', output_filename)}.lua", 'w') as f:
             bits = []
             for y in range(image.size[1]):
                 for x in range(image.size[0]):
