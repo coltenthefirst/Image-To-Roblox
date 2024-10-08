@@ -5,12 +5,18 @@ import requests
 app = Flask(__name__)
 
 # Constants
-INPUT_FOLDER = "/Users/coltenparker/Downloads/Image-to-roblox/input"
-OUTPUT_FOLDER = "/Users/coltenparker/Downloads/Image-to-roblox/output"
-SCRIPT_DIR = "/Users/coltenparker/Downloads/Image-to-roblox"
+INPUT_FOLDER = "input"  # Use relative paths for folders
+OUTPUT_FOLDER = "output"  # Use relative paths for folders
+SCRIPT_DIR = "."  # Assuming the scripts are in the same directory as the app
 IMAGE_NAME = "1727325916.jumpyjackal_canvas_2044_7_1_bd__1_.png"
 MAX_RETRIES = 3
-SCRIPT_MAPPING = {'high': 'high.py', 'low': 'low.py', 'mid': 'mid.py', 'ehigh': 'extra-high.py', 'elow': 'extra-low.py',}
+SCRIPT_MAPPING = {
+    'high': 'high.py',
+    'low': 'low.py',
+    'mid': 'mid.py',
+    'ehigh': 'extra-high.py',
+    'elow': 'extra-low.py',
+}
 
 def save_image_from_url(image_url, image_path):
     """Download an image from a URL and save it to the specified path."""
@@ -70,6 +76,9 @@ def send_image():
 
     image_url = data['image_url']
     button_clicked = data['button_clicked']
+    
+    # Create the input folder if it doesn't exist
+    os.makedirs(INPUT_FOLDER, exist_ok=True)
     image_path = os.path.join(INPUT_FOLDER, IMAGE_NAME)
 
     # Step 1: Download the image
@@ -82,6 +91,10 @@ def send_image():
 
     # Step 3: Fetch the generated Lua script
     output_file = os.path.join(OUTPUT_FOLDER, IMAGE_NAME.replace('.png', '.lua'))
+    
+    # Create the output folder if it doesn't exist
+    os.makedirs(OUTPUT_FOLDER, exist_ok=True)
+    
     lua_script = get_lua_script(output_file)
     if lua_script:
         return jsonify({"status": "success", "lua_script": lua_script})
@@ -89,4 +102,5 @@ def send_image():
         return jsonify({"status": "error", "message": "Error reading Lua script"}), 500
 
 if __name__ == '__main__':
-    app.run(debug=True, host='0.0.0.0', port=5000)
+    port = int(os.environ.get("PORT", 5000))  # Get the port from environment variable
+    app.run(debug=True, host='0.0.0.0', port=port)
