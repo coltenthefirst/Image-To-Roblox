@@ -4,11 +4,13 @@ import requests
 
 app = Flask(__name__)
 
-INPUT_FOLDER = "/tmp/input"  # Change to /tmp/input
-OUTPUT_FOLDER = "/tmp/output"  # Change to /tmp/output
+# Define constants
+INPUT_FOLDER = "/tmp/input"
+OUTPUT_FOLDER = "/tmp/output"
 SCRIPT_DIR = "."
 IMAGE_NAME = "image.png"
 MAX_RETRIES = 3
+
 SCRIPT_MAPPING = {
     'high': 'high.py',
     'low': 'low.py',
@@ -23,7 +25,7 @@ def save_image_from_url(image_url, image_path):
             print(f"Attempting to download image from {image_url} (Attempt {attempt + 1})")
             response = requests.get(image_url)
             if response.status_code == 200:
-                os.makedirs(os.path.dirname(image_path), exist_ok=True)  # Create input directory in /tmp
+                os.makedirs(os.path.dirname(image_path), exist_ok=True)
                 with open(image_path, 'wb') as f:
                     f.write(response.content)
                 print(f"Image saved to {image_path}")
