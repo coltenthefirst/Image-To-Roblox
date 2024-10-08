@@ -3,7 +3,6 @@ from PIL import Image
 
 factor = 30
 rate = 400
-
 input_directory = "input"
 
 for filename in os.listdir(input_directory):
@@ -21,6 +20,11 @@ for filename in os.listdir(input_directory):
                 for y in range(image.size[1]):
                     for x in range(image.size[0]):
                         p = pixels[x, y]
+                        if isinstance(p, int):  # Check if the pixel is grayscale
+                            p = (p, p, p)  # Convert to RGB format
+                        else:
+                            p = (p[0], p[1], p[2])  # Ensure it's an RGB tuple
+
                         p = ("{:03d}".format(p[0]), "{:03d}".format(p[1]), "{:03d}".format(p[2]))
                         bits.append(''.join(map(str, p)))
 
