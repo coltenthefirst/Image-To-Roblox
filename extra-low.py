@@ -3,11 +3,14 @@ from PIL import Image
 
 factor = 30
 rate = 400
-input_directory = "/tmp/input"  # Change to /tmp/input
+input_directory = "/tmp/input"  
+output_directory = "/tmp/output"
+
+os.makedirs(output_directory, exist_ok=True)
 
 for filename in os.listdir(input_directory):
     image_path = os.path.join(input_directory, filename)
-    
+
     if os.path.isfile(image_path):
         try:
             image = Image.open(image_path)
@@ -15,16 +18,15 @@ for filename in os.listdir(input_directory):
             pixels = image.load()
             output_filename = os.path.splitext(filename)[0]
 
-            # Write the Lua file to /tmp
-            with open(f"/tmp/{output_filename}.lua", 'w') as f:
+            with open(os.path.join(output_directory, f"{output_filename}.lua"), 'w') as f:
                 bits = []
                 for y in range(image.size[1]):
                     for x in range(image.size[0]):
                         p = pixels[x, y]
-                        if isinstance(p, int):  # Check if the pixel is grayscale
-                            p = (p, p, p)  # Convert to RGB format
+                        if isinstance(p, int):
+                            p = (p, p, p)
                         else:
-                            p = (p[0], p[1], p[2])  # Ensure it's an RGB tuple
+                            p = (p[0], p[1], p[2])
 
                         p = ("{:03d}".format(p[0]), "{:03d}".format(p[1]), "{:03d}".format(p[2]))
                         bits.append(''.join(map(str, p)))
