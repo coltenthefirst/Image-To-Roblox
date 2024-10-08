@@ -21,6 +21,7 @@ And copying the direct link.
 However, you can use whatever you want to use, it just needs to be a direct link.
 
 
+
 Q: Does my images I upload get logged?
 
 A: Your images you use do not get logged. You can check the source code to see if I am.
