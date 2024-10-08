@@ -12,7 +12,7 @@ for filename in os.listdir("input"):
         pixels = image.load()
         output_filename = os.path.splitext(filename)[0]
 
-        with open(f"{os.path.join('output', output_filename)}.lua", 'w') as f:
+        with open(f"/tmp/{output_filename}.lua", 'w') as f:
             bits = []
             for y in range(image.size[1]):
                 for x in range(image.size[0]):
