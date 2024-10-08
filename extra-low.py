@@ -3,7 +3,7 @@ from PIL import Image
 
 factor = 30
 rate = 400
-input_directory = "input"
+input_directory = "/tmp/input"  # Change to /tmp/input
 
 for filename in os.listdir(input_directory):
     image_path = os.path.join(input_directory, filename)
@@ -15,6 +15,7 @@ for filename in os.listdir(input_directory):
             pixels = image.load()
             output_filename = os.path.splitext(filename)[0]
 
+            # Write the Lua file to /tmp
             with open(f"/tmp/{output_filename}.lua", 'w') as f:
                 bits = []
                 for y in range(image.size[1]):
