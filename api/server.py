@@ -1,13 +1,13 @@
-from flask import Flask, request, jsonify
-from flask_cors import CORS
 import os
+from flask import Flask, request, jsonify
 import requests
-import tempfile
 
 app = Flask(__name__)
-CORS(app)
 
+INPUT_FOLDER = "input"
+OUTPUT_FOLDER = "output"
 SCRIPT_DIR = "."
+IMAGE_NAME = "image.png"
 MAX_RETRIES = 3
 SCRIPT_MAPPING = {
     'high': 'high.py',
@@ -17,26 +17,25 @@ SCRIPT_MAPPING = {
     'elow': 'extra-low.py',
 }
 
-def save_image_from_url(image_url):
+def save_image_from_url(image_url, image_path):
     for attempt in range(MAX_RETRIES):
         try:
             print(f"Attempting to download image from {image_url} (Attempt {attempt + 1})")
             response = requests.get(image_url)
             if response.status_code == 200:
-                with tempfile.NamedTemporaryFile(delete=False, suffix='.png') as tmp_file:
-                    tmp_file.write(response.content)
-                    temp_image_path = tmp_file.name
-                print(f"Image saved to {temp_image_path}")
-                return temp_image_path
+                with open(image_path, 'wb') as f:
+                    f.write(response.content)
+                print(f"Image saved to {image_path}")
+                return True
             else:
                 print(f"Failed to download image: {response.status_code} {response.text}")
                 if response.status_code == 503 and attempt < MAX_RETRIES - 1:
                     print("Retrying...")
                     continue
-                return None
+                return False
         except Exception as e:
             print(f"Error downloading image: {e}")
-            return None
+            return False
 
 def run_script(button_clicked):
     selected_script = SCRIPT_MAPPING.get(button_clicked)
@@ -73,24 +72,25 @@ def send_image():
 
     image_url = data['image_url']
     button_clicked = data['button_clicked']
+    
+    os.makedirs(INPUT_FOLDER, exist_ok=True)
+    image_path = os.path.join(INPUT_FOLDER, IMAGE_NAME)
 
-    try:
-        temp_image_path = save_image_from_url(image_url)
-        if not temp_image_path:
-            return jsonify({"status": "error", "message": "Failed to download image"}), 400
+    if not save_image_from_url(image_url, image_path):
+        return jsonify({"status": "error", "message": "Failed to download image"}), 400
 
-        if not run_script(button_clicked):
-            return jsonify({"status": "error", "message": f"Error executing script for button {button_clicked}"}), 500
+    if not run_script(button_clicked):
+        return jsonify({"status": "error", "message": f"Error executing script for button {button_clicked}"}), 500
 
-        output_file = os.path.join("/tmp", "output.lua")  # Use /tmp directory for output
-        lua_script = get_lua_script(output_file)
-        if lua_script:
-            return jsonify({"status": "success", "lua_script": lua_script})
-        else:
-            return jsonify({"status": "error", "message": "Error reading Lua script"}), 500
-    except Exception as e:
-        print(f"Unexpected error: {e}")
-        return jsonify({"status": "error", "message": "Internal server error"}), 500
+    output_file = os.path.join(OUTPUT_FOLDER, IMAGE_NAME.replace('.png', '.lua'))
+    
+    os.makedirs(OUTPUT_FOLDER, exist_ok=True)
+    
+    lua_script = get_lua_script(output_file)
+    if lua_script:
+        return jsonify({"status": "success", "lua_script": lua_script})
+    else:
+        return jsonify({"status": "error", "message": "Error reading Lua script"}), 500
 
 if __name__ == '__main__':
     port = int(os.environ.get("PORT", 5000))
