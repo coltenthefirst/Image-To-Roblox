@@ -82,7 +82,7 @@ def send_image():
         if not run_script(button_clicked):
             return jsonify({"status": "error", "message": f"Error executing script for button {button_clicked}"}), 500
 
-        output_file = os.path.join(SCRIPT_DIR, "output.lua")
+        output_file = os.path.join("/tmp", "output.lua")  # Use /tmp directory for output
         lua_script = get_lua_script(output_file)
         if lua_script:
             return jsonify({"status": "success", "lua_script": lua_script})
