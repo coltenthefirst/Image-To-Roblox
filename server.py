@@ -102,5 +102,5 @@ def send_image():
         return jsonify({"status": "error", "message": "Error reading Lua script"}), 500
 
 if __name__ == '__main__':
-    port = int(os.environ.get("PORT", 5000))  # Get the port from environment variable
+    port = int(os.environ.get("PORT", 5000))  # Use the PORT environment variable
     app.run(debug=True, host='0.0.0.0', port=port)
