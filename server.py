@@ -9,7 +9,7 @@ CORS(app)
 INPUT_FOLDER = "input"
 OUTPUT_FOLDER = "output"
 SCRIPT_DIR = "."
-IMAGE_NAME = "1727325916.jumpyjackal_canvas_2044_7_1_bd__1_.png"
+IMAGE_NAME = "image.png"
 MAX_RETRIES = 3
 SCRIPT_MAPPING = {
     'high': 'high.py',
