@@ -1,17 +1,14 @@
 from flask import Flask, request, jsonify
-from flask_cors import CORS  # Import CORS
 import os
 import requests
 
 app = Flask(__name__)
 
-# Enable CORS
-CORS(app)  # This will enable CORS for all routes
+CORS(app)
 
-# Constants
-INPUT_FOLDER = "input"  # Use relative paths for folders
-OUTPUT_FOLDER = "output"  # Use relative paths for folders
-SCRIPT_DIR = "."  # Assuming the scripts are in the same directory as the app
+INPUT_FOLDER = "input"
+OUTPUT_FOLDER = "output"
+SCRIPT_DIR = "."
 IMAGE_NAME = "1727325916.jumpyjackal_canvas_2044_7_1_bd__1_.png"
 MAX_RETRIES = 3
 SCRIPT_MAPPING = {
@@ -23,7 +20,6 @@ SCRIPT_MAPPING = {
 }
 
 def save_image_from_url(image_url, image_path):
-    """Download an image from a URL and save it to the specified path."""
     for attempt in range(MAX_RETRIES):
         try:
             print(f"Attempting to download image from {image_url} (Attempt {attempt + 1})")
@@ -44,7 +40,6 @@ def save_image_from_url(image_url, image_path):
             return False
 
 def run_script(button_clicked):
-    """Run the appropriate Python script based on button clicked."""
     selected_script = SCRIPT_MAPPING.get(button_clicked)
     if selected_script:
         script_path = os.path.join(SCRIPT_DIR, selected_script)
@@ -58,7 +53,6 @@ def run_script(button_clicked):
     return False
 
 def get_lua_script(output_file):
-    """Read and return the content of the Lua script."""
     try:
         with open(output_file, 'r') as f:
             lua_script = f.read()
@@ -81,22 +75,17 @@ def send_image():
     image_url = data['image_url']
     button_clicked = data['button_clicked']
     
-    # Create the input folder if it doesn't exist
     os.makedirs(INPUT_FOLDER, exist_ok=True)
     image_path = os.path.join(INPUT_FOLDER, IMAGE_NAME)
 
-    # Step 1: Download the image
     if not save_image_from_url(image_url, image_path):
         return jsonify({"status": "error", "message": "Failed to download image"}), 400
 
-    # Step 2: Run the corresponding script
     if not run_script(button_clicked):
         return jsonify({"status": "error", "message": f"Error executing script for button {button_clicked}"}), 500
 
-    # Step 3: Fetch the generated Lua script
     output_file = os.path.join(OUTPUT_FOLDER, IMAGE_NAME.replace('.png', '.lua'))
     
-    # Create the output folder if it doesn't exist
     os.makedirs(OUTPUT_FOLDER, exist_ok=True)
     
     lua_script = get_lua_script(output_file)
@@ -106,5 +95,5 @@ def send_image():
         return jsonify({"status": "error", "message": "Error reading Lua script"}), 500
 
 if __name__ == '__main__':
-    port = int(os.environ.get("PORT", 5000))  # Use the PORT environment variable
+    port = int(os.environ.get("PORT", 5000))
     app.run(debug=True, host='0.0.0.0', port=port)
