@@ -1,15 +1,15 @@
 from flask import Flask, request, jsonify
+from flask_cors import CORS
 import os
 import requests
 
 app = Flask(__name__)
-
 CORS(app)
 
 INPUT_FOLDER = "input"
 OUTPUT_FOLDER = "output"
 SCRIPT_DIR = "."
-IMAGE_NAME = "image.png"
+IMAGE_NAME = "1727325916.jumpyjackal_canvas_2044_7_1_bd__1_.png"
 MAX_RETRIES = 3
 SCRIPT_MAPPING = {
     'high': 'high.py',
@@ -97,3 +97,4 @@ def send_image():
 if __name__ == '__main__':
     port = int(os.environ.get("PORT", 5000))
     app.run(debug=True, host='0.0.0.0', port=port)
+
