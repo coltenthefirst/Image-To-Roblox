@@ -74,20 +74,23 @@ def send_image():
     image_url = data['image_url']
     button_clicked = data['button_clicked']
 
-    temp_image_path = save_image_from_url(image_url)
-    if not temp_image_path:
-        return jsonify({"status": "error", "message": "Failed to download image"}), 400
+    try:
+        temp_image_path = save_image_from_url(image_url)
+        if not temp_image_path:
+            return jsonify({"status": "error", "message": "Failed to download image"}), 400
 
-    if not run_script(button_clicked):
-        return jsonify({"status": "error", "message": f"Error executing script for button {button_clicked}"}), 500
+        if not run_script(button_clicked):
+            return jsonify({"status": "error", "message": f"Error executing script for button {button_clicked}"}), 500
 
-    output_file = os.path.join(SCRIPT_DIR, "output.lua")
-
-    lua_script = get_lua_script(output_file)
-    if lua_script:
-        return jsonify({"status": "success", "lua_script": lua_script})
-    else:
-        return jsonify({"status": "error", "message": "Error reading Lua script"}), 500
+        output_file = os.path.join(SCRIPT_DIR, "output.lua")
+        lua_script = get_lua_script(output_file)
+        if lua_script:
+            return jsonify({"status": "success", "lua_script": lua_script})
+        else:
+            return jsonify({"status": "error", "message": "Error reading Lua script"}), 500
+    except Exception as e:
+        print(f"Unexpected error: {e}")
+        return jsonify({"status": "error", "message": "Internal server error"}), 500
 
 if __name__ == '__main__':
     port = int(os.environ.get("PORT", 5000))
