@@ -1,8 +1,12 @@
 from flask import Flask, request, jsonify
+from flask_cors import CORS  # Import CORS
 import os
 import requests
 
 app = Flask(__name__)
+
+# Enable CORS
+CORS(app)  # This will enable CORS for all routes
 
 # Constants
 INPUT_FOLDER = "input"  # Use relative paths for folders
