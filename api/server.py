@@ -4,7 +4,6 @@ import requests
 
 app = Flask(__name__)
 
-# Define constants
 INPUT_FOLDER = "/tmp/input"
 OUTPUT_FOLDER = "/tmp/output"
 SCRIPT_DIR = "."
