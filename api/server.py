@@ -6,7 +6,7 @@ app = Flask(__name__)
 
 INPUT_FOLDER = "/tmp/input"
 OUTPUT_FOLDER = "/tmp/output"
-SCRIPT_DIR = "."
+SCRIPT_DIR = ".."
 IMAGE_NAME = "video.mp4"
 MAX_RETRIES = 3
 
