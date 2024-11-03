@@ -6,7 +6,7 @@ app = Flask(__name__)
 
 INPUT_FOLDER = "/tmp/input"
 OUTPUT_FOLDER = "/tmp/output"
-SCRIPT_DIR = "."
+SCRIPT_DIR = "api"
 IMAGE_NAME = "image.png"
 VIDEO_NAME = "video.mp4"
 MAX_RETRIES = 3
@@ -17,7 +17,7 @@ SCRIPT_MAPPING = {
     'mid': 'mid.py',
     'ehigh': 'extra-high.py',
     'elow': 'extra-low.py',
-    'vtest': 'frame-extracter.py'
+    'vtest': 'frame-extractor.py'
 }
 
 def save_file_from_url(file_url, file_path):
@@ -34,7 +34,6 @@ def save_file_from_url(file_url, file_path):
             else:
                 print(f"Failed to download file: {response.status_code} {response.text}")
                 if response.status_code == 503 and attempt < MAX_RETRIES - 1:
-                    print("Retrying...")
                     continue
                 return False
         except Exception as e:
