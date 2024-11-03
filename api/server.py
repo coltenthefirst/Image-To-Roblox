@@ -1,17 +1,23 @@
 import os
-import replicate
-import requests
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
 from flask import Flask, request, jsonify
 
 app = Flask(__name__)
+
+cloudinary.config(
+    cloud_name=os.getenv('CLOUDINARY_CLOUD_NAME'),
+    api_key=os.getenv('CLOUDINARY_API_KEY'),
+    api_secret=os.getenv('CLOUDINARY_API_SECRET'),
+    secure=True
+)
 
 INPUT_FOLDER = "/tmp/input"
 OUTPUT_FOLDER = "/tmp/output"
 IMAGE_NAME = "image.png"
 VIDEO_NAME = "video.mp4"
 MAX_RETRIES = 3
-
-REPLICATE_MODEL_ID = "fofr/video-to-frames:ad9374d1b385c86948506b3ad287af9fca23e796685221782d9baa2bc43f14a9"
 
 def save_file_from_url(file_url, file_path):
     for attempt in range(MAX_RETRIES):
@@ -24,6 +30,7 @@ def save_file_from_url(file_url, file_path):
                 print(f"File saved to {file_path}")
                 return True
             else:
+                print(f"Failed to download file: {response.status_code} {response.text}")
                 if response.status_code == 503 and attempt < MAX_RETRIES - 1:
                     continue
                 return False
@@ -31,46 +38,55 @@ def save_file_from_url(file_url, file_path):
             print(f"Error downloading file: {e}")
             return False
 
-def extract_frames_with_replicate(video_url):
+def extract_frames_with_cloudinary(video_url):
     try:
-        output = replicate.run(
-            REPLICATE_MODEL_ID,
-            input={"video": video_url}
+        upload_response = cloudinary.uploader.upload_large(
+            video_url,
+            resource_type="video"
         )
-        frame_urls = []
-        for index, item in enumerate(output):
-            frame_filename = f"output_{index}.png"
-            frame_path = os.path.join(OUTPUT_FOLDER, frame_filename)
-            frame_urls.append(item)
 
-            response = requests.get(item)
-            with open(frame_path, "wb") as file:
-                file.write(response.content)
-            print(f"Frame {index} saved as {frame_path}")
+        public_id = upload_response['public_id']
+        duration = upload_response['duration']
+
+        frame_urls = []
+        interval = 2  # seconds
+
+        for time in range(0, int(duration), interval):
+            frame_url = cloudinary.utils.cloudinary_url(
+                public_id + f".jpg",
+                resource_type="video",
+                start_offset=time,
+                format="jpg"
+            )[0]
+            frame_urls.append(frame_url)
+
         return frame_urls
+
     except Exception as e:
-        print(f"Error extracting frames with Replicate: {e}")
+        print(f"Error extracting frames with Cloudinary: {e}")
         return None
 
 @app.route('/send_image', methods=['POST'])
 def send_image():
+    print("Received POST request to /send_image")
     data = request.get_json()
+    print(f"Raw data received: {data}")
 
     if not data or not data.get('image_url') or not data.get('button_clicked'):
+        print("Error: Missing image_url or button_clicked")
         return jsonify({"status": "error", "message": "Missing image_url or button_clicked"}), 400
 
     file_url = data['image_url']
     button_clicked = data['button_clicked']
-    
-    os.makedirs(INPUT_FOLDER, exist_ok=True)
-    
+
     if button_clicked == "vtest":
-        frame_urls = extract_frames_with_replicate(file_url)
+        frame_urls = extract_frames_with_cloudinary(file_url)
         if not frame_urls:
-            return jsonify({"status": "error", "message": "Failed to extract frames with Replicate"}), 500
+            return jsonify({"status": "error", "message": "Failed to extract frames with Cloudinary"}), 500
         return jsonify({"status": "success", "frame_urls": frame_urls})
 
     else:
+        os.makedirs(INPUT_FOLDER, exist_ok=True)
         image_path = os.path.join(INPUT_FOLDER, IMAGE_NAME)
         
         if not save_file_from_url(file_url, image_path):
@@ -88,6 +104,36 @@ def send_image():
             return jsonify({"status": "success", "lua_script": lua_script})
         else:
             return jsonify({"status": "error", "message": "Error reading Lua script"}), 500
+
+def run_script(button_clicked):
+    SCRIPT_MAPPING = {
+        'high': 'high.py',
+        'low': 'low.py',
+        'mid': 'mid.py',
+        'ehigh': 'extra-high.py',
+        'elow': 'extra-low.py'
+    }
+    selected_script = SCRIPT_MAPPING.get(button_clicked)
+    if selected_script:
+        script_path = os.path.join(".", selected_script)
+        try:
+            print(f"Executing script: {selected_script}")
+            os.system(f"python3 {script_path}")
+            return True
+        except Exception as e:
+            print(f"Error running script: {e}")
+            return False
+    return False
+
+def get_lua_script(output_file):
+    try:
+        with open(output_file, 'r') as f:
+            lua_script = f.read()
+        print(f"Successfully read Lua script from {output_file}")
+        return lua_script
+    except Exception as e:
+        print(f"Error reading output Lua file: {e}")
+        return None
 
 if __name__ == '__main__':
     port = int(os.environ.get("PORT", 5000))
