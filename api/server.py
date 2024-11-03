@@ -16,6 +16,7 @@ SCRIPT_MAPPING = {
     'mid': 'mid.py',
     'ehigh': 'extra-high.py',
     'elow': 'extra-low.py',
+    'vtest': 'frame-extracter.py'
 }
 
 def save_image_from_url(image_url, image_path):
@@ -40,17 +41,26 @@ def save_image_from_url(image_url, image_path):
             return False
 
 def run_script(button_clicked):
-    selected_script = SCRIPT_MAPPING.get(button_clicked)
-    if selected_script:
-        script_path = os.path.join(SCRIPT_DIR, selected_script)
-        try:
-            print(f"Executing script: {selected_script}")
-            os.system(f"python3 {script_path}")
-            return True
-        except Exception as e:
-            print(f"Error running script: {e}")
+    if button_clicked == "vtest":
+        input_video_path = os.path.join(INPUT_FOLDER, "video.mp4")
+        output_folder = os.path.join(OUTPUT_FOLDER, "video")
+        script_path = os.path.join(SCRIPT_DIR, "frame-extracter.py")
+        command = f"python3 {script_path} --input {input_video_path} --output {output_folder}"
+    else:
+        selected_script = SCRIPT_MAPPING.get(button_clicked)
+        if not selected_script:
+            print(f"No script mapped for button {button_clicked}")
             return False
-    return False
+        script_path = os.path.join(SCRIPT_DIR, selected_script)
+        command = f"python3 {script_path}"
+
+    try:
+        print(f"Executing command: {command}")
+        os.system(command)
+        return True
+    except Exception as e:
+        print(f"Error running script: {e}")
+        return False
 
 def get_lua_script(output_file):
     try:
