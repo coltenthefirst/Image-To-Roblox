@@ -8,6 +8,7 @@ INPUT_FOLDER = "/tmp/input"
 OUTPUT_FOLDER = "/tmp/output"
 SCRIPT_DIR = "."
 IMAGE_NAME = "image.png"
+VIDEO_NAME = "video.mp4"
 MAX_RETRIES = 3
 
 SCRIPT_MAPPING = {
@@ -16,27 +17,28 @@ SCRIPT_MAPPING = {
     'mid': 'mid.py',
     'ehigh': 'extra-high.py',
     'elow': 'extra-low.py',
+    'vtest': 'frame-extracter.py'
 }
 
-def save_image_from_url(image_url, image_path):
+def save_file_from_url(file_url, file_path):
     for attempt in range(MAX_RETRIES):
         try:
-            print(f"Attempting to download image from {image_url} (Attempt {attempt + 1})")
-            response = requests.get(image_url)
+            print(f"Attempting to download file from {file_url} (Attempt {attempt + 1})")
+            response = requests.get(file_url)
             if response.status_code == 200:
-                os.makedirs(os.path.dirname(image_path), exist_ok=True)
-                with open(image_path, 'wb') as f:
+                os.makedirs(os.path.dirname(file_path), exist_ok=True)
+                with open(file_path, 'wb') as f:
                     f.write(response.content)
-                print(f"Image saved to {image_path}")
+                print(f"File saved to {file_path}")
                 return True
             else:
-                print(f"Failed to download image: {response.status_code} {response.text}")
+                print(f"Failed to download file: {response.status_code} {response.text}")
                 if response.status_code == 503 and attempt < MAX_RETRIES - 1:
                     print("Retrying...")
                     continue
                 return False
         except Exception as e:
-            print(f"Error downloading image: {e}")
+            print(f"Error downloading file: {e}")
             return False
 
 def run_script(button_clicked):
@@ -44,8 +46,15 @@ def run_script(button_clicked):
     if selected_script:
         script_path = os.path.join(SCRIPT_DIR, selected_script)
         try:
-            print(f"Executing script: {selected_script}")
-            os.system(f"python3 {script_path}")
+            if button_clicked == "vtest":
+                input_video_path = os.path.join(INPUT_FOLDER, VIDEO_NAME)
+                output_folder = os.path.join(OUTPUT_FOLDER, "video")
+                os.makedirs(output_folder, exist_ok=True)
+                command = f"python3 {script_path} --input {input_video_path} --output {output_folder}"
+            else:
+                command = f"python3 {script_path}"
+            print(f"Executing command: {command}")
+            os.system(command)
             return True
         except Exception as e:
             print(f"Error running script: {e}")
@@ -72,21 +81,26 @@ def send_image():
         print("Error: Missing image_url or button_clicked")
         return jsonify({"status": "error", "message": "Missing image_url or button_clicked"}), 400
 
-    image_url = data['image_url']
+    file_url = data['image_url']
     button_clicked = data['button_clicked']
     
     os.makedirs(INPUT_FOLDER, exist_ok=True)
-    image_path = os.path.join(INPUT_FOLDER, IMAGE_NAME)
+    
+    if button_clicked == "vtest":
+        file_path = os.path.join(INPUT_FOLDER, VIDEO_NAME)
+    else:
+        file_path = os.path.join(INPUT_FOLDER, IMAGE_NAME)
 
-    if not save_image_from_url(image_url, image_path):
-        return jsonify({"status": "error", "message": "Failed to download image"}), 400
+    if not save_file_from_url(file_url, file_path):
+        return jsonify({"status": "error", "message": "Failed to download file"}), 400
 
     if not run_script(button_clicked):
         return jsonify({"status": "error", "message": f"Error executing script for button {button_clicked}"}), 500
 
-    output_file = os.path.join(OUTPUT_FOLDER, IMAGE_NAME.replace('.png', '.lua'))
-    
-    os.makedirs(OUTPUT_FOLDER, exist_ok=True)
+    if button_clicked == "vtest":
+        output_file = os.path.join(OUTPUT_FOLDER, "video", VIDEO_NAME.replace('.mp4', '.lua'))
+    else:
+        output_file = os.path.join(OUTPUT_FOLDER, IMAGE_NAME.replace('.png', '.lua'))
     
     lua_script = get_lua_script(output_file)
     if lua_script:
