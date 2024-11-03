@@ -5,7 +5,7 @@ from moviepy.editor import VideoFileClip
 factor = 30
 rate = 400
 input_video_path = '/tmp/input/video.mp4'
-output_directory = '/tmp/output'
+output_directory = '/tmp/output/video'
 
 os.makedirs(output_directory, exist_ok=True)
 
