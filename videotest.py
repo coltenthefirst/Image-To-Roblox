@@ -25,16 +25,8 @@ for image_filename in images:
                     p = (p, p, p)
                 else:
                     p = (p[0], p[1], p[2])
-
                 p = ("{:03d}".format(p[0]), "{:03d}".format(p[1]), "{:03d}".format(p[2]))
                 bits.append(''.join(map(str, p)))
-
-        f.write("require(script.Parent.Parent):Draw(" + str(rate) + 
-                ", Vector3.new(0,0,0), {" + str(image.size[0]) + "," + str(image.size[1]) + 
-                "}, '" + ''.join(bits) + "')")
-    
-    print(f"Generated Lua script: {output_filename}.lua")
+        f.write("require(script.Parent.Parent):Draw(" + str(rate) + ", Vector3.new(0,0,0), {" + str(image.size[0]) + "," + str(image.size[1]) + "}, '" + ''.join(bits) + "')")
     
     time.sleep(2.5)
-
-print("Lua script generation completed!")
