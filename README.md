@@ -15,7 +15,7 @@ limitations under the License.
 -->
 
 <p align="center">
-  <img alt="Images To Roblox Parts" src="https://i.postimg.cc/MGx8XrT6/Roblox-Logo-2022.jpg" width="222" height="222" style="max-width: 100%;">
+  <img alt="Images To Roblox Parts" src="https://i.postimg.cc/MGx8XrT6/Roblox-Logo-2022.jpg" width="322" height="322" style="max-width: 100%;">
   <br/>
   <br/>
 </p>
@@ -72,6 +72,8 @@ For obtaining direct image urls, I recommended to use [Postimages.org](https://p
 - [snipboard.io](https://snipboard.io/) ✅
 - [prnt.sc](https://prnt.sc/) ❌
 - [lunapic.com](https://www7.lunapic.com/editor/?action=quick-upload) ✅
+- [imagevenue.com](https://www.imagevenue.com/) ✅
+- [pictr.com](https://pictr.com/upload) ✅
 
 ## FAQ
 
