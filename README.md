@@ -92,7 +92,7 @@ For obtaining direct image urls, I recommended to use [Postimages.org](https://p
 ## FAQ
 
 **Q: Do my uploaded images get logged?**  
-**A:** Uploaded images are saved in a temporary file called "tmp."
+**A:** Uploaded images are temporary logged.
 
 **Q: Will I get banned for using exploit images?**  
 **A:** No, you will not be banned. The project generates parts based on your image, not Roblox assets.
