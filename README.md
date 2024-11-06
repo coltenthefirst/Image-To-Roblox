@@ -58,7 +58,20 @@ If both games are offline, you can download the place file here:
 
 
 ## Uploading Custom Images
-For uploading images, it's recommended to use [Postimages.org](https://postimages.org/) to obtain a direct link. Other services can be used as long as they provide a direct link.
+For obtaining direct image urls, i recommended to use [Postimages.org](https://postimages.org/) to obtain a direct link. Other services can be used as long as they provide a direct link.
+
+## Tested Image Services
+- ✅ = Works
+- ❌ = Does not work
+
+- [Postimages.org](https://postimages.org/) ✅
+- [imgbb.com](https://imgbb.com/) ✅
+- [i.imghippo.com](https://i.imghippo.com) ✅
+- [i.imgur.com](https://i.imgur.com) ❌
+- [imgbox.com](https://imgbox.com/) ✅
+- [snipboard.io](https://snipboard.io/) ✅
+- [prnt.sc](https://prnt.sc/) ❌
+- [lunapic.com](https://www7.lunapic.com/editor/?action=quick-upload) ✅
 
 ## FAQ
 
