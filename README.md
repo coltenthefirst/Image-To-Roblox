@@ -67,8 +67,8 @@ Here’s a overview of the process:
 
 You can download the place files here:
 
-- Update 1:  [Google Drive Link](https://drive.google.com/file/d/1YdDMn-is_UD_VkbfgQKzQ3mzjJb5QZHY/view?usp=sharing).
-- Update 2: Soon...
+- Update 1/Model-1:  [Google Drive Link](https://drive.google.com/file/d/1YdDMn-is_UD_VkbfgQKzQ3mzjJb5QZHY/view?usp=sharing).
+- Update 2/Model-2: Soon...
 
 
 ## Uploading Custom Images
