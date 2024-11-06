@@ -37,10 +37,10 @@ limitations under the License.
 
 ## Introduction
 
-This repository contains the source code for the **Roblox Image Generator**. This tool allows users to convert image URLs into parts within Roblox, facilitating creative projects and gameplay. Users are free to use the files provided in this repository for their own purposes.
+This repository contains the backend source code for the **Image To Parts** Roblox Game. This tool allows users to convert image URLs into parts within Roblox. Users are free to use the files provided in this repository for their own purposes.
 
 ## How It Works
-Here’s a brief overview of the process:
+Here’s a overview of the process:
 1. Input an image URL and select a quality setting (such as mid, high, low, extra low).
 2. The image URL and selected quality are sent to **Vercel**.
 3. Vercel downloads the image and runs a Python script based on your selection.
@@ -58,7 +58,7 @@ If both games are offline, you can download the place file here:
 
 
 ## Uploading Custom Images
-For obtaining direct image urls, i recommended to use [Postimages.org](https://postimages.org/) to obtain a direct link. Other services can be used as long as they provide a direct link.
+For obtaining direct image urls, I recommended to use [Postimages.org](https://postimages.org/) to obtain a direct link. Other services can be used as long as they provide a direct link.
 
 ## Tested Image Services
 - ✅ = Works
