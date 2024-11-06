@@ -58,6 +58,10 @@ Here’s a overview of the process:
 3. Vercel downloads the image and runs a Python script based on your selection.
 4. A Lua script is generated and sent back to Roblox, where it is processed into parts that resemble the pixels of your image.
 
+<video src="./preview.mp4" controls="controls" style="max-width: 100%;">
+   Your browser does not support the video tag.
+</video>
+
 ## Game Links
 - [Image-To-Parts (Deleted)](https://www.roblox.com/games/78950815879906/Image-To-Parts)
 - [Create Your Dreams (Online)](https://www.roblox.com/games/128560311364952/Create-Your-Dreams)
