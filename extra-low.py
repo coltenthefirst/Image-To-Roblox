@@ -1,10 +1,9 @@
 import os
-import time
 from PIL import Image
 
 factor = 30
 rate = 400
-input_directory = "/tmp/input"
+input_directory = "/tmp/input"  
 output_directory = "/tmp/output"
 
 os.makedirs(output_directory, exist_ok=True)
@@ -18,9 +17,8 @@ for filename in os.listdir(input_directory):
             image = image.resize((int(image.size[0] / factor), int(image.size[1] / factor)))
             pixels = image.load()
             output_filename = os.path.splitext(filename)[0]
-            lua_file_path = os.path.join(output_directory, f"{output_filename}.lua")
 
-            with open(lua_file_path, 'w') as f:
+            with open(os.path.join(output_directory, f"{output_filename}.lua"), 'w') as f:
                 bits = []
                 for y in range(image.size[1]):
                     for x in range(image.size[0]):
@@ -39,10 +37,6 @@ for filename in os.listdir(input_directory):
 
             print(f"Processed: {filename}")
 
-            time.sleep(10)
-            if os.path.exists(lua_file_path):
-                os.remove(lua_file_path)
-                print(f"Deleted: {lua_file_path}")
         except Exception as e:
             print(f"Error processing {filename}: {e}")
 
