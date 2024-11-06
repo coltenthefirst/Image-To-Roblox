@@ -20,26 +20,32 @@ limitations under the License.
   <br/>
 </p>
 
+<h1 align="center">
+    <a href="https://github.com/coltenthefirst/image-to-roblox">
+        <img alt="License Info" src="https://img.shields.io/badge/License-MIT-blue.svg">
+    </a>
+    <a href="https://github.com/coltenthefirst/image-to-roblox/releases">
+        <img alt="Newest Release" src="https://img.shields.io/github/release/coltenthefirst/image-to-roblox.svg">
+    </a>
+</h1>
+
 <p align="center">
   <img alt="asset" src="https://cdn.vectorstock.com/i/500p/16/54/checkerboard-black-and-white-background-vector-33401654.jpg" width="5000" height="10" style="max-width: 100%;">
   <br/>
   <br/>
 </p>
 
+<h1 align="center">
+    Images To Roblox Parts
+</h1>
+
+<br>
+
 <p align="center">
-    <a href="https://github.com/coltenthefirst/image-to-roblox"><img alt="License Info" src="https://img.shields.io/badge/License-MIT-blue.svg"></a>
-    <a href="https://github.com/coltenthefirst/image-to-roblox/releases"><img alt="Newest Release" src="https://img.shields.io/github/release/coltenthefirst/image-to-roblox.svg"></a>
+  <img alt="asset" src="https://cdn.vectorstock.com/i/500p/16/54/checkerboard-black-and-white-background-vector-33401654.jpg" width="5000" height="10" style="max-width: 100%;">
+  <br/>
+  <br/>
 </p>
-
-<h4 align="center">
-    <p>
-        <b>English</b>
-    </p>
-</h4>
-
-<h3 align="center">
-    <p>Images To Roblox Parts</p>
-</h3>
 
 ## Introduction
 
