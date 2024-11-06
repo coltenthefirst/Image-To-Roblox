@@ -15,7 +15,7 @@ limitations under the License.
 -->
 
 <p align="center">
-  <img alt="Roblox Image Generator" src="https://i.postimg.cc/MGx8XrT6/Roblox-Logo-2022.jpg" width="352" height="352" style="max-width: 100%;">
+  <img alt="Roblox Image Generator" src="https://i.postimg.cc/MGx8XrT6/Roblox-Logo-2022.jpg" width="222" height="222" style="max-width: 100%;">
   <br/>
   <br/>
 </p>
