@@ -15,7 +15,13 @@ limitations under the License.
 -->
 
 <p align="center">
-  <img alt="Images To Roblox Parts" src="https://i.postimg.cc/MGx8XrT6/Roblox-Logo-2022.jpg" width="322" height="322" style="max-width: 100%;">
+  <img alt="Images To Roblox Parts" src="https://i.postimg.cc/MGx8XrT6/Roblox-Logo-2022.jpg" width="422" height="422" style="max-width: 100%;">
+  <br/>
+  <br/>
+</p>
+
+<p align="center">
+  <img alt="asset" src="https://cdn.vectorstock.com/i/500p/16/54/checkerboard-black-and-white-background-vector-33401654.jpg" width="5000" height="10" style="max-width: 100%;">
   <br/>
   <br/>
 </p>
