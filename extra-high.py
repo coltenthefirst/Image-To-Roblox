@@ -1,5 +1,4 @@
 import os
-import time
 from PIL import Image
 
 factor = 1.6
@@ -12,9 +11,8 @@ for filename in os.listdir("/tmp/input"):
         image = image.resize((int(image.size[0] / factor), int(image.size[1] / factor)))
         pixels = image.load()
         output_filename = os.path.splitext(filename)[0]
-        lua_file_path = f"{os.path.join('/tmp/output', output_filename)}.lua"
 
-        with open(lua_file_path, 'w') as f:
+        with open(f"{os.path.join('/tmp/output', output_filename)}.lua", 'w') as f:
             bits = []
             for y in range(image.size[1]):
                 for x in range(image.size[0]):
@@ -27,10 +25,5 @@ for filename in os.listdir("/tmp/input"):
                     "}, '" + ''.join(bits) + "')")
 
         print(f"Processed: {filename}")
-        
-        time.sleep(10)
-        if os.path.exists(lua_file_path):
-            os.remove(lua_file_path)
-            print(f"Deleted: {lua_file_path}")
 
 print("Done!")
