@@ -35,6 +35,8 @@ for filename in os.listdir(input_directory):
             if os.path.exists(lua_file_path):
                 os.remove(lua_file_path)
                 print(f"Deleted: {lua_file_path}")
+            else:
+                print(f"Lua file does not exist: {lua_file_path}")
 
         except Exception as e:
             print(f"Error processing {filename}: {e}")
