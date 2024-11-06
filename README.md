@@ -58,8 +58,7 @@ Here’s a overview of the process:
 3. Vercel downloads the image and runs a Python script based on your selection.
 4. A Lua script is generated and sent back to Roblox, where it is processed into parts that resemble the pixels of your image.
 
-# Click to Play
-[![Model-2 Preview Video](./sickimage.png)](./preview.mp4)
+![Preview Model-2](./preview.gif)
 
 ## Game Links
 - [Image-To-Parts (Deleted)](https://www.roblox.com/games/78950815879906/Image-To-Parts)
