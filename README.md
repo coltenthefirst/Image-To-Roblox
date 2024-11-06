@@ -32,7 +32,7 @@ limitations under the License.
 </h4>
 
 <h3 align="center">
-    <p>Roblox Image Generation from URLs</p>
+    <p>Images To Roblox Parts</p>
 </h3>
 
 ## Introduction
