@@ -1,42 +1,72 @@
-Hello there! <3
+<!---
+Copyright 2024 Colten Wade Parker. All rights reserved.
 
-This is the image gen source code for my Roblox game!
-This only exists because this github repo runs the Roblox funcion to gen the image.
+Licensed under the MIT License;
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
 
--
+    https://opensource.org/licenses/MIT
 
-How does it work?
-When you enter a image url and press mid, high, low, extra low, ect. It will send that info to vercal/railway, and then vercal/railway will download that image and run a .py file based on what button you pressed. (high, low, mid, ect) After that, it makes a lua script and sends it to Roblox. That lua script gets chopped and processed into a module script to generate your image into parts.
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
 
-Link: 
-https://www.roblox.com/games/78950815879906/Image-To-Parts (deleted :sob:)
-https://www.roblox.com/games/128560311364952/Create-Your-Dreams (Online)
+<p align="center">
+  <img alt="Roblox Image Generator" src="https://i.postimg.cc/MGx8XrT6/Roblox-Logo-2022.jpg" width="352" height="59" style="max-width: 100%;">
+  <br/>
+  <br/>
+</p>
 
--
+<p align="center">
+    <a href="https://github.com/coltenthefirst/image-to-roblox"><img alt="License Info" src="https://img.shields.io/badge/License-MIT-blue.svg"></a>
+    <a href="https://github.com/coltenthefirst/image-to-roblox/releases"><img alt="Newest Release" src="https://img.shields.io/github/release/coltenthefirst/image-to-roblox.svg"></a>
+</p>
 
-(If both is offline then download the place file on google drive)
-https://drive.google.com/file/d/1YdDMn-is_UD_VkbfgQKzQ3mzjJb5QZHY/view?usp=sharing
+<h4 align="center">
+    <p>
+        <b>English</b>
+    </p>
+</h4>
 
--
+<h3 align="center">
+    <p>Roblox Image Generation from URLs</p>
+</h3>
 
-To upload custom images I recommend using:
+## Introduction
 
-https://postimages.org/
+This repository contains the source code for the **Roblox Image Generator**. This tool allows users to convert image URLs into parts within Roblox, facilitating creative projects and gameplay. Users are free to use the files provided in this repository for their own purposes.
 
-And copying the direct link.
+## How It Works
+Here’s a brief overview of the process:
+1. Input an image URL and select a quality setting (such as mid, high, low, extra low).
+2. The image URL and selected quality are sent to **Vercel**.
+3. Vercel downloads the image and runs a Python script based on your selection.
+4. A Lua script is generated and sent back to Roblox, where it is processed into parts that resemble the pixels of your image.
 
-However, you can use whatever you want to use, it just needs to be a direct link.
+## Game Links
+- [Image-To-Parts (Deleted)](https://www.roblox.com/games/78950815879906/Image-To-Parts)
+- [Create Your Dreams (Online)](https://www.roblox.com/games/128560311364952/Create-Your-Dreams)
 
--
+If both games are offline, you can download the place file here:
+Update 1:  [Google Drive Link](https://drive.google.com/file/d/1YdDMn-is_UD_VkbfgQKzQ3mzjJb5QZHY/view?usp=sharing).
+Update 2: Soon...
 
-Q: Does my images I upload get logged?
+## Uploading Custom Images
+For uploading images, it's recommended to use [Postimages.org](https://postimages.org/) to obtain a direct link. Other services can be used as long as they provide a direct link.
 
-A: Well, it depends on what you mean. Your images you upload get saved into a temporary file called "tmp."
+## FAQ
 
--|-
+**Q: Do my uploaded images get logged?**  
+**A:** Uploaded images are saved in a temporary file called "tmp."
 
-Q: If I use exploit images, will I get banned?
+**Q: Will I get banned for using exploit images?**  
+**A:** No, you will not be banned. The project generates parts based on your image, not Roblox assets.
 
-A: You will not get banned, because it's not a Roblox asset, it's parts to look like pixels of your image. You can upload anything you want tbh.
+## License
+This project is licensed under the MIT License. You are free to use, modify, and distribute the files in this repository, as long as you include the original license. For more details, see the [LICENSE](LICENSE) file.
 
-. . . . . . .
+## Contributing
+Contributions are welcome. If you have suggestions or improvements, please open an issue or submit a pull request.
