@@ -62,11 +62,10 @@ Here’s a overview of the process:
 ![Preview Model-2](./preview.gif)
 
 ## Game Links
-- [Image-To-Parts (Deleted)](https://www.roblox.com/games/78950815879906/Image-To-Parts)
-- [Create Your Dreams (Online)](https://www.roblox.com/games/128560311364952/Create-Your-Dreams)
+- [Create Your Dreams](https://www.roblox.com/games/128560311364952/Create-Your-Dreams)
 
 
-If both games are offline, you can download the place file here:
+You can download the place files here:
 
 - Update 1:  [Google Drive Link](https://drive.google.com/file/d/1YdDMn-is_UD_VkbfgQKzQ3mzjJb5QZHY/view?usp=sharing).
 - Update 2: Soon...
