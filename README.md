@@ -78,16 +78,18 @@ For obtaining direct image urls, I recommended to use [Postimages.org](https://p
 - ✅ = Works
 - ❌ = Does not work
 
-- [Postimages.org](https://postimages.org/) ✅
-- [imgbb.com](https://imgbb.com/) ✅
-- [i.imghippo.com](https://i.imghippo.com) ✅
-- [i.imgur.com](https://i.imgur.com) ❌
-- [imgbox.com](https://imgbox.com/) ✅
-- [snipboard.io](https://snipboard.io/) ✅
-- [prnt.sc](https://prnt.sc/) ❌
-- [lunapic.com](https://www7.lunapic.com/editor/?action=quick-upload) ✅
-- [imagevenue.com](https://www.imagevenue.com/) ✅
-- [pictr.com](https://pictr.com/upload) ✅
+| Service           | Status |
+|-------------------|--------|
+| Postimages.org    | ✅     |
+| imgbb.com         | ✅     |
+| i.imghippo.com    | ✅     |
+| i.imgur.com       | ❌     |
+| imgbox.com        | ✅     |
+| snipboard.io      | ✅     |
+| prnt.sc           | ❌     |
+| lunapic.com       | ✅     |
+| imagevenue.com    | ✅     |
+| pictr.com         | ✅     |
 
 ## FAQ
 
