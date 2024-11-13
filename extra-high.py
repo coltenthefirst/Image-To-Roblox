@@ -1,6 +1,6 @@
+from PIL import Image
 import os
 import time
-from PIL import Image
 
 factor = 1.6
 rate = 25
@@ -11,6 +11,9 @@ for filename in os.listdir("/tmp/input"):
     image_path = os.path.join("/tmp/input", filename)
     if os.path.isfile(image_path):
         image = Image.open(image_path)
+        if image.mode != "RGB":
+            image = image.convert("RGB")
+        
         image = image.resize((int(image.size[0] / factor), int(image.size[1] / factor)))
         pixels = image.load()
         output_filename = os.path.splitext(filename)[0]
