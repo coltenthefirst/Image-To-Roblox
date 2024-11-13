@@ -1,4 +1,5 @@
 import os
+import time
 from PIL import Image
 
 factor = 3.2
@@ -12,6 +13,7 @@ for filename in os.listdir("/tmp/input"):
         pixels = image.load()
         output_filename = os.path.splitext(filename)[0]
 
+        time.sleep(2)
         with open(f"{os.path.join('/tmp/output', output_filename)}.lua", 'w') as f:
             bits = []
             for y in range(image.size[1]):
