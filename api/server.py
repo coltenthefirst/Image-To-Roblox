@@ -21,7 +21,7 @@ SCRIPT_MAPPING = {
 def save_image_from_url(image_url, image_path):
     for attempt in range(MAX_RETRIES):
         try:
-            print(f"Attempting to download image from {image_url} (Attempt {attempt + 1})")
+            print(f"Attempting to download image (Attempt {attempt + 1})")
             response = requests.get(image_url)
             if response.status_code == 200:
                 os.makedirs(os.path.dirname(image_path), exist_ok=True)
@@ -66,7 +66,7 @@ def get_lua_script(output_file):
 def send_image():
     print("Received POST request to /send_image")
     data = request.get_json()
-    print(f"Raw data received: {data}")
+    print(f"Raw data received")
 
     if not data or not data.get('image_url') or not data.get('button_clicked'):
         print("Error: Missing image_url or button_clicked")
