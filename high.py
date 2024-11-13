@@ -1,11 +1,8 @@
 import os
-import time
 from PIL import Image
 
 factor = 3.2
 rate = 50
-
-time.sleep(2)
 
 for filename in os.listdir("/tmp/input"):
     image_path = os.path.join("/tmp/input", filename)
