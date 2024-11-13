@@ -1,5 +1,6 @@
 import os
 from flask import Flask, request, jsonify
+import time
 import requests
 
 app = Flask(__name__)
@@ -8,7 +9,7 @@ INPUT_FOLDER = "/tmp/input"
 OUTPUT_FOLDER = "/tmp/output"
 SCRIPT_DIR = "."
 IMAGE_NAME = "image.png"
-MAX_RETRIES = 3
+MAX_RETRIES = 5
 
 SCRIPT_MAPPING = {
     'high': 'high.py',
@@ -23,6 +24,7 @@ def save_image_from_url(image_url, image_path):
         try:
             print(f"Attempting to download image from {image_url} (Attempt {attempt + 1})")
             response = requests.get(image_url)
+            time.sleep(2)
             if response.status_code == 200:
                 os.makedirs(os.path.dirname(image_path), exist_ok=True)
                 with open(image_path, 'wb') as f:
