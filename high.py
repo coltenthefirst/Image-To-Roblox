@@ -1,4 +1,5 @@
 import os
+import time
 from PIL import Image
 
 factor = 3.2
