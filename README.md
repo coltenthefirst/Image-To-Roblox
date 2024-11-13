@@ -58,8 +58,8 @@ Here’s a overview of the process:
 3. Vercel downloads the image and runs a Python script based on your selection.
 4. A Lua script is generated and sent back to Roblox, where it is processed into parts that resemble the pixels of your image.
 
-# THIS IS A PREVIEW OF A UNRELEASED MODEL!!!
-![Preview Model-2](./preview.gif)
+# VIDEO COMING SOON FOR MODEL-2!
+![Early Model-2 Preview](./preview.gif)
 
 ## Game Links
 - [Create Your Dreams](https://www.roblox.com/games/128560311364952/Create-Your-Dreams)
