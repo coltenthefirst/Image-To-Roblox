@@ -70,7 +70,7 @@ You can download the place files here:
 | Model / Update                            | Download |
 |------------------------------------|--------|
 | Update 1/Model-1: |[Google Drive Link](https://drive.google.com/file/d/1YdDMn-is_UD_VkbfgQKzQ3mzjJb5QZHY/view?usp=sharing)|
-| Update 2/Model-2: |[Google Drive Link](https://drive.google.com/file/d/12Di4nvkUzlRC_26pz1mQxsHhNa6Td38Q/view?usp=sharing)|
+| Update 2/Model-2: |[Google Drive Link](https://drive.google.com/file/d/1GUnPJWO0sX8VsMysFi1eTUbYXyJKcshk/view?usp=sharing)|
 
 
 ## Uploading Custom Images
