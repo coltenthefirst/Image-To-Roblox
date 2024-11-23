@@ -62,6 +62,27 @@ Here’s a overview of the process:
 3. Vercel downloads the image and runs a Python script based on your selection.
 4. A Lua script is generated and sent back to Roblox, where it is processed into parts that resemble the pixels of your image.
 
+## To-Do List
+
+<h6 style="text-align: right;">
+    ~ EXPECT THESE TO CHANGE!!! ~
+</h6>
+
+### Current Tasks
+
+- [ ] NSFW Filter? (Github)
+
+### Completed Tasks
+
+- [x] Frame By Frame Animation Player (Model-2)
+- [x] Faster Image Gen Speed (Model-2)
+- [x] Enhanced image data privacy (Github)
+- [x] Improved support for black and white images and single-color images (Github)
+- [x] Add a frame-by-frame animation player (Model-2)
+- [x] Add a delete button for parts (Model-2)
+- [x] Fix Error 500 (Github/Model-2)
+- [x] Resolve issue with the first pixel not generating (Model-2)
+
 ## Videos
 [Model-1](https://www.youtube.com/watch?v=oFm_znA53r8)
 [Model-2](https://www.youtube.com/watch?v=6pRmz4_hoDo)
