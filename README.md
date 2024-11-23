@@ -104,7 +104,7 @@ For obtaining direct image urls, I recommended to use [Postimages.org](https://p
 **A:** Uploaded images are temporary logged, they cannot be downloaded, viewed, or anything, unless its in Roblox.
 
 **Q: Will I get banned for using exploit images?**  
-**A:** I said before that you won't be banned but you can be banned. Please be careful when using this in your games.
+**A:** I said before that you won't be banned, but you can be banned. Please be careful when using this in your games.
 
 ## License
 This project is licensed under the MIT License. You are free to use, modify, and distribute the files in this repository, as long as you include the original license. For more details, see the [LICENSE](LICENSE) file.
