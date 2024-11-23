@@ -100,6 +100,9 @@ For obtaining direct image urls, I recommended to use [Postimages.org](https://p
 
 ## FAQ
 
+**Q: Does this have a NSFW filter**  
+**A:** No. If I knew how to make a NSFW filter for this, I would've made one.
+
 **Q: Do my uploaded images get logged?**  
 **A:** Uploaded images are temporary logged, they cannot be downloaded, viewed, or anything, unless its in Roblox.
 
