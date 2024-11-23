@@ -20,11 +20,14 @@ limitations under the License.
   <br/>
 </p>
 
+<h6 align="center">
+    ~ Works For IOS, Android, Windows, Mac, and Console. ~
+</h6>
+
 <h1 align="center">
     <a href="https://github.com/coltenthefirst/image-to-roblox">
         <img alt="License Info" src="https://img.shields.io/badge/License-MIT-blue.svg">
     </a>
-    Works For IOS, Android, Windows, Mac, and Console.
     <a href="https://github.com/coltenthefirst/image-to-roblox/releases">
         <img alt="Newest Release" src="https://img.shields.io/github/release/coltenthefirst/image-to-roblox.svg">
     </a>
