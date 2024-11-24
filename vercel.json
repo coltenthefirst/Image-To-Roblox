@@ -1,9 +1,12 @@
 {
-  "version": 2,
+  "version": 3,
   "builds": [
     {
       "src": "api/server.py",
-      "use": "@vercel/python"
+      "use": "@vercel/python",
+      "config": {
+        "cache": [".vercel_build_output/cache"]
+      }
     }
   ],
   "routes": [
