@@ -70,7 +70,7 @@ Here’s a overview of the process:
 
 ### Current Tasks
 
-- [ ] NSFW Filter? (Github)
+- [ ] PlaceHolder
 
 ### Completed Tasks
 
