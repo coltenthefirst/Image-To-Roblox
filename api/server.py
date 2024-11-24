@@ -2,6 +2,10 @@ import os
 from flask import Flask, request, jsonify
 import requests
 
+cache_path = os.path.join(".vercel_build_output", "cache")
+if os.path.exists(cache_path):
+    sys.path.insert(0, cache_path)
+
 app = Flask(__name__)
 
 INPUT_FOLDER = "/tmp/input"
