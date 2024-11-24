@@ -74,6 +74,7 @@ Here’s a overview of the process:
 
 ### Completed Tasks
 
+- [x] NSFW Filter (Github/Model-2F)
 - [x] Frame By Frame Animation Player (Model-2)
 - [x] Faster Image Gen Speed (Model-2)
 - [x] Enhanced image data privacy (Github)
