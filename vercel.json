@@ -7,7 +7,7 @@
     }
   ],
   "functions": {
-    "api/server.py": {
+    "api/**.py": {
       "maxDuration": 900
     }
   },
