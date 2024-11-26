@@ -7,8 +7,8 @@
     }
   ],
   "functions": {
-    "api/**.py": {
-      "maxDuration": 900
+    "api/server.py": {
+      "maxDuration": 60
     }
   },
   "routes": [
