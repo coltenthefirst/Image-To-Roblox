@@ -6,6 +6,11 @@
       "use": "@vercel/python"
     }
   ],
+  "functions": {
+    "api/server.py": {
+      "maxDuration": 60 // hobby plan sucks fucking kill me
+    }
+  },
   "routes": [
     {
       "src": "/(.*)",
