@@ -51,6 +51,8 @@ limitations under the License.
   <br/>
 </p>
 
+# THERE IS A ISSUE WITH MODEL-2! PLEASE READ [fix](https://github.com/coltenthefirst/image-to-roblox/issues/5) TO FIX IT!
+
 ## Introduction
 
 This repository contains the backend source code for the **Image To Parts** Roblox Game. This tool allows users to convert image URLs into parts within Roblox. Users are free to use the files provided in this repository for their own purposes.
