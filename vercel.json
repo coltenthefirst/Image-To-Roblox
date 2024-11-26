@@ -8,7 +8,7 @@
   ],
   "functions": {
     "api/server.py": {
-      "maxDuration": 60 // hobby plan sucks fucking kill me
+      "maxDuration": 60
     }
   },
   "routes": [
