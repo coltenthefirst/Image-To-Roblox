@@ -88,6 +88,9 @@ Here’s a overview of the process:
 ### Completed Tasks Since Model-2 Released
 
 - [x] Automatic Video Player (Github/Model-3) - unreleased
+<h6 style="text-align: right;">
+    ~ Context: This will import the frames for you, and all you have to do is put in a gif url. ~
+</h6>
 - [x] NSFW Filter (Github/Model-2F) - released
 
 ## Videos
