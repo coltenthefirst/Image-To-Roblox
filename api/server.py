@@ -172,6 +172,9 @@ def send_gif():
 
     gif_url = data['gif_url']
     api_key = data['api_key']
+
+    print(f"Received gif_url: {gif_url}")
+    print(f"Received api_key: {api_key}")
     
     uploaded_urls = process_and_upload_gif(api_key, gif_url, OUTPUT_FOLDER)
 
