@@ -70,13 +70,12 @@ Here’s a overview of the process:
     ~ EXPECT THESE TO CHANGE!!! ~
 </h6>
 
-### Current Tasks
+### Current Tasks (IN ORDER) - Model-3 Planned
 
-- [ ] PlaceHolder
+- [ ] NSFW Filter Model-3 (Github/Model-3F)
 
 ### Completed Tasks
 
-- [x] NSFW Filter (Github/Model-2F)
 - [x] Frame By Frame Animation Player (Model-2)
 - [x] Faster Image Gen Speed (Model-2)
 - [x] Enhanced image data privacy (Github)
@@ -85,6 +84,11 @@ Here’s a overview of the process:
 - [x] Add a delete button for parts (Model-2)
 - [x] Fix Error 500 (Github/Model-2)
 - [x] Resolve issue with the first pixel not generating (Model-2)
+
+### Completed Tasks Since Model-2 Released
+
+- [x] Automatic Video Player (Github/Model-3)
+- [x] NSFW Filter (Github/Model-2F)
 
 ## Videos
 [Model-1](https://www.youtube.com/watch?v=oFm_znA53r8)
