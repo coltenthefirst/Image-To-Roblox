@@ -1,3 +1,5 @@
+# smth fucked with the server so I just placed this here to redeploy github.
+
 import os
 import requests
 from flask import Flask, request, jsonify
