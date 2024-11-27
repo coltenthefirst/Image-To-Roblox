@@ -8,8 +8,8 @@ These models are currently being supported with security updates.
 | ------- | ------------------ |
 | Model-1 | :white_check_mark: |
 | Model-2 | :white_check_mark: |
-| Model-2F |❗| - Please note I am not really working on this.
-| Model-3| :white_check_mark: | - unreleased
+| Model-2F |❗|
+| Model-3| :white_check_mark: |
 
 ## Reporting a Vulnerability
 
