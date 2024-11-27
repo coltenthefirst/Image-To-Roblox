@@ -94,11 +94,13 @@ Here’s a overview of the process:
 ## Videos
 | Info                            | Video |
 |------------------------------------|--------|
-| Model-1 Release: |[Model-1 YouTube](https://www.youtube.com/watch?v=oFm_znA53r8)|
-| Model-2 Release: |[Model-2 YouTube](https://www.youtube.com/watch?v=6pRmz4_hoDo)|
+| Model-1 Release: |[Model-1 YouTube Link](https://www.youtube.com/watch?v=oFm_znA53r8)|
+| Model-2 Release: |[Model-2 YouTube Link](https://www.youtube.com/watch?v=6pRmz4_hoDo)|
 
-## Game Links
-- [Create Your Dreams](https://www.roblox.com/games/128560311364952/Create-Your-Dreams)
+## Game Link
+| Name                            | Link |
+|------------------------------------|--------|
+| Create Your Dreams: |[Create Your Dreams Roblox Link](https://www.roblox.com/games/128560311364952/Create-Your-Dreams)|
 
 
 You can download the place files here:
