@@ -72,7 +72,7 @@ Here’s a overview of the process:
 
 ### Current Tasks (IN ORDER) - Model-3 Planned
 
-- [ ] NSFW Filter Model-3 (Github/Model-3F)
+- [ ] NSFW Filter Model-3 (Github/Model-3F) - Last thing I will do is this.
 
 ### Completed Tasks
 
@@ -87,8 +87,8 @@ Here’s a overview of the process:
 
 ### Completed Tasks Since Model-2 Released
 
-- [x] Automatic Video Player (Github/Model-3)
-- [x] NSFW Filter (Github/Model-2F)
+- [x] Automatic Video Player (Github/Model-3) - unreleased
+- [x] NSFW Filter (Github/Model-2F) - released
 
 ## Videos
 [Model-1](https://www.youtube.com/watch?v=oFm_znA53r8)
