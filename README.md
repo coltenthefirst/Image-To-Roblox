@@ -28,15 +28,12 @@ limitations under the License.
     <a href="https://github.com/coltenthefirst/image-to-roblox">
         <img alt="License Info" src="https://img.shields.io/badge/License-MIT-blue.svg">
     </a>
-        <a href="https://vercel.com/">
-        <img alt="Deployed and Made with Vercel" src="https://img.shields.io/badge/Vercel-000000?logo=vercel&logoColor=white">
-    </a>
-    </a>
-        <a href="https://vercel.com/">
-        <img alt="Vercel Deploy Status" src="https://deploy-badge.vercel.app/?url=http://www.nextjs.org/&name=image-to-roblox">
-    </a>
     <a href="https://github.com/coltenthefirst/image-to-roblox/releases">
         <img alt="Newest Release" src="https://img.shields.io/github/release/coltenthefirst/image-to-roblox.svg">
+    </a>
+    </a>
+        <a href="https://vercel.com/">
+        <img alt="Vercel Deploy Status" src="https://deploy-badge.vercel.app/?url=https%3A%2F%2Fvercel.com%2Fcoltenthefirsts-projects%2Fimage-to-roblox&logo=Vercel&name=Vercel+%28image-to-roblox%29">
     </a>
 </h1>
 
