@@ -87,7 +87,7 @@ Here’s a overview of the process:
 
 ### Completed Tasks Since Model-2 Released
 
-- [x] Automatic Video Player (Github/Model-3) - unreleased
+- [x] Automatic Frame By Frame Animation Player (Github/Model-3) - unreleased
 ###### ↑ Context: This will import the frames for you, and all you have to do is put in a gif url.
 - [x] NSFW Filter (Github/Model-2F) - released
 
