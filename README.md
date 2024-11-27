@@ -92,8 +92,10 @@ Here’s a overview of the process:
 - [x] NSFW Filter (Github/Model-2F) - released
 
 ## Videos
-[Model-1](https://www.youtube.com/watch?v=oFm_znA53r8)
-[Model-2](https://www.youtube.com/watch?v=6pRmz4_hoDo)
+| Info                            | Video |
+|------------------------------------|--------|
+| Model-1 Release: |[Model-1 YouTube](https://www.youtube.com/watch?v=oFm_znA53r8)|
+| Model-2 Release: |[Model-2 YouTube](https://www.youtube.com/watch?v=6pRmz4_hoDo)|
 
 ## Game Links
 - [Create Your Dreams](https://www.roblox.com/games/128560311364952/Create-Your-Dreams)
