@@ -14,8 +14,8 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-### Please star this repo or dm me on discord to help on this project. I only work on this project alone, and I would highly like if someone else could help along. Thank you.
-#### Discord: unknowingly_exists
+#### Please star this repo or dm me on discord to help on this project. I only work on this project alone, and I would highly like if someone else could help along. Thank you.
+##### Discord: unknowingly_exists
 
 <p align="center">
   <img alt="Images To Roblox Parts" src="https://i.postimg.cc/MGx8XrT6/Roblox-Logo-2022.jpg" width="422" height="422" style="max-width: 100%;">
