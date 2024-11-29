@@ -79,6 +79,8 @@ Here’s a overview of the process:
 
 ### Current Tasks (IN ORDER) - Model-3 Planned
 
+- [ ] Making A Logo (Github)
+- [ ] Fix The Lag When Animating (Model-3)
 - [ ] NSFW Filter Model-3 (Github/Model-3F) - Last thing I will do is this.
 
 ### Completed Tasks
