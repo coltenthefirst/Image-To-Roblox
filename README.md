@@ -79,6 +79,7 @@ Here’s a overview of the process:
 
 ### Current Tasks (IN ORDER) - Model-3 Planned
 
+- [ ] More Player Image Options (Model-3)
 - [ ] Remake The GUI (Model-3)
 - [ ] NSFW Filter Model-3 (Github/Model-3F) - Last thing I will do is this.
 
