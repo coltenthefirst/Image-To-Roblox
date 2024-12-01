@@ -18,7 +18,7 @@ limitations under the License.
 ##### Discord: unknowingly_exists
 
 <p align="center">
-  <img alt="Images To Roblox Parts" src="https://i.postimg.cc/MGx8XrT6/Roblox-Logo-2022.jpg" width="422" height="422" style="max-width: 100%;">
+  <img alt="Images To Roblox Parts" src="https://i.postimg.cc/mDfm6ydS/Untitled86-20241130213821.png" width="422" height="422" style="max-width: 100%;">
   <br/>
   <br/>
 </p>
@@ -79,8 +79,6 @@ Here’s a overview of the process:
 
 ### Current Tasks (IN ORDER) - Model-3 Planned
 
-- [ ] Making A Logo (Github)
-- [ ] Fix The Lag When Animating (Model-3)
 - [ ] NSFW Filter Model-3 (Github/Model-3F) - Last thing I will do is this.
 
 ### Completed Tasks
@@ -99,6 +97,9 @@ Here’s a overview of the process:
 - [x] Automatic Frame By Frame Animation Player (Github/Model-3) - unreleased
 ###### ↑ Context: This will import the frames for you, and all you have to do is put in a gif url.
 - [x] NSFW Filter (Github/Model-2F) - released
+- [x] Making A Logo (Github) - released
+- [x] Color Filters (Model-3) - unreleased
+- [x] More Customizable Image Options (Model-3) - unreleased
 
 ## Videos
 | Info                            | Video |
