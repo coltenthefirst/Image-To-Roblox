@@ -79,6 +79,7 @@ Here’s a overview of the process:
 
 ### Current Tasks (IN ORDER) - Model-3 Planned
 
+- [ ] Remake The GUI (Model-3)
 - [ ] NSFW Filter Model-3 (Github/Model-3F) - Last thing I will do is this.
 
 ### Completed Tasks
@@ -91,6 +92,7 @@ Here’s a overview of the process:
 - [x] Add a delete button for parts (Model-2)
 - [x] Fix Error 500 (Github/Model-2)
 - [x] Resolve issue with the first pixel not generating (Model-2)
+- [x] Updated README.md (Github) - released
 
 ### Completed Tasks Since Model-2 Released
 
@@ -100,6 +102,9 @@ Here’s a overview of the process:
 - [x] Making A Logo (Github) - released
 - [x] Color Filters (Model-3) - unreleased
 - [x] More Customizable Image Options (Model-3) - unreleased
+- [x] Fix The Frame By Frame Animation Player Bug (Model-3) - unreleased
+- [x] Fix Other Bugs (Github/Model-3) - unreleased
+- [x] Updated README.md #2 (Github) - released
 
 ## Videos
 | Info                            | Video |
