@@ -4,6 +4,7 @@ from flask import Flask, request, jsonify
 from PIL import Image
 import time
 import subprocess
+from concurrent.futures import ThreadPoolExecutor
 import shutil
 
 app = Flask(__name__)
@@ -14,6 +15,7 @@ SCRIPT_DIR = "."
 IMAGE_NAME = "image.png"
 GIF_NAME = "downloaded.gif"
 MAX_RETRIES = 5
+MAX_THREADS = 10
 
 SCRIPT_MAPPING = {
     'high': 'high.py',
@@ -22,6 +24,8 @@ SCRIPT_MAPPING = {
     'ehigh': 'extra-high.py',
     'elow': 'extra-low.py',
 }
+
+executor = ThreadPoolExecutor(max_workers=MAX_THREADS)
 
 def save_image_from_url(image_url, image_path):
     for attempt in range(MAX_RETRIES):
@@ -112,15 +116,15 @@ def process_and_upload_gif(api_key, gif_url, output_folder, fps="max"):
         return []
     
     frames = extract_frames(gif_path, output_folder, fps)
-    uploaded_urls = []
     
-    for image_file in frames:
-        url = upload_image_to_imgbb(api_key, image_file)
-        if url:
-            uploaded_urls.append(url)
-        time.sleep(1 / fps if fps != "max" else 0.1)
+    def upload_frame(frame):
+        return upload_image_to_imgbb(api_key, frame)
     
-    return uploaded_urls
+    uploaded_urls = list(executor.map(upload_frame, frames))
+    
+    shutil.rmtree(temp_folder, ignore_errors=True)
+    
+    return [url for url in uploaded_urls if url]
 
 def execute_gif_sender(uploaded_urls):
     try:
