@@ -14,6 +14,8 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
+# SERVERS WILL BE UP SOON! MODEL-3 IS IN TESTING! SORRY FOR DOING THIS.
+
 #### Please star this repo or dm me on discord to help on this project. I only work on this project alone, and I would highly like if someone else could help along. Thank you.
 ##### Discord: unknowingly_exists
 
