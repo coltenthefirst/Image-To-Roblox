@@ -1,9 +1,19 @@
 {
   "version": 2,
-  "rewrites": [
+  "builds": [
     {
-      "source": "/send_image",
-      "destination": "/api/send_image"
+      "src": "api/server.py",
+      "use": "@vercel/python"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/send_image",
+      "dest": "/api/send_image"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/api/server.py"
     }
   ]
 }
