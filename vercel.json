@@ -8,8 +8,12 @@
   ],
   "routes": [
     {
+      "src": "/send_image",
+      "dest": "/api/send_image"
+    },
+    {
       "src": "/(.*)",
-      "dest": "api/server.py"
+      "dest": "/api/server.py"
     }
   ]
 }
