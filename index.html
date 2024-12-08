@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image To Roblox Website Container</title>
+    <link rel="icon" href="https://camo.githubusercontent.com/6bf0e6c9bcbfb21bbce5a3f52fbd5dcb3725716283fcb89b9b48133c673364e1/68747470733a2f2f692e706f7374696d672e63632f6d44666d367964532f556e7469746c656438362d32303234313133303231333832312e706e67" />
+    <style>
+        body {
+            background-color: #000;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #000;
+            color: #fff;
+            padding: 50px 20px;
+            text-align: center;
+            border-bottom: 2px solid #fff;
+        }
+
+        header h1 {
+            font-size: 48px;
+            font-weight: bold;
+        }
+
+        header p {
+            font-size: 18px;
+        }
+
+        header img {
+            max-width: 150px;
+            margin-bottom: 20px;
+        }
+
+        section {
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        section h2 {
+            font-size: 30px;
+            color: #fff;
+        }
+
+        .feature-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-top: 50px;
+        }
+
+        .feature-card {
+            background-color: #222;
+            padding: 20px;
+            margin: 10px;
+            flex: 1 0 300px;
+            box-sizing: border-box;
+        }
+
+        .feature-card h3 {
+            color: #fff;
+        }
+
+        .feature-card a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 10px;
+            display: inline-block;
+        }
+
+        footer {
+            background-color: #111;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .about {
+            padding: 30px 20px;
+            background-color: #222;
+            margin-top: 50px;
+        }
+
+        .about h3 {
+            font-size: 24px;
+            color: #fff;
+        }
+
+        .about p, .about ul {
+            color: #ccc;
+            font-size: 16px;
+        }
+
+        .about ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .about ul li {
+            margin-bottom: 10px;
+        }
+
+        .video-table, .download-table {
+            width: 100%;
+            margin-top: 20px;
+            text-align: left;
+            color: #fff;
+        }
+
+        .video-table th, .download-table th {
+            background-color: #333;
+            padding: 10px;
+        }
+
+        .video-table td, .download-table td {
+            padding: 10px;
+            border-bottom: 1px solid #444;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="https://camo.githubusercontent.com/6bf0e6c9bcbfb21bbce5a3f52fbd5dcb3725716283fcb89b9b48133c673364e1/68747470733a2f2f692e706f7374696d672e63632f6d44666d367964532f556e7469746c656438362d32303234313133303231333832312e706e67" alt="Image To Roblox Logo">
+        <h1>Image to Roblox Parts</h1>
+        <p>Convert images into Roblox parts without uploading them directly to Roblox.</p>
+    </header>
+
+    <section class="about">
+        <h3>Introduction</h3>
+        <p>This repository contains the backend source code for the Image To Parts Roblox Game. This tool allows users to convert image URLs into parts within Roblox. Users are free to use the files provided in <a href="https://github.com/coltenthefirst/image-to-roblox" style="color: #F54F00; text-decoration: underline;">this repository</a> for their own purposes.</p>
+
+        <h3>How It Works</h3>
+        <p>Here’s an overview of the process:</p>
+        <ul>
+            <li>Input an image URL and select a quality setting (such as mid, high, low, extra low).</li>
+            <li>The image URL and selected quality are sent to Vercel.</li>
+            <li>Vercel downloads the image and runs a Python script based on your selection.</li>
+            <li>A Lua script is generated and sent back to Roblox, where it is processed into parts that resemble the pixels of your image.</li>
+        </ul>
+
+        <h3>Videos</h3>
+        <table class="video-table">
+            <tr>
+                <th>Info</th>
+                <th>Video</th>
+            </tr>
+            <tr>
+                <td>Model-1 Release</td>
+                <td><a href="https://www.youtube.com/watch?v=oFm_znA53r8" style="color: #fff;">Model-1 YouTube Link</a></td>
+            </tr>
+            <tr>
+                <td>Model-2 Release</td>
+                <td><a href="https://www.youtube.com/watch?v=6pRmz4_hoDo" style="color: #fff;">Model-2 YouTube Link</a></td>
+            </tr>
+        </table>
+
+        <h3>Game Link</h3>
+        <table class="video-table">
+            <tr>
+                <th>Name</th>
+                <th>Link</th>
+            </tr>
+            <tr>
+                <td>Create Your Dreams</td>
+                <td><a href="https://www.roblox.com/games/128560311364952/Create-Your-Dreams" style="color: #fff;">Create Your Dreams Roblox Link</a></td>
+            </tr>
+        </table>
+
+        <h3>Downloads</h3>
+        <table class="download-table">
+            <tr>
+                <th>Model / Update</th>
+                <th>Download</th>
+            </tr>
+            <tr>
+                <td>Update 1/Model-1</td>
+                <td><a href="https://drive.google.com/file/d/1YdDMn-is_UD_VkbfgQKzQ3mzjJb5QZHY/view?usp=sharing" style="color: #fff;">Google Drive Link</a></td>
+            </tr>
+            <tr>
+                <td>Update 2/Model-2</td>
+                <td><a href="https://drive.google.com/file/d/1GUnPJWO0sX8VsMysFi1eTUbYXyJKcshk/view?usp=sharing" style="color: #fff;">Google Drive Link</a></td>
+            </tr>
+        </table>
+
+        <h3>Uploading Custom Images</h3>
+        <p>For obtaining direct image URLs, I recommend using <a href="https://postimages.org/" style="color: #fff;">Postimages.org</a> to obtain a direct link. Other services can be used as long as they provide a direct link.</p>
+    </section>
+
+    <footer>
+        <p>Project by <a href="https://github.com/coltenthefirst" style="color: #fff; text-decoration: none;">coltenthefirst</a></p>
+    </footer>
+</body>
+</html>
