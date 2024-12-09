@@ -21,7 +21,7 @@ limitations under the License.
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fcoltenthefirst%2Fimage-to-roblox&env=FLASK_APP&envValue=server.py&env=FLASK_ENV&envValue=development&project-name=image-to-roblox&repository-name=image-to-roblox)
 
-#### Make sure you make a github account and go to https://vercel.com and make a account by connecting your github account to vercel.
+#### Make sure you make a github account and go to https://vercel.com and make a vercel account by connecting your github account to vercel.
 ##### Set "FLASK_APP" as "server.py"
 ##### Set "FLASK_ENV" as "development"
 ##### Once its deployed. Go to the settings tab of your vercel project, click on General and click on Project Settings.
