@@ -17,6 +17,11 @@ limitations under the License.
 #### Please star this repo or dm me on discord to help on this project. I only work on this project alone, and I would highly like if someone else could help along. Thank you.
 ##### Discord: unknowingly_exists
 
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fcoltenthefirst%2Fimage-to-roblox&env=FLASK_APP&envValue=server.py&env=FLASK_ENV&envValue=development&project-name=image-to-roblox&repository-name=image-to-roblox)
+
+-# Set "FLASK_APP" as "server.py"
+-# Set "FLASK_ENV" as "development"
+
 <p align="center">
   <img alt="Images To Roblox Parts" src="https://i.postimg.cc/mDfm6ydS/Untitled86-20241130213821.png" width="422" height="422" style="max-width: 100%;">
   <br/>
