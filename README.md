@@ -136,7 +136,7 @@ For obtaining direct image urls, I recommended to use [Postimages.org](https://p
 |------------------------------------|--------|
 | [Postimages.org](https://postimages.org/)      | ✅     |
 | [imgbb.com](https://imgbb.com/)                | ✅     |
-| [i.imghippo.com](https://i.imghippo.com/)       | ✅     |
+| [imghippo.com](https://imghippo.com/)       | ✅     |
 | [i.imgur.com](https://i.imgur.com/)             | ❌     |
 | [imgbox.com](https://imgbox.com/)              | ✅     |
 | [snipboard.io](https://snipboard.io/)          | ✅     |
