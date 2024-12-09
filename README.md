@@ -23,6 +23,10 @@ limitations under the License.
 
 ##### Set "FLASK_APP" as "server.py"
 ##### Set "FLASK_ENV" as "development"
+##### Once its deployed. Go to the settings tab of your vercel project, click on General and click on Project Settings.
+#### Overwrite the Build Command as "flask run --host=0.0.0.0 --port=5000"
+#### Overwrite the Install Command as "pip install -r requirements.txt"
+##### Now you're done!
 
 <p align="center">
   <img alt="asset" src="https://cdn.vectorstock.com/i/500p/16/54/checkerboard-black-and-white-background-vector-33401654.jpg" width="5000" height="10" style="max-width: 100%;">
