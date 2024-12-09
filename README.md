@@ -136,8 +136,8 @@ For obtaining direct image urls, I recommended to use [Postimages.org](https://p
 |------------------------------------|--------|
 | [Postimages.org](https://postimages.org/)      | ✅     |
 | [imgbb.com](https://imgbb.com/)                | ✅     |
-| [i.imghippo.com](https://i.imghippo.com)       | ✅     |
-| [i.imgur.com](https://i.imgur.com)             | ❌     |
+| [i.imghippo.com](https://i.imghippo.com/)       | ✅     |
+| [i.imgur.com](https://i.imgur.com/)             | ❌     |
 | [imgbox.com](https://imgbox.com/)              | ✅     |
 | [snipboard.io](https://snipboard.io/)          | ✅     |
 | [prnt.sc](https://prnt.sc/)                    | ❌     |
@@ -145,7 +145,8 @@ For obtaining direct image urls, I recommended to use [Postimages.org](https://p
 | [imagevenue.com](https://www.imagevenue.com/)  | ✅     |
 | [pictr.com](https://pictr.com/upload)          | ✅     |
 | [freeimage.host](https://freeimage.host/)               | ❌     |
-| [dropbox.com](https://www.dropbox.com)              | ❌     |
+| [dropbox.com](https://www.dropbox.com/)              | ❌     |
+| [imagebam.com](https://www.imagebam.com/)          | ✅     |
 
 ## FAQ
 
