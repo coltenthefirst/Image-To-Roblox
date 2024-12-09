@@ -26,7 +26,8 @@ limitations under the License.
 ##### Once its deployed. Go to the settings tab of your vercel project, click on General and click on Project Settings.
 #### Overwrite the Build Command as "flask run --host=0.0.0.0 --port=5000"
 #### Overwrite the Install Command as "pip install -r requirements.txt"
-##### Now you're done!
+##### You can go back to the Project page and click on the thumbnail preview that says "Not Found", this is normal don't worry. Once you are on the site, click on the spacing where the url ends and type "/send_image". It should look like "https://your-vercel-project-name.vercel.app/send_image". You can go to your copyed Roblox game and open serverscriptservice and open the script "ImageRequestHandler". After that, replace the line "local url = "https://image-to-roblox.vercel.app/send_image"" as your url, like "local url = "https://your-vercel-project-name.vercel.app/send_image"".
+### Now you're done! Note that you can't edit the backend files unless you clone this repo and do the same steps with your cloned repo connected to vercel. You will have logs.
 
 <p align="center">
   <img alt="asset" src="https://cdn.vectorstock.com/i/500p/16/54/checkerboard-black-and-white-background-vector-33401654.jpg" width="5000" height="10" style="max-width: 100%;">
