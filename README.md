@@ -145,6 +145,7 @@ For obtaining direct image urls, I recommended to use [Postimages.org](https://p
 | [imagevenue.com](https://www.imagevenue.com/)  | ✅     |
 | [pictr.com](https://pictr.com/upload)          | ✅     |
 | [freeimage.host](https://freeimage.host/)               | ❌     |
+| [dropbox.com](https://www.dropbox.com)              | ❌     |
 
 ## FAQ
 
