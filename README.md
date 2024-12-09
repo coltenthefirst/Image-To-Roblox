@@ -148,6 +148,7 @@ For obtaining direct image urls, I recommended to use [Postimages.org](https://p
 | [dropbox.com](https://www.dropbox.com/)              | ❌     |
 | [imagebam.com](https://www.imagebam.com/)          | ✅     |
 | [imgbly.com](https://imgbly.com/)          | ✅     |
+| [picsur.org](https://picsur.org/upload)          | ✅     |
 
 ## FAQ
 
