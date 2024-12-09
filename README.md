@@ -13,14 +13,22 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 -->
-
-#### Please star this repo or dm me on discord to help on this project. I only work on this project alone, and I would highly like if someone else could help along. Thank you.
-##### Discord: unknowingly_exists
+<p align="center">
+  <img alt="asset" src="https://cdn.vectorstock.com/i/500p/16/54/checkerboard-black-and-white-background-vector-33401654.jpg" width="5000" height="10" style="max-width: 100%;">
+  <br/>
+  <br/>
+</p>
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fcoltenthefirst%2Fimage-to-roblox&env=FLASK_APP&envValue=server.py&env=FLASK_ENV&envValue=development&project-name=image-to-roblox&repository-name=image-to-roblox)
 
--# Set "FLASK_APP" as "server.py"
--# Set "FLASK_ENV" as "development"
+##### Set "FLASK_APP" as "server.py"
+##### Set "FLASK_ENV" as "development"
+
+<p align="center">
+  <img alt="asset" src="https://cdn.vectorstock.com/i/500p/16/54/checkerboard-black-and-white-background-vector-33401654.jpg" width="5000" height="10" style="max-width: 100%;">
+  <br/>
+  <br/>
+</p>
 
 <p align="center">
   <img alt="Images To Roblox Parts" src="https://i.postimg.cc/mDfm6ydS/Untitled86-20241130213821.png" width="422" height="422" style="max-width: 100%;">
