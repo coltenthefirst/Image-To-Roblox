@@ -30,15 +30,12 @@ def save_image_from_url(image_url, image_path):
                 os.makedirs(os.path.dirname(image_path), exist_ok=True)
                 with open(image_path, 'wb') as f:
                     f.write(response.content)
-                print("download image 1")
                 return True
             else:
                 if response.status_code == 503 and attempt < MAX_RETRIES - 1:
                     continue
-                print("failed to download image error 503 thats sus")
                 return False
         except Exception:
-            print("error downloading image <error message> major l")
             return False
 
 def run_script(button_clicked):
@@ -47,20 +44,16 @@ def run_script(button_clicked):
         script_path = os.path.join(SCRIPT_DIR, selected_script)
         try:
             os.system(f"python3 {script_path}")
-            print("running script high.py vibes are high")
             return True
         except Exception:
-            print("error running script for button high that's a no-go")
             return False
     return False
 
 def get_lua_script(output_file):
     try:
         with open(output_file, 'r') as f:
-            print("lua script read so lit")
             return f.read()
     except Exception:
-        print("error reading lua script thats a no-go")
         return None
 
 def download_gif(gif_url, temp_folder):
@@ -71,10 +64,8 @@ def download_gif(gif_url, temp_folder):
     if response.status_code == 200:
         with open(gif_filename, "wb") as f:
             f.write(response.content)
-        print("downloading gif its about to be skibidi")
         return gif_filename
     else:
-        print("failed to download gif error 404 whole vibe")
         return None
 
 def extract_frames(gif_path, output_folder, fps="max"):
@@ -95,7 +86,6 @@ def extract_frames(gif_path, output_folder, fps="max"):
             frame_path = os.path.join(output_folder, f"frame_{i}.png")
             gif.save(frame_path, format="PNG")
             frames.append(frame_path)
-            print(f"saved frame {i} flexing")
     
     return frames
 
@@ -108,11 +98,9 @@ def upload_image_to_imgbb(api_key, image_path):
         response = requests.post(url, data=payload, files=files)
     
     if response.status_code == 200:
-        print("image uploaded big flex")
         result = response.json()
         return result['data']['url']
     else:
-        print("failed to upload image error 500 that's a no-go")
         return None
 
 def process_and_upload_gif(api_key, gif_url, output_folder, fps="max"):
@@ -120,7 +108,6 @@ def process_and_upload_gif(api_key, gif_url, output_folder, fps="max"):
     
     gif_path = download_gif(gif_url, temp_folder)
     if not gif_path:
-        print("couldn't process gif major l")
         return []
     
     frames = extract_frames(gif_path, output_folder, fps)
@@ -132,7 +119,6 @@ def process_and_upload_gif(api_key, gif_url, output_folder, fps="max"):
             uploaded_urls.append(url)
         time.sleep(1 / fps if fps != "max" else 0.1)
     
-    print("uploaded 30 frames that's a flex")
     return uploaded_urls
 
 def execute_gif_sender(uploaded_urls):
@@ -143,20 +129,16 @@ def execute_gif_sender(uploaded_urls):
             text=True
         )
         if result.returncode == 0:
-            print("gif-sender ran success flexing")
             return result.stdout
         else:
-            print("error with gif-sender major l")
             return None
     except Exception:
-        print("failed to process and upload gif major sus")
         return None
 
 @app.route('/send_image', methods=['POST'])
 def send_image():
     data = request.get_json()
     if not data or not data.get('image_url') or not data.get('button_clicked'):
-        print("missing image_url or button_clicked major sus")
         return jsonify({"status": "error", "message": "Missing image_url or button_clicked"}), 400
 
     image_url = data['image_url']
@@ -166,11 +148,9 @@ def send_image():
     image_path = os.path.join(INPUT_FOLDER, IMAGE_NAME)
 
     if not save_image_from_url(image_url, image_path):
-        print("failed to download image whole vibe")
         return jsonify({"status": "error", "message": "Failed to download image"}), 400
 
     if not run_script(button_clicked):
-        print("error running script for button high that's a no-go")
         return jsonify({"status": "error", "message": f"Error executing script for button {button_clicked}"}), 500
 
     output_file = os.path.join(OUTPUT_FOLDER, IMAGE_NAME.replace('.png', '.lua'))
@@ -181,7 +161,6 @@ def send_image():
     if lua_script:
         return jsonify({"status": "success", "lua_script": lua_script})
     else:
-        print("error reading lua script thats sus")
         return jsonify({"status": "error", "message": "Error reading Lua script"}), 500
 
 @app.route('/send_gif', methods=['POST'])
@@ -189,12 +168,14 @@ def send_gif():
     data = request.get_json()
 
     if not data or not data.get('gif_url') or not data.get('api_key'):
-        print("missing gif_url or api_key whole vibe")
         return jsonify({"status": "error", "message": "Missing gif_url or api_key"}), 400
 
     gif_url = data['gif_url']
     api_key = data['api_key']
 
+    print(f"Received gif_url: {gif_url}")
+    print(f"Received api_key: {api_key}")
+    
     uploaded_urls = process_and_upload_gif(api_key, gif_url, OUTPUT_FOLDER)
 
     if uploaded_urls:
@@ -203,10 +184,8 @@ def send_gif():
         if gif_sender_output:
             return jsonify({"status": "success", "uploaded_urls": uploaded_urls, "gif_sender_output": gif_sender_output})
         else:
-            print("error executing gif-sender.py")
             return jsonify({"status": "error", "message": "Error executing gif-sender.py"}), 500
     else:
-        print("failed to process and upload gif major sus")
         return jsonify({"status": "error", "message": "Failed to process and upload GIF frames"}), 500
 
 if __name__ == '__main__':
