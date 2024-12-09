@@ -147,6 +147,7 @@ For obtaining direct image urls, I recommended to use [Postimages.org](https://p
 | [freeimage.host](https://freeimage.host/)               | ❌     |
 | [dropbox.com](https://www.dropbox.com/)              | ❌     |
 | [imagebam.com](https://www.imagebam.com/)          | ✅     |
+| [imgbly.com](https://imgbly.com/)          | ✅     |
 
 ## FAQ
 
