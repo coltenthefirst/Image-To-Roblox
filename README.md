@@ -181,16 +181,28 @@ For obtaining direct image urls, I recommended to use [Postimages.org](https://p
 ## FAQ
 
 **Q: Does this have a NSFW filter?**
+######
 **A:** This version does NOT have a nsfw filter. If you want a filter use: [Image To Roblox Parts Filtered](https://github.com/coltenthefirst/image-to-roblox-FILTERED)
 
+##### -
+
 **Q: Do my uploaded images get logged?**
+######
 **A:** Uploaded images are temporary logged, they cannot be downloaded, viewed, or anything, unless its in Roblox.
 
+##### -
+
 **Q: Will I get banned for using exploit images?**
+######
 **A:** I said before that you won't be banned, but you can be banned. Please be careful when using this in your games.
 
+##### -
+
 **Q: Why is the send gif function split into different files?**
+######
 **A:** Since this whole project is free, I can't edit the timeout time. So I spit the send gif function into different files, so it wouldn't timeout when uploading the frames. 
+
+##### -
 
 ## License
 This project is licensed under the MIT License. You are free to use, modify, and distribute the files in this repository, as long as you include the original license. For more details, see the [LICENSE](LICENSE) file.
