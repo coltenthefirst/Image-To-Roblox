@@ -14,26 +14,9 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-# Model-3 Coming Dec 13th
-
-<p align="center">
-  <img alt="asset" src="https://cdn.vectorstock.com/i/500p/16/54/checkerboard-black-and-white-background-vector-33401654.jpg" width="5000" height="10" style="max-width: 100%;">
-  <br/>
-  <br/>
-</p>
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fcoltenthefirst%2Fimage-to-roblox&env=FLASK_APP&envValue=server.py&env=FLASK_ENV&envValue=development&project-name=image-to-roblox&repository-name=image-to-roblox)
-
-#### Make sure you make a github account and go to https://vercel.com and make a vercel account by connecting your github account to vercel.
-##### Set "FLASK_APP" as "server.py"
-##### Set "FLASK_ENV" as "development"
-##### Once its deployed. Go to the settings tab of your vercel project, click on General and click on Project Settings.
-#### Overwrite the Build Command as "flask run --host=0.0.0.0 --port=5000"
-#### Overwrite the Install Command as "pip install -r requirements.txt"
-##### You can go back to the Project page and click on the thumbnail preview that says "Not Found", don't worry, this is normal. Once you are on the site, click on the spacing where the url ends and type "/send_image". It should look like "https://your-vercel-project-name.vercel.app/send_image".
-##### Model-2 and below: Go to your copyed Roblox game and open serverscriptservice and open the script "ImageRequestHandler". After that, replace the line "local url = "https://image-to-roblox.vercel.app/send_image"" as your url, like "local url = "https://your-vercel-project-name.vercel.app/send_image"".
-##### Model-3 and higher: Go to your copyed Roblox game and open serverscriptservice and open the module script "ServerlessWebsites". After that, replace the line "Urls.Image = "https://image-to-roblox.vercel.app/send_image"" as your url, like "Urls.Image = "https://your-vercel-project-name.vercel.app/send_image"". You can also replace "Urls.Gif = "https://image-to-roblox.vercel.app/send_gif"" as "Urls.Gif = "https://your-vercel-project-name.vercel.app/send_gif"" (model-3 is unreleased)
-### Now you're done! You can visit your github profile and you can find the cloned repo, you can edit this repo and do whatever you want with it.
+<h2 align="center">
+    ~ Model-3 Coming Dec 13th ~
+</h2>
 
 <p align="center">
   <img alt="asset" src="https://cdn.vectorstock.com/i/500p/16/54/checkerboard-black-and-white-background-vector-33401654.jpg" width="5000" height="10" style="max-width: 100%;">
@@ -94,6 +77,26 @@ Here’s a overview of the process:
 2. The image URL and selected quality are sent to **Vercel**.
 3. Vercel downloads the image and runs a Python script based on your selection.
 4. A Lua script is generated and sent back to Roblox, where it is processed into parts that resemble the pixels of your image.
+
+## Cloning Vercel and Github
+
+#### Make sure you make a github account and go to https://vercel.com and make a vercel account by connecting your github account to vercel.
+#### Click This:
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fcoltenthefirst%2Fimage-to-roblox&env=FLASK_APP&envValue=server.py&env=FLASK_ENV&envValue=development&project-name=image-to-roblox&repository-name=image-to-roblox)
+
+#
+
+##### Set "FLASK_APP" as "server.py"
+##### Set "FLASK_ENV" as "development"
+##### Once its deployed. Go to the settings tab of your vercel project, click on General and click on Project Settings.
+#### Overwrite the Build Command as "flask run --host=0.0.0.0 --port=5000"
+#### Overwrite the Install Command as "pip install -r requirements.txt"
+##### You can go back to the Project page and click on the thumbnail preview that says "Not Found", don't worry, this is normal. Once you are on the site, click on the spacing where the url ends and type "/send_image". It should look like "https://your-vercel-project-name.vercel.app/send_image".
+##### Model-2 and below: Go to your copyed Roblox game and open serverscriptservice and open the script "ImageRequestHandler". After that, replace the line "local url = "https://image-to-roblox.vercel.app/send_image"" as your url, like "local url = "https://your-vercel-project-name.vercel.app/send_image"".
+##### Model-3 and higher: Go to your copyed Roblox game and open serverscriptservice and open the module script "ServerlessWebsites". After that, replace the line "Urls.Image = "https://image-to-roblox.vercel.app/send_image"" as your url, like "Urls.Image = "https://your-vercel-project-name.vercel.app/send_image"". You can also replace "Urls.Gif = "https://image-to-roblox.vercel.app/send_gif"" as "Urls.Gif = "https://your-vercel-project-name.vercel.app/send_gif"" (model-3 is unreleased)
+### Now you're done! You can visit your github profile and you can find the cloned repo, you can edit this repo and do whatever you want with it.
+
+#
 
 ## To-Do List
 
