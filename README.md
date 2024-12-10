@@ -186,21 +186,27 @@ For obtaining direct image urls, I recommended to use [Postimages.org](https://p
 
 ##### -
 
-**Q: Do my uploaded images get logged?**
+**Q: Do my uploaded images get logged? (All Models and Github)**
 ######
 **A:** Uploaded images are temporary logged, they cannot be downloaded, viewed, or anything, unless its in Roblox.
 
 ##### -
 
-**Q: Will I get banned for using exploit images?**
+**Q: Will I get banned for using exploit images? (All Models and Github)**
 ######
 **A:** I said before that you won't be banned, but you can be banned. Please be careful when using this in your games.
 
 ##### -
 
-**Q: Why is the send gif function split into different files?**
+**Q: Why is the send gif function split into different files? (Model-3 and Above)**
 ######
 **A:** Since this whole project is free, I can't edit the timeout time. So I spit the send gif function into different files, so it wouldn't timeout when uploading the frames. 
+
+##### -
+
+**Q: Why is the animation player not working? (Model-3)**
+######
+**A:** Sometimes the api key can get rate limited and for it to work again, you would have to wait a hour. Or you can make another api key, delete the old one, and use the new one. I don't have a fix for this yet but, I could make it send to another image hoster, or I could make a script that checks if the api key works or not, and if it doesn't than what it would do is use another api key. I will fix this in Model-3.5.
 
 ##### -
 
