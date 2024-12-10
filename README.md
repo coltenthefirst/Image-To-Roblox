@@ -48,7 +48,7 @@ limitations under the License.
 </p>
 
 <h6 align="center">
-    ~ Works For IOS, Android, Windows, Mac, and Console. ~
+    ~ Made with Lua, Python, Flask, and Vercel! ~
 </h6>
 
 <h1 align="center">
@@ -82,7 +82,7 @@ limitations under the License.
   <br/>
 </p>
 
-# THERE IS A ISSUE WITH MODEL-2! PLEASE READ [fix](https://github.com/coltenthefirst/image-to-roblox/issues/5) TO FIX IT!
+#### If you use Model-2. Please read this: [fix](https://github.com/coltenthefirst/image-to-roblox/issues/5)
 
 ## Introduction
 
