@@ -128,7 +128,7 @@ Here’s a overview of the process:
 - [x] Fix The Frame By Frame Animation Player Bug (Model-3) - unreleased
 - [x] Fix Other Bugs (Github/Model-3) - unreleased
 - [x] Updated README.md #2 (Github) - released
-- [x] Boring Website (Other)
+- [x] Boring Website (Other) - released
 
 ## Videos
 | Info                            | Video |
