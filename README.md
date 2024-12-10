@@ -169,8 +169,6 @@ For obtaining direct image urls, I recommended to use [Postimages.org](https://p
 | [imgbly.com](https://imgbly.com/)          | ✅     |
 | [picsur.org](https://picsur.org/upload)          | ✅     |
 | [pixhost.to](https://pixhost.to/)       | ✅     |
-| [imagevenue.com](https://imagevenue.com/)| ✅     |
-| [pictr.com](https://pictr.com/upload)       | ✅     |
 | [imghostr.com](https://imghostr.com/ )            | ❌     |
 
 ## FAQ
