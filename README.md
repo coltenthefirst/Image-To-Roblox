@@ -14,8 +14,12 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-<h2 align="center">
+<h1 align="center">
     ~ Model-3 Coming Dec 13th ~
+</h2>
+
+<h2 align="center">
+    ~ Please note that Model-3 is not released yet. I just have stuff already here when it comes out. ~
 </h2>
 
 <p align="center">
@@ -180,7 +184,7 @@ For obtaining direct image urls, I recommended to use [Postimages.org](https://p
 
 ## FAQ
 
-**Q: Does this have a NSFW filter?**
+**Q: Does this have a NSFW filter? (All Models and Github)**
 ######
 **A:** This version does NOT have a nsfw filter. If you want a filter use: [Image To Roblox Parts Filtered](https://github.com/coltenthefirst/image-to-roblox-FILTERED)
 
@@ -204,9 +208,21 @@ For obtaining direct image urls, I recommended to use [Postimages.org](https://p
 
 ##### -
 
+**Q: Why is the animation player not working? (Model-2)**
+######
+**A:** Please read this: [fix](https://github.com/coltenthefirst/image-to-roblox/issues/5)
+
+##### -
+
 **Q: Why is the animation player not working? (Model-3)**
 ######
 **A:** Sometimes the api key can get rate limited and for it to work again, you would have to wait a hour. Or you can make another api key, delete the old one, and use the new one. I don't have a fix for this yet but, I could make it send to another image hoster, or I could make a script that checks if the api key works or not, and if it doesn't than what it would do is use another api key. I will fix this in Model-3.5.
+
+##### -
+
+**Q: How can I help on this project?**
+######
+**A:** You can star this project or, dm me on discord if you want to help another way: "unknowingly_exists"
 
 ##### -
 
