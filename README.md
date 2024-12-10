@@ -148,28 +148,26 @@ You can download the place files here:
 For obtaining direct image urls, I recommended to use [Postimages.org](https://postimages.org/) to obtain a direct link. Other services can be used as long as they provide a direct link.
 
 ## Tested Image Services
-- ✅ = Works
-- ❌ = Does not work
+### ✅ Use (Works)
+- [Postimages.org](https://postimages.org/)
+- [imgbb.com](https://imgbb.com/)
+- [imghippo.com](https://imghippo.com/)
+- [imgbox.com](https://imgbox.com/)
+- [snipboard.io](https://snipboard.io/)
+- [lunapic.com](https://www7.lunapic.com/editor/?action=quick-upload)
+- [imagevenue.com](https://www.imagevenue.com/)
+- [pictr.com](https://pictr.com/upload)
+- [imagebam.com](https://www.imagebam.com/)
+- [imgbly.com](https://imgbly.com/)
+- [picsur.org](https://picsur.org/upload)
+- [pixhost.to](https://pixhost.to/)
 
-| Service                            | Status |
-|------------------------------------|--------|
-| [Postimages.org](https://postimages.org/)      | ✅     |
-| [imgbb.com](https://imgbb.com/)                | ✅     |
-| [imghippo.com](https://imghippo.com/)       | ✅     |
-| [i.imgur.com](https://i.imgur.com/)             | ❌     |
-| [imgbox.com](https://imgbox.com/)              | ✅     |
-| [snipboard.io](https://snipboard.io/)          | ✅     |
-| [prnt.sc](https://prnt.sc/)                    | ❌     |
-| [lunapic.com](https://www7.lunapic.com/editor/?action=quick-upload) | ✅     |
-| [imagevenue.com](https://www.imagevenue.com/)  | ✅     |
-| [pictr.com](https://pictr.com/upload)          | ✅     |
-| [freeimage.host](https://freeimage.host/)               | ❌     |
-| [dropbox.com](https://www.dropbox.com/)              | ❌     |
-| [imagebam.com](https://www.imagebam.com/)          | ✅     |
-| [imgbly.com](https://imgbly.com/)          | ✅     |
-| [picsur.org](https://picsur.org/upload)          | ✅     |
-| [pixhost.to](https://pixhost.to/)       | ✅     |
-| [imghostr.com](https://imghostr.com/ )            | ❌     |
+### ❌ Do not use (Won't work)
+- [i.imgur.com](https://i.imgur.com/)
+- [prnt.sc](https://prnt.sc/)
+- [freeimage.host](https://freeimage.host/)
+- [dropbox.com](https://www.dropbox.com/)
+- [imghostr.com](https://imghostr.com/)
 
 ## FAQ
 
