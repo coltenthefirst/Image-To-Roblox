@@ -3,7 +3,7 @@ from PIL import Image
 import sys
 import subprocess
 
-def extract_frames(gif_path, output_folder, fps="max"):
+def extract_frames(gif_path, output_folder, fps="1"):
     os.makedirs(output_folder, exist_ok=True)
     with Image.open(gif_path) as gif:
         total_frames = gif.n_frames
