@@ -229,7 +229,7 @@ For obtaining direct image urls, I recommended to use [Postimages.org](https://p
 
 ##### -
 
-**Q: How can I help on this project?**
+**Q: How can I help on this project? (Other)**
 ######
 **A:** You can star this project or, dm me on discord if you want to help another way: "unknowingly_exists"
 
