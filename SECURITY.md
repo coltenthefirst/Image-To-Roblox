@@ -11,6 +11,8 @@ These models are currently being supported with security updates.
 | Model-2F |❗|
 ↑ (Outdated Source Code) ↑
 | Model-3| :white_check_mark: |
+| Model-3F|❌|
+↑ (Unfinished) ↑
 
 ## Reporting a Vulnerability
 
