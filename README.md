@@ -15,7 +15,7 @@ limitations under the License.
 -->
 
 <h1 align="center">
-    ~ Model-3 Coming Dec 13th ~
+    ~ Model-3 Coming Dec 13th (2 Days) ~
 </h2>
 
 <h2 align="center">
