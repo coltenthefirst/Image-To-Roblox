@@ -162,25 +162,31 @@ For obtaining direct image urls, I recommended to use [Postimages.org](https://p
 
 ## Tested Image Services
 ### ✅ Use (Works)
-- [Postimages.org](https://postimages.org/) (***RECOMMENDED*** - Free. No acccount needed. Uploads Gifs.)
-- [imgbb.com](https://imgbb.com/) (***RECOMMENDED*** - Free. No acccount needed. Uploads Gifs.)
-- [imghippo.com](https://imghippo.com/) (Free. No acccount needed. Uploads Gifs.)
-- [imgbox.com](https://imgbox.com/) (Free. No acccount needed. Uploads Gifs.)
-- [lunapic.com](https://www7.lunapic.com/editor/?action=quick-upload) (Free. No acccount needed. Uploads Gifs.)
-- [imagevenue.com](https://www.imagevenue.com/) (Free. No acccount needed. Uploads Gifs.)
-- [pictr.com](https://pictr.com/upload) (Free. No acccount needed. Uploads Gifs.)
-- [imagebam.com](https://www.imagebam.com/) (Free. No acccount needed. Uploads Gifs.)
-- [imgbly.com](https://imgbly.com/) (Free. No acccount needed. Uploads Gifs.)
-- [picsur.org](https://picsur.org/upload) (Free. No acccount needed. Uploads Gifs.)
-- [pixhost.to](https://pixhost.to/) (Free. No acccount needed. Uploads Gifs.)
-- [snipboard.io](https://snipboard.io/) (Free. No acccount needed. **DOES NOT UPLOAD GIFS!**)
+#### Free, No Account Needed
+- **[Postimages.org](https://postimages.org/)** — *Highly recommended*. Supports GIF uploads.
+- **[imgbb.com](https://imgbb.com/)** — *Highly recommended*. Supports GIF uploads.
+- [imghippo.com](https://imghippo.com/) — Supports GIF uploads.
+- [imgbox.com](https://imgbox.com/) — Supports GIF uploads.
+- [lunapic.com](https://www7.lunapic.com/editor/?action=quick-upload) — Supports GIF uploads.
+- [imagevenue.com](https://www.imagevenue.com/) — Supports GIF uploads.
+- [pictr.com](https://pictr.com/upload) — Supports GIF uploads.
+- [imagebam.com](https://www.imagebam.com/) — Supports GIF uploads.
+- [imgbly.com](https://imgbly.com/) — Supports GIF uploads.
+- [picsur.org](https://picsur.org/upload) — Supports GIF uploads.
+- [pixhost.to](https://pixhost.to/) — Supports GIF uploads.
 
-### ❌ Do not use (Does not work)
-- [i.imgur.com](https://i.imgur.com/)
-- [prnt.sc](https://prnt.sc/)
-- [freeimage.host](https://freeimage.host/)
-- [dropbox.com](https://www.dropbox.com/)
-- [imghostr.com](https://imghostr.com/)
+#### Free, Limited Functionality
+- **[snipboard.io](https://snipboard.io/)** — Does *not* support GIF uploads.
+
+### ❌ Not Recommended (Does Not Work)
+
+- [i.imgur.com](https://i.imgur.com/) — Issues with functionality.
+- [prnt.sc](https://prnt.sc/) — Issues with functionality.
+- [freeimage.host](https://freeimage.host/) — Issues with functionality.
+- [dropbox.com](https://www.dropbox.com/) — Not suited for this purpose.
+- [imghostr.com](https://imghostr.com/) — Issues with functionality.
+
+
 
 ## FAQ
 
