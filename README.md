@@ -175,7 +175,7 @@ For obtaining direct image urls, I recommended to use [Postimages.org](https://p
 - [pixhost.to](https://pixhost.to/) (Free. No acccount needed. Uploads Gifs.)
 - [snipboard.io](https://snipboard.io/) (Free. No acccount needed. **DOES NOT UPLOAD GIFS!**)
 
-### ❌ Do not use (Doesn't work)
+### ❌ Do not use (Does not work)
 - [i.imgur.com](https://i.imgur.com/)
 - [prnt.sc](https://prnt.sc/)
 - [freeimage.host](https://freeimage.host/)
