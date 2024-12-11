@@ -161,7 +161,7 @@ You can download the place files here:
 For obtaining direct image urls, I recommended to use [Postimages.org](https://postimages.org/) to obtain a direct link. Other services can be used as long as they provide a direct link.
 
 ## Tested Image Services
-### ✅ Use (Works)
+### ✅ Recommended (Works)
 #### Free, No Account Needed
 - **[Postimages.org](https://postimages.org/)** — *Highly recommended*. Supports GIF uploads.
 - **[imgbb.com](https://imgbb.com/)** — *Highly recommended*. Supports GIF uploads.
@@ -175,16 +175,16 @@ For obtaining direct image urls, I recommended to use [Postimages.org](https://p
 - [picsur.org](https://picsur.org/upload) — Supports GIF uploads.
 - [pixhost.to](https://pixhost.to/) — Supports GIF uploads.
 
-#### Free, Limited Functionality
+#### Free, But Limited Functionality
 - **[snipboard.io](https://snipboard.io/)** — Does *not* support GIF uploads.
 
 ### ❌ Not Recommended (Does Not Work)
 
-- [i.imgur.com](https://i.imgur.com/) — Issues with functionality.
-- [prnt.sc](https://prnt.sc/) — Issues with functionality.
-- [freeimage.host](https://freeimage.host/) — Issues with functionality.
-- [dropbox.com](https://www.dropbox.com/) — Not suited for this purpose.
-- [imghostr.com](https://imghostr.com/) — Issues with functionality.
+- [i.imgur.com](https://i.imgur.com/) — Direct Links Are Broken
+- [prnt.sc](https://prnt.sc/) — Direct Links Are Broken
+- [freeimage.host](https://freeimage.host/) — Direct Links Are Broken
+- [dropbox.com](https://www.dropbox.com/) — Direct Links Are Broken
+- [imghostr.com](https://imghostr.com/) — Direct Links Are Broken
 
 
 
