@@ -162,8 +162,8 @@ For obtaining direct image urls, I recommended to use [Postimages.org](https://p
 
 ## Tested Image Services
 ### ✅ Use (Works)
-- [Postimages.org](https://postimages.org/) (Free. No acccount needed. Uploads Gifs.)
-- [imgbb.com](https://imgbb.com/) (Free. No acccount needed. Uploads Gifs.)
+- [Postimages.org](https://postimages.org/) (***RECOMMENDED*** - Free. No acccount needed. Uploads Gifs.)
+- [imgbb.com](https://imgbb.com/) (***RECOMMENDED*** - Free. No acccount needed. Uploads Gifs.)
 - [imghippo.com](https://imghippo.com/) (Free. No acccount needed. Uploads Gifs.)
 - [imgbox.com](https://imgbox.com/) (Free. No acccount needed. Uploads Gifs.)
 - [lunapic.com](https://www7.lunapic.com/editor/?action=quick-upload) (Free. No acccount needed. Uploads Gifs.)
