@@ -8,7 +8,7 @@ These models are currently being supported with security updates.
 | ------- | ------------------ |
 | Model-1 | :white_check_mark: |
 | Model-2 | :white_check_mark: |
-| Model-2F |❗|
+| Model-2F |❗| (Outdated Source Code)
 | Model-3| :white_check_mark: |
 
 ## Reporting a Vulnerability
