@@ -210,13 +210,13 @@ For obtaining direct image urls, I recommended to use [Postimages.org](https://p
 
 ##### -
 
-**Q: Will I get banned for using exploit images? (All Models and Github)**
+**Q: Will I get banned for using exploit images? (Other)**
 ######
 **A:** I said before that you won't be banned, but you can be banned. Please be careful when using this in your games.
 
 ##### -
 
-**Q: Why is the send gif function split into different files? (Model-3 and Above)**
+**Q: Why is the send gif function split into different files? (Github)**
 ######
 **A:** Since this whole project is free, I can't edit the timeout time. So I spit the send gif function into different files, so it wouldn't timeout when uploading the frames. 
 
