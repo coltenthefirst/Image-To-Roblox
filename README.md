@@ -112,7 +112,7 @@ Here’s a overview of the process:
 
 ### Current Tasks (IN ORDER) - Model-3 Planned
 
-- [ ] NSFW Filter Model-3 (Github/Model-3F) - Last thing I will do is this.
+- [ ] Placeholder (Other) - Unknown
 
 ### Completed Tasks
 
@@ -130,7 +130,6 @@ Here’s a overview of the process:
 
 - [x] Automatic Frame By Frame Animation Player (Github/Model-3) - unreleased
 ###### ↑ Context: This will import the frames for you, and all you have to do is put in a gif url.
-- [x] NSFW Filter (Github/Model-2F) - released
 - [x] Making A Logo (Github) - released
 - [x] Color Filters (Model-3) - unreleased
 - [x] More Customizable Image Options (Model-3) - unreleased
@@ -195,7 +194,13 @@ For obtaining direct image urls, I recommended to use [Postimages.org](https://p
 
 **Q: Does this have a NSFW filter? (All Models and Github)**
 ######
-**A:** This version does NOT have a nsfw filter. If you want a filter use: [Image To Roblox Parts Filtered](https://github.com/coltenthefirst/image-to-roblox-FILTERED)
+**A:** No, this does NOT have a nsfw filter.
+
+##### -
+
+**Q: What happened to the NSFW filter version? (Other)**
+######
+**A:** The NSFW filter wasn't very good at detecting NSFW images or NSFW words in images. It was very buggy and was very messy to take care of. The apis also stopped working. Sorry for shutting it down but I couldn't keep working on it anymore. You can always make a fanmade NSFW Filter. Maybe if this project gets known more, then I will make another NSFW filter. Thank you.
 
 ##### -
 
