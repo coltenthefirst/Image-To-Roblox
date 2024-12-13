@@ -151,6 +151,7 @@ You can download the place files here:
 |------------------------------------|--------|
 | Update 1/Model-1: |[Google Drive Link](https://drive.google.com/file/d/1YdDMn-is_UD_VkbfgQKzQ3mzjJb5QZHY/view?usp=sharing)|
 | Update 2/Model-2: |[Google Drive Link](https://drive.google.com/file/d/1GUnPJWO0sX8VsMysFi1eTUbYXyJKcshk/view?usp=sharing)|
+| Update 3/Model-3: |[Google Drive Link](https://drive.google.com/file/d/17ZLL6-GvSCIvHV76Q4nytUkpEa8sWtXW/view?usp=sharing)|
 
 
 ## Uploading Custom Images
