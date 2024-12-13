@@ -190,6 +190,29 @@ For obtaining direct image urls, I recommended to use [Postimages.org](https://p
 - [dropbox.com](https://www.dropbox.com/) — Direct Links Are Broken
 - [imghostr.com](https://imghostr.com/) — Direct Links Are Broken
 
+# **Reported Outages**
+
+### **Big Server Outage #1 - Server Outage Details**
+**Date and Time:**
+- **Dec 13th**, 4:16 PM CST  
+  *(Same day Model-3 launched)*
+
+#### **Incident Summary:**
+- The `/send_image` endpoint was attacked by over **6,200 botted requests** in a coordinated DDoS attack.
+- The sudden influx overwhelmed the servers, causing them to crash.
+
+#### **Timeline of Events:**
+1. **4:16 PM CST:**
+   - Attack began with **6.2k botted requests.**
+2. **4:18 PM CST:**
+   - The outage was noticed, and rate-limiting measures were deployed.
+3. **4:18 - 4:40 PM CST:**
+   - Rate limiting applied to **all incoming requests** as a mitigation measure.
+   - This temporarily disrupted legitimate user traffic.
+4. **4:40 PM CST:**
+   - Servers were stabilized, and normal operations resumed.
+
+## **Others will be reported.**
 
 
 ## FAQ
