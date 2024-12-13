@@ -119,7 +119,6 @@ Here’s a overview of the process:
 - [x] Resolve issue with the first pixel not generating (Model-2)
 - [x] Updated README.md (Github) - released
 - [x] Automatic Frame By Frame Animation Player (Github/Model-3)
-###### ↑ Context: This will import the frames for you, and all you have to do is put in a gif url.
 - [x] Making A Logo (Github)
 - [x] Color Filters (Model-3)
 - [x] More Customizable Image Options (Model-3)
