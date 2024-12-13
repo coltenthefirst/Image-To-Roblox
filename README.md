@@ -50,7 +50,7 @@ limitations under the License.
 </p>
 
 <h1 align="center">
-    Images To Roblox Parts
+    Images To Roblox Parts (Model-3 Released)
 </h1>
 
 <br>
@@ -108,6 +108,7 @@ Here’s a overview of the process:
 
 ### Completed Tasks
 
+- [x] Release (Github/Model-1)
 - [x] Frame By Frame Animation Player (Model-2)
 - [x] Faster Image Gen Speed (Model-2)
 - [x] Enhanced image data privacy (Github)
@@ -117,18 +118,19 @@ Here’s a overview of the process:
 - [x] Fix Error 500 (Github/Model-2)
 - [x] Resolve issue with the first pixel not generating (Model-2)
 - [x] Updated README.md (Github) - released
-
-### Completed Tasks Since Model-2 Released
-
-- [x] Automatic Frame By Frame Animation Player (Github/Model-3) - unreleased
+- [x] Automatic Frame By Frame Animation Player (Github/Model-3)
 ###### ↑ Context: This will import the frames for you, and all you have to do is put in a gif url.
-- [x] Making A Logo (Github) - released
-- [x] Color Filters (Model-3) - unreleased
-- [x] More Customizable Image Options (Model-3) - unreleased
-- [x] Fix The Frame By Frame Animation Player Bug (Model-3) - unreleased
-- [x] Fix Other Bugs (Github/Model-3) - unreleased
-- [x] Updated README.md #2 (Github) - released
-- [x] Boring Website (Other) - released
+- [x] Making A Logo (Github)
+- [x] Color Filters (Model-3)
+- [x] More Customizable Image Options (Model-3)
+- [x] Fix The Frame By Frame Animation Player Bug
+- [x] Fix Other Bugs (Github/Model-3)
+- [x] Updated README.md #2 (Github)
+- [x] Boring Website (Other)
+
+### Completed Tasks Since Model-3 Released
+
+- [ ] Placeholder (Other) - Unknown
 
 ## Videos
 | Info                            | Video |
@@ -136,6 +138,7 @@ Here’s a overview of the process:
 | Model-1 Release: |[Model-1 YouTube Link](https://www.youtube.com/watch?v=oFm_znA53r8)|
 | Model-2 Release: |[Model-2 YouTube Link](https://www.youtube.com/watch?v=6pRmz4_hoDo)|
 | Vercel Setup Tutorial: |[Vercel Setup Tutorial YouTube Link](https://youtu.be/RcwPO3fshEU)|
+| Model-3 Release Video Soon: ||
 
 ## Game Link
 | Name                            | Link |
