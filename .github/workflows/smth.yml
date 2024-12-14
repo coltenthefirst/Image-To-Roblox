@@ -1,0 +1,22 @@
+            - name: Codeball AI Code Review
+  # You may pin to the exact commit or the version.
+  # uses: sturdy-dev/codeball-action@102067b9f537482cee112577655c85fda56d8926
+  uses: sturdy-dev/codeball-action@v2.6.0
+  with:
+    # If "true", the action will submit an approving review if the Codeball AI approves the contribution
+    approvePullRequests: # optional, default is true
+    # If "true", the action will add `codeball:approved` label to the PR if the Codeball AI confidence is above the configured approve threshold
+    labelPullRequestsWhenApproved: # optional, default is true
+    # If "true", the action will add `codeball:needs-review` label to the PR if the Codeball AI confidence is between the "approve" and "careful" thresholds
+    labelPullRequestsWhenReviewNeeded: # optional, default is false
+    # If "true", the action will add `codeball:needs-careful-review` label to the PR if the Codeball AI confidence is below the configured careful threshold
+    labelPullRequestsWhenCarefulReviewNeeded: # optional, default is true
+    # The threshold to use for "approving" (greater than or equal to). A number between 0 and 1. Must be specified with 3 decimals.
+    approveThreshold: # optional, default is 0.935
+    # The threshold to use for "careful review" actions (less than). A number between 0 and 1. Must be specified with 3 decimals.
+    carefulReviewThreshold: # optional, default is 0.300
+    # If "true", the action will exit with status code 1 if the Codeball AI does not approve the contribution
+    failJobsWhenReviewNeeded: # optional, default is false
+    # If "true", Codeball will read generate code suggestions from comments made in Pull Requests (beta)
+    codeSuggestionsFromComments: # optional, default is false
+          
