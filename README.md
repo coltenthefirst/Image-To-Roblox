@@ -137,7 +137,6 @@ Here’s a overview of the process:
 | Model-1 Release: |[Model-1 YouTube Link](https://www.youtube.com/watch?v=oFm_znA53r8)|
 | Model-2 Release: |[Model-2 YouTube Link](https://www.youtube.com/watch?v=6pRmz4_hoDo)|
 | Vercel Setup Tutorial: |[Vercel Setup Tutorial YouTube Link](https://youtu.be/RcwPO3fshEU)|
-| Model-3 Release Video Soon: ||
 
 ## Game Link
 | Name                            | Link |
