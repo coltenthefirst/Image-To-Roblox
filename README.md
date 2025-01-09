@@ -50,7 +50,7 @@ limitations under the License.
 </p>
 
 <h1 align="center">
-    Images To Roblox Parts (Model-3 Released)
+    Images To Roblox Parts (Current: Model-3)
 </h1>
 
 <br>
@@ -64,7 +64,13 @@ limitations under the License.
 > [!WARNING]
 > This project is AGAINST the Terms of Services of Roblox! Usage is on YOUR risk.
 
-#### If you use Model-2. Please read this: [fix](https://github.com/coltenthefirst/image-to-roblox/issues/5)
+> [!IMPORTANT]  
+> This is all Client-Sided. You can make a Server-Sided version if you want.
+
+> [!IMPORTANT]  
+> Model-4 will be the last ever Model I will do for this project.
+
+### If you use Model-2. Please read this: [fix](https://github.com/coltenthefirst/image-to-roblox/issues/5)
 
 ## Introduction
 
@@ -107,7 +113,9 @@ Here’s a overview of the process:
 
 ### Current Tasks (IN ORDER) - Model-3 Planned
 
-- [ ] Placeholder (Other) - Unknown
+- [ ] Fix vulnerabilitys (Model-4)
+- [ ] Fix Part deletion for the Server-Side (Model-4)
+- [ ] Cut off Part generation on the Server-Side (Model-4)
 
 ### Completed Tasks
 
@@ -252,7 +260,7 @@ For obtaining direct image urls, I recommended to use [Postimages.org](https://p
 
 **Q: Why is the animation player not working? (Model-3)**
 ######
-**A:** Sometimes the api key can get rate limited and for it to work again, you would have to wait a hour. Or you can make another api key, delete the old one, and use the new one. I don't have a fix for this yet but, I could make it send to another image hoster, or I could make a script that checks if the api key works or not, and if it doesn't than what it would do is use another api key. I will fix this in Model-3.5.
+**A:** Sometimes the api key can get rate limited and for it to work again, you would have to wait a hour. Or you can make another api key, delete the old one, and use the new one.
 
 ##### -
 
