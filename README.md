@@ -61,6 +61,9 @@ limitations under the License.
   <br/>
 </p>
 
+> [!WARNING]
+> This project is AGAINST the Terms of Services of Roblox! Usage is on YOUR risk.
+
 #### If you use Model-2. Please read this: [fix](https://github.com/coltenthefirst/image-to-roblox/issues/5)
 
 ## Introduction
