@@ -111,7 +111,7 @@ Here’s a overview of the process:
     ~ EXPECT THESE TO CHANGE!!! ~
 </h6>
 
-### Current Tasks (IN ORDER) - Model-3 Planned
+### Current Tasks (IN ORDER) - Model-4 Planned
 
 - [ ] Fix vulnerabilitys (Model-4)
 - [ ] Fix Part deletion for the Server-Side (Model-4)
@@ -140,7 +140,7 @@ Here’s a overview of the process:
 
 ### Completed Tasks Since Model-3 Released
 
-- [ ] Placeholder (Other) - Unknown
+- [ ] non (Other) - Unknown
 
 ## Videos
 | Info                            | Video |
