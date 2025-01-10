@@ -117,8 +117,6 @@ Here’s a overview of the process:
 ### Current Tasks (IN ORDER) - Model-4 Planned
 
 - [ ] Fix vulnerabilitys (Model-4)
-- [ ] Fix Part deletion for the Server-Side (Model-4)
-- [ ] Cut off Part generation on the Server-Side (Model-4)
 
 ### Completed Tasks
 
@@ -143,7 +141,8 @@ Here’s a overview of the process:
 
 ### Completed Tasks Since Model-3 Released
 
-- [ ] non (Other) - Unknown
+- [x] Fix Part deletion for the Server-Side (Model-4)
+- [x] Cut off Part generation on the Server-Side (Model-4)
 
 ## Videos
 | Info                            | Video |
