@@ -65,10 +65,7 @@ limitations under the License.
 > This project is AGAINST the Terms of Services of Roblox! Usage is on YOUR risk. This doesn't have a filter so nsfw material can be generated.
 
 > [!IMPORTANT]  
-> This is all Client-Sided. You can make a Server-Sided version if you want.
-
-> [!IMPORTANT]  
-> Model-4 will be the last ever Model I will do for this project.
+> Model-4 might be the last ever Model I will do for this project. Besides bug fix updates.
 
 ##### What makes this special from all the other image to roblox tools?
 ##### With this you don't have to run anything on your computer! All you need to do is join the Roblox game or download the place file and insert a image url or a gif url. Just wait and you will see your gif or your image! This doesn't have a filter so nsfw material can be generated.
