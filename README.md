@@ -41,6 +41,11 @@ limitations under the License.
         <a href="https://vercel.com/">
         <img alt="Vercel Deploy Status" src="https://deploy-badge.vercel.app/?url=https%3A%2F%2Fvercel.com%2Fcoltenthefirsts-projects%2Fimage-to-roblox&logo=Vercel&name=Vercel+%28image-to-roblox%29">
     </a>
+        <img src="https://img.shields.io/github/languages/top/coltenthefirst/image-to-roblox?color=%23000000">
+    <img src="https://img.shields.io/github/stars/coltenthefirst/image-to-roblox?color=%23000000&logoColor=%23000000">
+    <br>
+    <img src="https://img.shields.io/github/commit-activity/w/coltenthefirst/image-to-roblox?color=%23000000"> 
+    <img src="https://img.shields.io/github/last-commit/coltenthefirst/image-to-roblox?color=%23000000&logoColor=%23000000">
 </h1>
 
 <p align="center">
