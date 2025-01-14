@@ -55,7 +55,7 @@ limitations under the License.
 </p>
 
 <h1 align="center">
-    Images To Roblox Parts (Current: Model-3)
+    Images To Roblox Parts (Current: Model-3.5)
 </h1>
 
 <br>
@@ -118,7 +118,7 @@ Here’s a overview of the process:
 
 ### Current Tasks (IN ORDER) - Model-4 Planned
 
-- [ ] Fix vulnerabilitys (Model-4)
+- [ ] non (Other)
 
 ### Completed Tasks
 
@@ -136,15 +136,17 @@ Here’s a overview of the process:
 - [x] Making A Logo (Github)
 - [x] Color Filters (Model-3)
 - [x] More Customizable Image Options (Model-3)
-- [x] Fix The Frame By Frame Animation Player Bug
+- [x] Fix The Frame By Frame Animation Player Bug (Model-3)
 - [x] Fix Other Bugs (Github/Model-3)
 - [x] Updated README.md #2 (Github)
 - [x] Boring Website (Other)
-
-### Completed Tasks Since Model-3 Released
-
+- [x] Fix vulnerabilitys (Model-4)
 - [x] Fix Part deletion for the Server-Side (Model-4)
 - [x] Cut off Part generation on the Server-Side (Model-4)
+
+### Completed Tasks Since Model-3.5 Released
+
+- [ ] non (Other)
 
 ## Videos
 | Info                            | Video |
@@ -166,6 +168,7 @@ You can download the place files here:
 | Update 1/Model-1: |[Google Drive Link](https://drive.google.com/file/d/1YdDMn-is_UD_VkbfgQKzQ3mzjJb5QZHY/view?usp=sharing)|
 | Update 2/Model-2: |[Google Drive Link](https://drive.google.com/file/d/1GUnPJWO0sX8VsMysFi1eTUbYXyJKcshk/view?usp=sharing)|
 | Update 3/Model-3: |[Google Drive Link](https://drive.google.com/file/d/17ZLL6-GvSCIvHV76Q4nytUkpEa8sWtXW/view?usp=sharing)|
+| Update 3/Model-3: |[Google Drive Link](https://drive.google.com/file/d/1YXN_ACZsuZWUorV84D2IoJtSqGu3a7w1/view?usp=sharing)|
 
 
 ## Uploading Custom Images
