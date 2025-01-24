@@ -77,6 +77,9 @@ limitations under the License.
 
 ### If you use Model-2. Please read this: [fix](https://github.com/coltenthefirst/image-to-roblox/issues/5)
 
+## I would highly love to credit Netpex for the original script!
+https://devforum.roblox.com/t/converting-image-to-parts-python/2713248
+
 ## Introduction
 
 This repository contains the backend source code for the **Image To Parts** Roblox Game. This tool allows users to convert image URLs into parts within Roblox. Users are free to use the files provided in this repository for their own purposes.
