@@ -75,7 +75,7 @@ limitations under the License.
 > Model-4 might be the last ever Model I will do for this project. Besides bug fix updates and the GUI Version.
 
 > [!IMPORTANT]  
-> I recommend always updating to the latest version for security fixes!
+> I recommend always updating to the latest Model for Security fixes!
 
 ##### What makes this special from all the other image to roblox tools?
 ##### With this you don't have to run anything on your computer! All you need to do is join the Roblox game or download the place file and insert a image url or a gif url. Just wait and you will see your gif or your image! This doesn't have a filter so nsfw material can be generated. This doesn't use Roblox's image API either! So you don't need ID verification!
