@@ -250,7 +250,7 @@ For obtaining direct image urls, I recommended to use [Postimages.org](https://p
 
 **Q: What happened to the NSFW filter version? (Other)**
 ######
-**A:** The NSFW filter wasn't very good at detecting NSFW images or NSFW words in images. It was very buggy and was very messy to take care of. The apis also stopped working. Sorry for shutting it down but I couldn't keep working on it anymore. You can always make a fanmade NSFW Filter. Maybe if this project gets known more, then I will make another NSFW filter. Thank you.
+**A:** The NSFW filter wasn't very good at detecting NSFW images or NSFW words in images. It was very buggy and was very messy to take care of. The apis also stopped working. Sorry for shutting it down but I couldn't keep working on it anymore. You can always make a fanmade NSFW Filter. Maybe if this project gets known more, then I will make another NSFW filter. Thank you. **I will post the archive files soon!**
 
 ##### -
 
