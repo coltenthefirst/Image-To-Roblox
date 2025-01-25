@@ -2,14 +2,15 @@
 
 ## Supported Versions
 
-These models are currently being supported with security updates.
+These models and servers are currently being supported or not with security updates.
 
-| Version | Supported          |
+| Model/Server | Support Status          |
 | ------- | ------------------ |
 | Vercel Server | :white_check_mark: Auto Updated (Latest)|
 | NSFW Filtered Vercel Server | ❌ Discontinued |
 | Model-1F | ❌ Discontinued |
 | Model-0.5G (DEV BUILD) | ✅ Not Released Tho (Latest) |
+| Model-0.25 (Nexpets Original Version)| ✅ Shown in the Model-2 Showcase Vid |
 | Model-0.5 (DEV BUILD)| ⚠️ HIGHLY Outdated ⚠️ - Never Released Tho |
 | Model-1 | ❌ Outdated |
 | Model-2 | ❌ Outdated |
@@ -20,4 +21,4 @@ These models are currently being supported with security updates.
 
 ## Reporting a Vulnerability
 
-Please open a pull request and tell me whats wrong.
+Please open a issue.
