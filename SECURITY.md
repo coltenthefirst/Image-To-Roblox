@@ -5,7 +5,7 @@ These models and servers are currently being supported or not with security upda
 | Model/Server | Support Status          |
 | ------- | ------------------ |
 | Vercel Server | :white_check_mark: Auto Updated (**Latest**)|
-| NSFW Filtered Vercel Server | ❌ Outdated and Discontinued But Fully Functional (**Latest**) |
+| NSFW Filtered Vercel Server | ❌ Outdated and Discontinued But Fully Functional |
 |  |  |
 | Model-1F | ❌ Outdated and Discontinued But Fully Functional |
 | Model-2F | ❌ Discontinued But Fully Functional (**Latest**) |
