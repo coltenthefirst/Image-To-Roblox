@@ -8,7 +8,7 @@ These models and servers are currently being supported or not with security upda
 | NSFW Filtered Vercel Server | ❌ Discontinued |
 | Model-1F | ❌ Discontinued |
 | Model-0.5G (DEV BUILD) | ✅ Not Released Tho (Latest) |
-| Model-0.25 (Nexpets Original Version)| ✅ Shown in the Model-2 Showcase Vid |
+| Model-0.25 (Netpexs Original Version)| ✅ Shown in the Model-2 Showcase Vid |
 | Model-0.5 (DEV BUILD)| ⚠️ HIGHLY Outdated ⚠️ - Never Released Tho |
 | Model-1 | ❌ Outdated |
 | Model-2 | ❌ Outdated |
