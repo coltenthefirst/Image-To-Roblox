@@ -10,9 +10,9 @@ These models and servers are currently being supported or not with security upda
 | Model-0.5G (DEV BUILD) | ✅ Not Released Tho (Latest) |
 | Model-0.25 (Netpexs Original Version)| ✅ Shown in the Model-2 Showcase Vid |
 | Model-0.5 (DEV BUILD)| ⚠️ HIGHLY Outdated ⚠️ - Never Released Tho |
-| Model-1 | ❌ Outdated |
-| Model-2 | ❌ Outdated |
-| Model-3 | ❌ Outdated |
+| Model-1 | ❌ Outdated (Still works - Uses Updated Servers) |
+| Model-2 | ❌ Outdated (Still works - Uses Updated Servers) |
+| Model-3 | ❌ Outdated (Still works - Uses Updated Servers) |
 | Model-3.5 | ✅ Updated (Latest) |
 | Model-3.7 | ❌ Not Being Worked In Progress |
 | Model-4 | ❌ Not Being Worked In Progress |
