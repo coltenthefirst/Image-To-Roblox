@@ -1,7 +1,5 @@
 # Security Policy
 
-## Supported Versions
-
 These models and servers are currently being supported or not with security updates.
 
 | Model/Server | Support Status          |
