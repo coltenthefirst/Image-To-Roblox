@@ -70,7 +70,7 @@ limitations under the License.
 > This project is AGAINST the Terms of Services of Roblox! Usage is on YOUR risk. This doesn't have a filter so nsfw material can be generated.
 
 > [!IMPORTANT]  
-> Model-4 might be the last ever Model I will do for this project. Besides bug fix updates.
+> Model-4 might be the last ever Model I will do for this project. Besides bug fix updates and the GUI Version.
 
 ##### What makes this special from all the other image to roblox tools?
 ##### With this you don't have to run anything on your computer! All you need to do is join the Roblox game or download the place file and insert a image url or a gif url. Just wait and you will see your gif or your image! This doesn't have a filter so nsfw material can be generated. This doesn't use Roblox's image API either! So you don't need ID verification!
@@ -119,9 +119,14 @@ Here’s a overview of the process:
     ~ EXPECT THESE TO CHANGE!!! ~
 </h6>
 
-### Current Tasks (IN ORDER) - Model-4 Planned
+### Current Tasks (IN ORDER) - Model-3.7/Model-G1/Other Planned
 
-- [ ] non (Other)
+- [ ] Full GUI Verison (Model-G1)
+- [ ] Add The Automatic Frame By Frame Animation Player to the GUI Version (Model-G2 or G1 if I have enough time.)
+- [ ] Update The README.md for Model-3.5 stuff (Github)
+- [ ] Add More Image Options for the Cilent-Side (Model-3.7)
+- [ ] Clean Up Source Code (Github)
+- [ ] Update The Website (Other)
 
 ### Completed Tasks
 
@@ -134,7 +139,7 @@ Here’s a overview of the process:
 - [x] Add a delete button for parts (Model-2)
 - [x] Fix Error 500 (Github/Model-2)
 - [x] Resolve issue with the first pixel not generating (Model-2)
-- [x] Updated README.md (Github) - released
+- [x] Updated README.md (Github)
 - [x] Automatic Frame By Frame Animation Player (Github/Model-3)
 - [x] Making A Logo (Github)
 - [x] Color Filters (Model-3)
@@ -149,7 +154,7 @@ Here’s a overview of the process:
 
 ### Completed Tasks Since Model-3.5 Released
 
-- [ ] non (Other)
+- [x] Working Demo GUI Verison (Other) - Unreleased
 
 ## Videos
 | Info                            | Video |
