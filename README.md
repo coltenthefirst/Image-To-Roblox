@@ -28,13 +28,6 @@ limitations under the License.
   <br/>
 </p>
 
-***
-
-<p align="center">
-  <img alt="Powered by Vercel" src="https://img.shields.io/badge/powered%20by%20Vercel-%23000000?style=for-the-badge&logo=vercel&logoColor=white" width="300" />
-</p>
-
-***
 
 <h1 align="center">
     <a href="https://github.com/coltenthefirst/image-to-roblox">
@@ -76,6 +69,13 @@ limitations under the License.
   <br/>
 </p>
 
+***
+
+<p align="center">
+  <img alt="Powered by Vercel" src="https://img.shields.io/badge/powered%20by%20Vercel-%23000000?style=for-the-badge&logo=vercel&logoColor=white" width="300" />
+</p>
+
+***
 > [!WARNING]
 > This project is AGAINST the Terms of Services of Roblox! Usage is on YOUR risk. This doesn't have a filter so nsfw material can be generated.
 
