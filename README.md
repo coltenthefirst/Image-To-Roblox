@@ -72,7 +72,7 @@ limitations under the License.
 ***
 
 <p align="center">
-  <img alt="Powered by Vercel" src="https://img.shields.io/badge/powered%20by%20Vercel-%23000000?style=for-the-badge&logo=vercel&logoColor=white" width="300" />
+  <img alt="Powered With Vercel" src="https://img.shields.io/badge/Powered%20With%20Vercel-%23000000?style=plastic&logo=vercel&logoColor=white" width="300" />
 </p>
 
 ***
@@ -301,16 +301,19 @@ For obtaining direct image urls, I recommended to use [Postimages.org](https://p
 ***
 
 <p align="center">
-  <img alt="Powered by Vercel" src="https://img.shields.io/badge/powered%20by%20Vercel-%23000000?style=for-the-badge&logo=vercel&logoColor=white" width="300" />
+  <img alt="Project For Roblox" src="https://img.shields.io/badge/Project%20For%20Roblox-%2338B5E4?style=plastic&logo=roblox&logoColor=white" width="300" />
 </p>
 
 <p align="center">
-  <img alt="Powered by GitHub" src="https://img.shields.io/badge/powered%20by%20GitHub-%23121011?style=for-the-badge&logo=github&logoColor=white" width="300" />
-  <img alt="Powered by Python" src="https://img.shields.io/badge/powered%20by%20Python-%233B8D99?style=for-the-badge&logo=python&logoColor=white" width="300" />
-  <img alt="Powered by Lua" src="https://img.shields.io/badge/powered%20by%20Lua-%232C2D72?style=for-the-badge&logo=lua&logoColor=white" width="300" />
+  <img alt="Coded With Python" src="https://img.shields.io/badge/Coded%20With%20Python-%233B8D99?style=plastic&logo=python&logoColor=white" width="300" />
+  <img alt="Coded With Lua" src="https://img.shields.io/badge/Coded%20With%20Lua-%232C2D72?style=plastic&logo=lua&logoColor=white" width="300" />
 </p>
 
-
+<p align="center">
+  <img alt="Source Code Powered With GitHub" src="https://img.shields.io/badge/Source%20Code%20Powered%20By%20GitHub-%23121011?style=plastic&logo=github&logoColor=white" width="300" />
+  <img alt="Powered With Vercel" src="https://img.shields.io/badge/Powered%20With%20Vercel-%23000000?style=plastic&logo=vercel&logoColor=white" width="300" />
+  <img alt="Powered With Flask" src="https://img.shields.io/badge/Powered%20With%20Flask-%23FF7F0E?style=plastic&logo=flask&logoColor=white" width="300" />
+</p>
 
 ***
 
