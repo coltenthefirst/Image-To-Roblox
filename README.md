@@ -114,9 +114,9 @@ Here’s a overview of the process:
 3. Vercel downloads the image and runs a Python script based on your selection.
 4. A Lua script is generated and sent back to Roblox, where it is processed into parts that resemble the pixels of your image.
 
-## Cloning Vercel and Github
+## Cloning Vercel and GitHub
 
-#### Make sure you make a github account and go to https://vercel.com and make a vercel account by connecting your github account to vercel.
+#### Make sure you create a GitHub account and go to [Vercel](https://vercel.com) to create a Vercel account by connecting your GitHub account to Vercel.
 #### Click This:
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fcoltenthefirst%2Fimage-to-roblox&env=FLASK_APP&envValue=server.py&env=FLASK_ENV&envValue=development&project-name=image-to-roblox&repository-name=image-to-roblox)
 
@@ -124,29 +124,49 @@ Here’s a overview of the process:
 
 #
 
-##### Set "FLASK_APP" as "server.py"
-##### Set "FLASK_ENV" as "development"
-##### Once its deployed. Go to the settings tab of your vercel project, click on General and click on Project Settings.
-#### Overwrite the Build Command as "flask run --host=0.0.0.0 --port=5000"
-#### Overwrite the Install Command as "pip install -r requirements.txt"
-##### You can go back to the Project page and click on the thumbnail preview that says "Not Found", don't worry, this is normal. Once you are on the site, click on the spacing where the url ends and type "/send_image". It should look like "https://your-vercel-project-name.vercel.app/send_image".
+##### Set "FLASK_APP" to "server.py"
+##### Set "FLASK_ENV" to "development"
+##### Once it's deployed, go to the settings tab of your Vercel project, click on **General**, and then click on **Project Settings**.
+#### Overwrite the **Build Command** as:  
+`flask run --host=0.0.0.0 --port=5000`
+#### Overwrite the **Install Command** as:  
+`pip install -r requirements.txt`
+##### You can go back to the **Project** page and click on the thumbnail preview that says "Not Found", don't worry, this is normal. Once you are on the site, click on the spacing where the URL ends and type `/send_image`. It should look like:  
+`https://your-vercel-project-name.vercel.app/send_image`
 
 ***
+
 #### MODEL-2 AND BELOW
-##### Go to your copyed Roblox game and open serverscriptservice and open the script "ImageRequestHandler". After that, replace the line "local url = "https://image-to-roblox.vercel.app/send_image"" as your url, like "local url = "https://your-vercel-project-name.vercel.app/send_image"".
-***
+##### Go to your copied Roblox game, open **ServerScriptService**, and open the script **ImageRequestHandler**. Replace the line:  
+`local url = "https://image-to-roblox.vercel.app/send_image"`  
+with your URL, like:  
+`local url = "https://your-vercel-project-name.vercel.app/send_image"`
 
 ***
+
 #### MODEL-3 AND HIGHER
-##### Go to your copyed Roblox game and open serverscriptservice and open the module script "ServerlessWebsites". After that, replace the line "Urls.Image = "https://image-to-roblox.vercel.app/send_image"" as your url, like "Urls.Image = "https://your-vercel-project-name.vercel.app/send_image"". You can also replace "Urls.Gif = "https://image-to-roblox.vercel.app/send_gif"" as "Urls.Gif = "https://your-vercel-project-name.vercel.app/send_gif""
-***
+##### Go to your copied Roblox game, open **ServerScriptService**, and open the module script **ServerlessWebsites**. Replace the line:  
+`Urls.Image = "https://image-to-roblox.vercel.app/send_image"`  
+with your URL, like:  
+`Urls.Image = "https://your-vercel-project-name.vercel.app/send_image"`
+
+##### You can also replace:  
+`Urls.Gif = "https://image-to-roblox.vercel.app/send_gif"`  
+with:  
+`Urls.Gif = "https://your-vercel-project-name.vercel.app/send_gif"`
 
 ***
+
 #### API Key for the GIF File Processor (Model-3.5)
-#### Go to https://api.imgbb.com/ and make a account. After you have made a account, go back to https://api.imgbb.com/ and generate a API key. Copy that API key and go to your copyed Roblox game and open serverscriptservice, and then open the module script: "ServerlessWebsites". After that, replace the line "Urls.GifAPIkey = "whatever is here"" with your API key, like "Urls.GifAPIkey = "YourAPIkey"".
+##### Go to [ImgBB](https://api.imgbb.com/) and create an account. After creating an account, go back to [ImgBB](https://api.imgbb.com/) and generate an API key.  
+##### Copy that API key and go to your copied Roblox game, open **ServerScriptService**, and then open the module script **ServerlessWebsites**. Replace the line:  
+`Urls.GifAPIkey = "whatever is here"`  
+with your API key, like:  
+`Urls.GifAPIkey = "YourAPIKey"`
+
 ***
 
-### Now you're done! You can visit your github profile and you can find the cloned repo, you can edit this repo and do whatever you want with it.
+### Now you're done! You can visit your GitHub profile to find the cloned repository, and edit it however you like <3.
 
 #
 
@@ -247,30 +267,6 @@ For obtaining direct image urls, I recommended to use [Postimages.org](https://p
 - [freeimage.host](https://freeimage.host/) — Direct Links Are Broken
 - [dropbox.com](https://www.dropbox.com/) — Direct Links Are Broken
 - [imghostr.com](https://imghostr.com/) — Direct Links Are Broken
-
-# **Reported Outages**
-
-### **Big Server Outage #1 - Server Outage Details**
-**Date and Time:**
-- **Dec 13th**, 4:16 PM CST  
-  *(Same day Model-3 launched)*
-
-#### **Incident Summary:**
-- The `/send_image` endpoint was attacked by over **6,200 botted requests** in a coordinated DDoS attack.
-- The sudden influx overwhelmed the servers, causing them to crash.
-
-#### **Timeline of Events:**
-1. **4:16 PM CST:**
-   - Attack began with **6.2k botted requests.**
-2. **4:18 PM CST:**
-   - The outage was noticed, and rate-limiting measures were deployed.
-3. **4:18 - 4:40 PM CST:**
-   - Rate limiting applied to **all incoming requests** as a mitigation measure.
-   - This temporarily disrupted legitimate user traffic.
-4. **4:40 PM CST:**
-   - Servers were stabilized, and normal operations resumed.
-
-## **Others will be reported.**
 
 
 ## FAQ
