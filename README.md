@@ -130,8 +130,22 @@ Here’s a overview of the process:
 #### Overwrite the Build Command as "flask run --host=0.0.0.0 --port=5000"
 #### Overwrite the Install Command as "pip install -r requirements.txt"
 ##### You can go back to the Project page and click on the thumbnail preview that says "Not Found", don't worry, this is normal. Once you are on the site, click on the spacing where the url ends and type "/send_image". It should look like "https://your-vercel-project-name.vercel.app/send_image".
-##### Model-2 and below: Go to your copyed Roblox game and open serverscriptservice and open the script "ImageRequestHandler". After that, replace the line "local url = "https://image-to-roblox.vercel.app/send_image"" as your url, like "local url = "https://your-vercel-project-name.vercel.app/send_image"".
-##### Model-3 and higher: Go to your copyed Roblox game and open serverscriptservice and open the module script "ServerlessWebsites". After that, replace the line "Urls.Image = "https://image-to-roblox.vercel.app/send_image"" as your url, like "Urls.Image = "https://your-vercel-project-name.vercel.app/send_image"". You can also replace "Urls.Gif = "https://image-to-roblox.vercel.app/send_gif"" as "Urls.Gif = "https://your-vercel-project-name.vercel.app/send_gif"" (model-3 is unreleased)
+
+***
+#### MODEL-2 AND BELOW
+##### Go to your copyed Roblox game and open serverscriptservice and open the script "ImageRequestHandler". After that, replace the line "local url = "https://image-to-roblox.vercel.app/send_image"" as your url, like "local url = "https://your-vercel-project-name.vercel.app/send_image"".
+***
+
+***
+#### MODEL-3 AND HIGHER
+##### Go to your copyed Roblox game and open serverscriptservice and open the module script "ServerlessWebsites". After that, replace the line "Urls.Image = "https://image-to-roblox.vercel.app/send_image"" as your url, like "Urls.Image = "https://your-vercel-project-name.vercel.app/send_image"". You can also replace "Urls.Gif = "https://image-to-roblox.vercel.app/send_gif"" as "Urls.Gif = "https://your-vercel-project-name.vercel.app/send_gif""
+***
+
+***
+#### API Key for the GIF File Processor (Model-3.5)
+#### Go to https://api.imgbb.com/ and make a account. After you have made a account, go back to https://api.imgbb.com/ and generate a API key. Copy that API key and go to your copyed Roblox game and open serverscriptservice, and then open the module script: "ServerlessWebsites". After that, replace the line "Urls.GifAPIkey = "whatever is here"" with your API key, like "Urls.GifAPIkey = "YourAPIkey"".
+***
+
 ### Now you're done! You can visit your github profile and you can find the cloned repo, you can edit this repo and do whatever you want with it.
 
 #
