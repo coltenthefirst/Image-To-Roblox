@@ -61,6 +61,15 @@ limitations under the License.
     ~ Made with Lua, Python, Flask, and Vercel! ~
 </h6>
 
+
+<h6 align="center">
+    Python Version: 3.12
+</h6>
+
+<h6 align="center">
+    Vercel Plan: Hobby (100% Free Plan)
+</h6>
+
 <br>
 
 <p align="center">
@@ -76,6 +85,7 @@ limitations under the License.
 </p>
 
 ***
+
 > [!WARNING]
 > This project is AGAINST the Terms of Services of Roblox! Usage is on YOUR risk. This doesn't have a filter so nsfw material can be generated.
 
