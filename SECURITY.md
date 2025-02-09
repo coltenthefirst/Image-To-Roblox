@@ -1,6 +1,6 @@
 # Security Policy
 
-These models and servers are currently being supported or not with security updates.
+These models/servers are currently being supported or not with security updates.
 
 | Model/Server | Support Status          |
 | ------- | ------------------ |
