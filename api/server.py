@@ -8,7 +8,7 @@ app = Flask(__name__)
 
 INPUT_FOLDER = "/tmp/input"
 OUTPUT_FOLDER = "/tmp/output"
-SCRIPT_DIR = "/image-quality-processors"
+SCRIPT_DIR = "./image-quality-processors"
 IMAGE_NAME = "image.png"
 GIF_NAME = "downloaded.gif"
 MAX_RETRIES = 5
