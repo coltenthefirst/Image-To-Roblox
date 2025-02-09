@@ -177,13 +177,9 @@ with your API key, like:
 </h6>
 
 ### Current Tasks (IN ORDER) - Model-3.7/Model-G1/Other Planned
-
-- [ ] HUGE SECURITY UPDATE (Github)
-- [ ] Update The README.md for Model-3.5 stuff (Github)
 - [ ] Full GUI Verison (Model-1G)
 - [ ] Add The Automatic Frame By Frame Animation Player to the GUI Version (Model-2G or 1G if I have enough time.)
 - [ ] Add More Image Options for the Cilent-Side (Model-3.7)
-- [ ] Clean Up Source Code (Github)
 - [ ] Update The Website (Other)
 
 ### Completed Tasks
@@ -213,6 +209,9 @@ with your API key, like:
 ### Completed Tasks Since Model-3.5 Released
 
 - [x] Working Testing GUI Verison Model (Other) - Unreleased Dev Build
+- [x] HUGE SECURITY UPDATE (Github)
+- [x] Update The README.md for Model-3.5 stuff (Github)
+- [x] Clean Up Source Code (Github)
 
 ## Videos
 | Info                            | Video |
