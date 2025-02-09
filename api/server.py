@@ -37,8 +37,7 @@ ALLOWED_DOMAINS = [
     "files.catbox.moe",
     "litter.catbox.moe",
     "s3.amazonaws.com",
-    "images2.imgbox.com",
-    "media-hosting.imagekit.io"
+    "images2.imgbox.com"
 ]
 
 def is_valid_url(url):
