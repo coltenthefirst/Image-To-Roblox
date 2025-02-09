@@ -258,6 +258,7 @@ For obtaining direct image urls, I recommended to use [Postimages.org](https://p
 - [pixhost.to](https://pixhost.to/) — Supports GIF uploads.
 - [catbox.moe](https://catbox.moe/) — Supports GIF uploads.
 - [litterbox.catbox.moe](https://litterbox.catbox.moe/) — Supports GIF uploads.
+- [endpot.com](https://i.endpot.com/) — Supports GIF uploads.
 
 #### Free, But Limited Functionality
 - **[snipboard.io](https://snipboard.io/)** — Does *not* support GIF uploads.
