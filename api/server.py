@@ -3,13 +3,12 @@ import requests
 from flask import Flask, request, jsonify
 from PIL import Image
 import subprocess
-import time
 
 app = Flask(__name__)
 
 INPUT_FOLDER = "/tmp/input"
 OUTPUT_FOLDER = "/tmp/output"
-SCRIPT_DIR = "."
+SCRIPT_DIR = "image-quality-processors"
 IMAGE_NAME = "image.png"
 GIF_NAME = "downloaded.gif"
 MAX_RETRIES = 5
@@ -23,7 +22,7 @@ SCRIPT_MAPPING = {
 }
 
 def save_image_from_url(image_url, image_path):
-    for attempt in range(MAX_RETRIES):
+    for _ in range(MAX_RETRIES):
         try:
             response = requests.get(image_url, timeout=10, verify=True)
             if response.status_code == 200:
