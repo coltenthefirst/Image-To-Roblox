@@ -72,11 +72,14 @@ def download_gif(gif_url, temp_folder):
 
     os.makedirs(temp_folder, exist_ok=True)
     gif_filename = os.path.join(temp_folder, GIF_NAME)
-    response = requests.get(gif_url, timeout=10, verify=True)
-    if response.status_code == 200:
-        with open(gif_filename, "wb") as f:
-            f.write(response.content)
-        return gif_filename
+    try:
+        response = requests.get(gif_url, timeout=10, verify=True)
+        if response.status_code == 200:
+            with open(gif_filename, "wb") as f:
+                f.write(response.content)
+            return gif_filename
+    except requests.exceptions.RequestException:
+        return None
     return None
 
 def extract_frames(gif_path, output_folder, fps="max"):
