@@ -3,6 +3,7 @@ import requests
 from flask import Flask, request, jsonify
 from PIL import Image
 import subprocess
+from urllib.parse import urlparse
 
 app = Flask(__name__)
 
@@ -21,7 +22,23 @@ SCRIPT_MAPPING = {
     'elow': 'extra-low.py',
 }
 
+ALLOWED_DOMAINS = ["trusted-domain.com"]
+
+def is_valid_url(url):
+    try:
+        result = urlparse(url)
+        return all([result.scheme, result.netloc])
+    except ValueError:
+        return False
+
+def is_allowed_domain(url):
+    domain = urlparse(url).netloc
+    return any(domain.endswith(allowed) for allowed in ALLOWED_DOMAINS)
+
 def save_image_from_url(image_url, image_path):
+    if not is_valid_url(image_url) or not is_allowed_domain(image_url):
+        return False
+
     for attempt in range(MAX_RETRIES):
         try:
             response = requests.get(image_url, timeout=10, verify=True)
@@ -50,6 +67,9 @@ def get_lua_script(output_file):
         return None
 
 def download_gif(gif_url, temp_folder):
+    if not is_valid_url(gif_url) or not is_allowed_domain(gif_url):
+        return None
+
     os.makedirs(temp_folder, exist_ok=True)
     gif_filename = os.path.join(temp_folder, GIF_NAME)
     response = requests.get(gif_url, timeout=10, verify=True)
@@ -64,14 +84,14 @@ def extract_frames(gif_path, output_folder, fps="max"):
     with Image.open(gif_path) as gif:
         total_frames = gif.n_frames
         frame_interval = 1 if fps == "max" else total_frames // int(fps) if fps != "max" else 1
-        
+
         frames = []
         for i in range(0, total_frames, frame_interval):
             gif.seek(i)
             frame_path = os.path.join(output_folder, f"frame_{i}.png")
             gif.save(frame_path, format="PNG")
             frames.append(frame_path)
-    
+
     return frames
 
 def upload_image_to_imgbb(api_key, image_path):
@@ -80,7 +100,7 @@ def upload_image_to_imgbb(api_key, image_path):
     with open(image_path, "rb") as image_file:
         files = {"image": image_file}
         response = requests.post(url, data=payload, files=files)
-    
+
     if response.status_code == 200:
         return response.json().get('data', {}).get('url')
     return None
@@ -109,7 +129,7 @@ def send_image():
 
     image_url = data['image_url']
     button_clicked = data['button_clicked']
-    
+
     os.makedirs(INPUT_FOLDER, exist_ok=True)
     image_path = os.path.join(INPUT_FOLDER, IMAGE_NAME)
 
@@ -121,7 +141,7 @@ def send_image():
 
     output_file = os.path.join(OUTPUT_FOLDER, IMAGE_NAME.replace('.png', '.lua'))
     os.makedirs(OUTPUT_FOLDER, exist_ok=True)
-    
+
     lua_script = get_lua_script(output_file)
     if lua_script:
         return jsonify({"status": "success", "lua_script": lua_script})
@@ -135,7 +155,7 @@ def send_gif():
 
     gif_url = data['gif_url']
     api_key = data['api_key']
-    
+
     uploaded_urls = process_and_upload_gif(api_key, gif_url, OUTPUT_FOLDER)
 
     if uploaded_urls:
