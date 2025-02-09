@@ -6,7 +6,7 @@
       "use": "@vercel/python"
     },
     {
-      "src": "image-quality-processors/**/*.py",
+      "src": "imagequalityprocessors/**/*.py",
       "use": "@vercel/python"
     }
   ],
