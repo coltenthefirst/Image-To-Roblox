@@ -55,10 +55,8 @@ def is_allowed_domain(url):
 def save_image_from_url(image_url, image_path):
     if not is_valid_url(image_url):
         return False, "Invalid URL format"
-    
     if not is_allowed_domain(image_url):
         return False, f"Invalid domain. Please use one of the following domains: {', '.join(ALLOWED_DOMAINS)}"
-    
     for attempt in range(MAX_RETRIES):
         try:
             response = requests.get(image_url, timeout=10, verify=True)
@@ -89,10 +87,8 @@ def get_lua_script(output_file):
 def download_gif(gif_url, temp_folder):
     if not is_valid_url(gif_url):
         return None, "Invalid URL format"
-    
     if not is_allowed_domain(gif_url):
         return None, f"Invalid domain. Please use one of the following domains: {', '.join(ALLOWED_DOMAINS)}"
-    
     os.makedirs(temp_folder, exist_ok=True)
     gif_filename = os.path.join(temp_folder, GIF_NAME)
     response = requests.get(gif_url, timeout=10, verify=True)
@@ -125,12 +121,7 @@ def upload_image_to_imgbb(api_key, image_path):
         return response.json().get('data', {}).get('url')
     return None
 
-def process_and_upload_gif(api_key, gif_url, output_folder, fps="max"):
-    temp_folder = "/tmp/processed_gif"
-    gif_path, message = download_gif(gif_url, temp_folder)
-    if not gif_path:
-        return [], message
-
+def process_and_upload_gif(api_key, gif_path, output_folder, fps="max"):
     frames = extract_frames(gif_path, output_folder, fps)
     uploaded_urls = [upload_image_to_imgbb(api_key, image_file) for image_file in frames]
     return [url for url in uploaded_urls if url], ""
@@ -146,19 +137,15 @@ def send_image():
     data = request.get_json()
     if not data or not data.get('image_url') or not data.get('button_clicked'):
         return jsonify({"status": "error", "message": "Missing image_url or button_clicked"}), 400
-    
     image_url = data['image_url']
     button_clicked = data['button_clicked']
     os.makedirs(INPUT_FOLDER, exist_ok=True)
     image_path = os.path.join(INPUT_FOLDER, IMAGE_NAME)
-    
     success, message = save_image_from_url(image_url, image_path)
     if not success:
         return jsonify({"status": "error", "message": message}), 400
-
     if not run_script(button_clicked):
         return jsonify({"status": "error", "message": "Error executing script for button " + button_clicked}), 500
-    
     output_file = os.path.join(OUTPUT_FOLDER, IMAGE_NAME.replace('.png', '.lua'))
     os.makedirs(OUTPUT_FOLDER, exist_ok=True)
     lua_script = get_lua_script(output_file)
@@ -171,22 +158,17 @@ def send_gif():
     data = request.get_json()
     if not data or not data.get('gif_url') or not data.get('api_key'):
         return jsonify({"status": "error", "message": "Missing gif_url or api_key"}), 400
-    
     gif_url = data['gif_url']
     api_key = data['api_key']
-    
     gif_path, message = download_gif(gif_url, "/tmp/processed_gif")
     if not gif_path:
         return jsonify({"status": "error", "message": message}), 400
-
-    uploaded_urls, message = process_and_upload_gif(api_key, gif_url, OUTPUT_FOLDER)
+    uploaded_urls, message = process_and_upload_gif(api_key, gif_path, OUTPUT_FOLDER)
     if not uploaded_urls:
         return jsonify({"status": "error", "message": message}), 400
-
     gif_sender_output = execute_gif_sender(uploaded_urls)
     if gif_sender_output:
         return jsonify({"status": "success", "uploaded_urls": uploaded_urls, "gif_sender_output": gif_sender_output})
-    
     return jsonify({"status": "error", "message": "Error executing gif-sender.py"}), 500
 
 if __name__ == '__main__':
