@@ -310,7 +310,7 @@ For obtaining direct image urls, I recommended to use [Postimages.org](https://p
 
 ##### -
 
-**Q: Why is the animation player not working? (Model-3)**
+**Q: Why is the animation player not working? (Model-3 and Higher)**
 ######
 **A:** Sometimes the api key can get rate limited and for it to work again, you would have to wait a hour. Or you can make another api key, delete the old one, and use the new one.
 
