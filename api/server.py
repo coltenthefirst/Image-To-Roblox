@@ -127,12 +127,13 @@ def upload_image_to_imgbb(api_key, image_path):
 
 def process_and_upload_gif(api_key, gif_url, output_folder, fps="max"):
     temp_folder = "/tmp/processed_gif"
-    gif_path = download_gif(gif_url, temp_folder)
+    gif_path, message = download_gif(gif_url, temp_folder)
     if not gif_path:
-        return []
+        return [], message
+
     frames = extract_frames(gif_path, output_folder, fps)
     uploaded_urls = [upload_image_to_imgbb(api_key, image_file) for image_file in frames]
-    return [url for url in uploaded_urls if url]
+    return [url for url in uploaded_urls if url], ""
 
 def execute_gif_sender(uploaded_urls):
     result = subprocess.run(['python3', 'gif-sender.py'] + uploaded_urls, capture_output=True, text=True)
@@ -178,14 +179,15 @@ def send_gif():
     if not gif_path:
         return jsonify({"status": "error", "message": message}), 400
 
-    uploaded_urls = process_and_upload_gif(api_key, gif_url, OUTPUT_FOLDER)
-    if uploaded_urls:
-        gif_sender_output = execute_gif_sender(uploaded_urls)
-        if gif_sender_output:
-            return jsonify({"status": "success", "uploaded_urls": uploaded_urls, "gif_sender_output": gif_sender_output})
-        return jsonify({"status": "error", "message": "Error executing gif-sender.py"}), 500
+    uploaded_urls, message = process_and_upload_gif(api_key, gif_url, OUTPUT_FOLDER)
+    if not uploaded_urls:
+        return jsonify({"status": "error", "message": message}), 400
+
+    gif_sender_output = execute_gif_sender(uploaded_urls)
+    if gif_sender_output:
+        return jsonify({"status": "success", "uploaded_urls": uploaded_urls, "gif_sender_output": gif_sender_output})
     
-    return jsonify({"status": "error", "message": "Failed to process and upload GIF frames"}), 500
+    return jsonify({"status": "error", "message": "Error executing gif-sender.py"}), 500
 
 if __name__ == '__main__':
     port = int(os.environ.get("PORT", 5000))
