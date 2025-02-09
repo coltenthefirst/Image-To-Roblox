@@ -133,6 +133,9 @@ def send_image():
     image_url = data['image_url']
     button_clicked = data['button_clicked']
 
+    if not is_valid_url(image_url) or not is_allowed_domain(image_url):
+        return jsonify({"status": "error", "message": "Invalid or disallowed image URL"}), 400
+
     os.makedirs(INPUT_FOLDER, exist_ok=True)
     image_path = os.path.join(INPUT_FOLDER, IMAGE_NAME)
 
