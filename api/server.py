@@ -22,7 +22,7 @@ SCRIPT_MAPPING = {
 }
 
 def save_image_from_url(image_url, image_path):
-    for _ in range(MAX_RETRIES):
+    for attempt in range(MAX_RETRIES):
         try:
             response = requests.get(image_url, timeout=10, verify=True)
             if response.status_code == 200:
