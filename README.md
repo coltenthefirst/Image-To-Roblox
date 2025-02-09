@@ -299,13 +299,13 @@ For obtaining direct image urls, I recommended to use [Postimages.org](https://p
 
 ##### -
 
-**Q:Why does the game not process my chosen image hosting service?**
+**Q:Why does the game not process my chosen image hosting service? (Other)**
 ######
 **A:** Either 1. The image hosting service you use is not on the allow list, or 2. The image hosting service's direct links don't work properly. Check this README for the allowed image hosting services. You can also make a issue so I could test out and add that image hoster to the allow list.
 
 ##### -
 
-**Q:Why does the game have a website domain allow list?**
+**Q:Why does the game have a website domain allow list? (Other/Github)**
 ######
 **A:** The reason why it has a allow list is because of security. I don't want this vulnerable to attacks, and url links would be a easy attack.
 
