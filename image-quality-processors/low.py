@@ -1,6 +1,13 @@
 import os
 import time
-from PIL import Image
+try:
+    from PIL import Image
+except ModuleNotFoundError:
+    import subprocess
+    result = subprocess.run(["python3", "-m", "pip", "install", "--no-cache-dir", "Pillow"], capture_output=True, text=True)
+    print(result.stdout)
+    print(result.stderr)
+    from PIL import Image
 
 factor = 12.8
 rate = 200
