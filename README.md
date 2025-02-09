@@ -89,6 +89,9 @@ limitations under the License.
 > [!WARNING]
 > This project is AGAINST the Terms of Services of Roblox! Usage is on YOUR risk. This doesn't have a filter so nsfw material can be generated.
 
+> [!WARNING]
+> Sometimes this can go down and stop working due to me updating and testing new features in the source code. This doesn't happen as often, but its worth knowing.
+
 > [!IMPORTANT]  
 > Model-4 might be the last ever Model I will do for this project. Besides bug fix updates and the GUI Version.
 
