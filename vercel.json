@@ -4,10 +4,6 @@
     {
       "src": "api/server.py",
       "use": "@vercel/python"
-    },
-    {
-      "src": "imagequalityprocessors/**/*.py",
-      "use": "@vercel/python"
     }
   ],
   "routes": [
