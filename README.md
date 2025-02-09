@@ -259,6 +259,7 @@ For obtaining direct image urls, I recommended to use [Postimages.org](https://p
 - [catbox.moe](https://catbox.moe/) — Supports GIF uploads.
 - [litterbox.catbox.moe](https://litterbox.catbox.moe/) — Supports GIF uploads.
 - [endpot.com](https://i.endpot.com/) — Supports GIF uploads.
+- [dc.missuo.ru](https://dc.missuo.ru/) — Supports GIF uploads.
 
 #### Free, But Limited Functionality
 - **[snipboard.io](https://snipboard.io/)** — Does *not* support GIF uploads.
