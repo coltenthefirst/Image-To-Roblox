@@ -33,7 +33,7 @@ def is_valid_url(url):
 
 def is_allowed_domain(url):
     domain = urlparse(url).netloc
-    return any(domain.endswith(allowed) for allowed in ALLOWED_DOMAINS)
+    return any(domain == allowed or domain.endswith('.' + allowed) for allowed in ALLOWED_DOMAINS)
 
 def save_image_from_url(image_url, image_path):
     if not is_valid_url(image_url) or not is_allowed_domain(image_url):
