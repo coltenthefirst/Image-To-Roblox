@@ -33,7 +33,7 @@ def is_valid_url(url):
 
 def is_allowed_domain(url):
     domain = urlparse(url).netloc
-    return any(domain == allowed or domain.endswith('.' + allowed) for allowed in ALLOWED_DOMAINS)
+    return any(domain.endswith(allowed) for allowed in ALLOWED_DOMAINS)
 
 def save_image_from_url(image_url, image_path):
     if not is_valid_url(image_url) or not is_allowed_domain(image_url):
@@ -72,14 +72,11 @@ def download_gif(gif_url, temp_folder):
 
     os.makedirs(temp_folder, exist_ok=True)
     gif_filename = os.path.join(temp_folder, GIF_NAME)
-    try:
-        response = requests.get(gif_url, timeout=10, verify=True)
-        if response.status_code == 200:
-            with open(gif_filename, "wb") as f:
-                f.write(response.content)
-            return gif_filename
-    except requests.exceptions.RequestException:
-        return None
+    response = requests.get(gif_url, timeout=10, verify=True)
+    if response.status_code == 200:
+        with open(gif_filename, "wb") as f:
+            f.write(response.content)
+        return gif_filename
     return None
 
 def extract_frames(gif_path, output_folder, fps="max"):
@@ -132,9 +129,6 @@ def send_image():
 
     image_url = data['image_url']
     button_clicked = data['button_clicked']
-
-    if not is_valid_url(image_url) or not is_allowed_domain(image_url):
-        return jsonify({"status": "error", "message": "Invalid or disallowed image URL"}), 400
 
     os.makedirs(INPUT_FOLDER, exist_ok=True)
     image_path = os.path.join(INPUT_FOLDER, IMAGE_NAME)
