@@ -248,9 +248,7 @@ For obtaining direct image urls, I recommended to use [Postimages.org](https://p
 - **[Postimages.org](https://postimages.org/)** — *Highly recommended*. Supports GIF uploads.
 - **[imgbb.com](https://imgbb.com/)** — *Highly recommended*. Supports GIF uploads.
 - [imghippo.com](https://imghippo.com/) — Supports GIF uploads.
-  
-- ~~[imgbox.com](https://imgbox.com/) — Supports GIF uploads.~~     ***(Website no longer works)***
-
+- [imgbox.com](https://imgbox.com/) — Supports GIF uploads.
 - [lunapic.com](https://www7.lunapic.com/editor/?action=quick-upload) — Supports GIF uploads.
 - [imagevenue.com](https://www.imagevenue.com/) — Supports GIF uploads.
 - [pictr.com](https://pictr.com/upload) — Supports GIF uploads.
