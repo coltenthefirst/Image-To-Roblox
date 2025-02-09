@@ -52,8 +52,12 @@ def is_allowed_domain(url):
     return any(domain.endswith(allowed) for allowed in ALLOWED_DOMAINS)
 
 def save_image_from_url(image_url, image_path):
-    if not is_valid_url(image_url) or not is_allowed_domain(image_url):
-        return False
+    if not is_valid_url(image_url):
+        return False, "Invalid URL format"
+    
+    if not is_allowed_domain(image_url):
+        return False, f"Invalid domain. Please use one of the following domains: {', '.join(ALLOWED_DOMAINS)}"
+    
     for attempt in range(MAX_RETRIES):
         try:
             response = requests.get(image_url, timeout=10, verify=True)
@@ -61,10 +65,10 @@ def save_image_from_url(image_url, image_path):
                 os.makedirs(os.path.dirname(image_path), exist_ok=True)
                 with open(image_path, 'wb') as f:
                     f.write(response.content)
-                return True
+                return True, ""
         except requests.exceptions.RequestException:
             continue
-    return False
+    return False, "Failed to download image"
 
 def run_script(button_clicked):
     selected_script = SCRIPT_MAPPING.get(button_clicked)
@@ -82,16 +86,20 @@ def get_lua_script(output_file):
         return None
 
 def download_gif(gif_url, temp_folder):
-    if not is_valid_url(gif_url) or not is_allowed_domain(gif_url):
-        return None
+    if not is_valid_url(gif_url):
+        return None, "Invalid URL format"
+    
+    if not is_allowed_domain(gif_url):
+        return None, f"Invalid domain. Please use one of the following domains: {', '.join(ALLOWED_DOMAINS)}"
+    
     os.makedirs(temp_folder, exist_ok=True)
     gif_filename = os.path.join(temp_folder, GIF_NAME)
     response = requests.get(gif_url, timeout=10, verify=True)
     if response.status_code == 200:
         with open(gif_filename, "wb") as f:
             f.write(response.content)
-        return gif_filename
-    return None
+        return gif_filename, ""
+    return None, "Failed to download GIF"
 
 def extract_frames(gif_path, output_folder, fps="max"):
     os.makedirs(output_folder, exist_ok=True)
@@ -136,14 +144,19 @@ def send_image():
     data = request.get_json()
     if not data or not data.get('image_url') or not data.get('button_clicked'):
         return jsonify({"status": "error", "message": "Missing image_url or button_clicked"}), 400
+    
     image_url = data['image_url']
     button_clicked = data['button_clicked']
     os.makedirs(INPUT_FOLDER, exist_ok=True)
     image_path = os.path.join(INPUT_FOLDER, IMAGE_NAME)
-    if not save_image_from_url(image_url, image_path):
-        return jsonify({"status": "error", "message": "Failed to download image"}), 400
+    
+    success, message = save_image_from_url(image_url, image_path)
+    if not success:
+        return jsonify({"status": "error", "message": message}), 400
+
     if not run_script(button_clicked):
         return jsonify({"status": "error", "message": "Error executing script for button " + button_clicked}), 500
+    
     output_file = os.path.join(OUTPUT_FOLDER, IMAGE_NAME.replace('.png', '.lua'))
     os.makedirs(OUTPUT_FOLDER, exist_ok=True)
     lua_script = get_lua_script(output_file)
@@ -156,14 +169,21 @@ def send_gif():
     data = request.get_json()
     if not data or not data.get('gif_url') or not data.get('api_key'):
         return jsonify({"status": "error", "message": "Missing gif_url or api_key"}), 400
+    
     gif_url = data['gif_url']
     api_key = data['api_key']
+    
+    gif_path, message = download_gif(gif_url, "/tmp/processed_gif")
+    if not gif_path:
+        return jsonify({"status": "error", "message": message}), 400
+
     uploaded_urls = process_and_upload_gif(api_key, gif_url, OUTPUT_FOLDER)
     if uploaded_urls:
         gif_sender_output = execute_gif_sender(uploaded_urls)
         if gif_sender_output:
             return jsonify({"status": "success", "uploaded_urls": uploaded_urls, "gif_sender_output": gif_sender_output})
         return jsonify({"status": "error", "message": "Error executing gif-sender.py"}), 500
+    
     return jsonify({"status": "error", "message": "Failed to process and upload GIF frames"}), 500
 
 if __name__ == '__main__':
