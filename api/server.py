@@ -22,7 +22,22 @@ SCRIPT_MAPPING = {
     'elow': 'extra-low.py',
 }
 
-ALLOWED_DOMAINS = ["trusted-domain.com"]
+ALLOWED_DOMAINS = [
+    "i.postimg.cc",
+    "i.ibb.co",
+    "i.imghippo.com",
+    "www2.lunapic.com",
+    "cdn-images.imagevenue.com",
+    "pictr.com",
+    "images4.imagebam.com",
+    "imgbly.com",
+    "picsur.org",
+    "img86.pixhost.to",
+    "files.catbox.moe",
+    "litter.catbox.moe",
+    "s3.amazonaws.com",
+    "images2.imgbox.com"
+]
 
 def is_valid_url(url):
     try:
