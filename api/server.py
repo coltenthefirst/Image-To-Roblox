@@ -23,7 +23,9 @@ SCRIPT_MAPPING = {
     'elow': 'extra-low.py',
 }
 
-ALLOWED_DOMAINS = [
+CHECK_ALLOWED_DOMAINS = True  # I set this to false for testing domains. You can set this to false for your project if you want.
+
+ALLOWED_DOMAINS = [ # This is the list of the allowed direct link domains thing. pluh.
     "i.postimg.cc",
     "i.ibb.co",
     "i.imghippo.com",
@@ -52,6 +54,8 @@ def is_valid_url(url):
         return False
 
 def is_allowed_domain(url):
+    if not CHECK_ALLOWED_DOMAINS:
+        return True
     domain = urlparse(url).netloc
     return any(domain.endswith(allowed) for allowed in ALLOWED_DOMAINS)
 
