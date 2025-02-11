@@ -247,7 +247,7 @@ For obtaining direct image urls, I recommended to use [Postimages.org](https://p
 
 ## Tested Image Services
 ### ✅ Recommended (Works)
-#### Free, No Account Needed
+#### Free, No Account Needed:
 - **[Postimages.org](https://postimages.org/)** — *Highly recommended*. Supports GIF uploads.
 - **[imgbb.com](https://imgbb.com/)** — *Highly recommended*. Supports GIF uploads.
 - [imghippo.com](https://imghippo.com/) — Supports GIF uploads.
@@ -266,16 +266,16 @@ For obtaining direct image urls, I recommended to use [Postimages.org](https://p
 - [gifyu.com](https://gifyu.com/) — Supports GIF uploads.
 - [freeimage.host](https://freeimage.host/) — Supports GIF uploads.
 
-#### Free, But Limited Functionality
+#### Free, But Limited Functionality:
 - **[snipboard.io](https://snipboard.io/)** — Does *not* support GIF uploads.
 - **[paste.pics](https://paste.pics/)** — Does *not* support GIF uploads.
+- **[imghostr.com](https://imghostr.com/)** — Does *not* support GIF uploads.
 
 ### ❌ Not Recommended (Does Not Work)
 
 - [i.imgur.com](https://i.imgur.com/) — Direct Links Are Broken
 - [prnt.sc](https://prnt.sc/) — Direct Links Are Broken
 - [dropbox.com](https://www.dropbox.com/) — Direct Links Are Broken
-- [imghostr.com](https://imghostr.com/) — Direct Links Are Broken
 
 
 ## FAQ
