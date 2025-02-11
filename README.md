@@ -264,6 +264,7 @@ For obtaining direct image urls, I recommended to use [Postimages.org](https://p
 - [endpot.com](https://i.endpot.com/) — Supports GIF uploads.
 - [dc.missuo.ru](https://dc.missuo.ru/) — Supports GIF uploads.
 - [gifyu.com](https://gifyu.com/) — Supports GIF uploads.
+- [freeimage.host](https://freeimage.host/) — Supports GIF uploads.
 
 #### Free, But Limited Functionality
 - **[snipboard.io](https://snipboard.io/)** — Does *not* support GIF uploads.
@@ -273,7 +274,6 @@ For obtaining direct image urls, I recommended to use [Postimages.org](https://p
 
 - [i.imgur.com](https://i.imgur.com/) — Direct Links Are Broken
 - [prnt.sc](https://prnt.sc/) — Direct Links Are Broken
-- [freeimage.host](https://freeimage.host/) — Direct Links Are Broken
 - [dropbox.com](https://www.dropbox.com/) — Direct Links Are Broken
 - [imghostr.com](https://imghostr.com/) — Direct Links Are Broken
 - [imagekit.io](https://imagekit.io/) — Direct Links Are Broken
