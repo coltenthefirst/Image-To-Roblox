@@ -274,7 +274,7 @@ For obtaining direct image urls, I recommended to use [Postimages.org](https://p
 ### ❌ Not Recommended (Does Not Work)
 
 - [i.imgur.com](https://i.imgur.com/) — Direct Links Are Broken
-- [prnt.sc](https://prnt.sc/) — Direct Links Are Broken (THE OWNER BANNED MY IP ADDRESS BECAUSE OF A BUG 😭)
+- [prnt.sc](https://prnt.sc/) — Direct Links Are Broken **(THE OWNER BANNED MY IP ADDRESS BECAUSE OF A BUG 😭)**
 - [dropbox.com](https://www.dropbox.com/) — Direct Links Are Broken
 
 
