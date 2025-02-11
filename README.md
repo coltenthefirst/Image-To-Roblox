@@ -252,8 +252,8 @@ For obtaining direct image urls, I recommended to use [Postimages.org](https://p
 ### ✅ Recommended (Works)
 #### Free, No Account Needed:
 - **[Postimages.org](https://postimages.org/)** — *Highly recommended*. Supports GIF uploads.
-- **[imgbb.com](https://imgbb.com/)** — *Highly recommended*. Supports GIF uploads.
-- [imghippo.com](https://imghippo.com/) — Supports GIF uploads.
+- **[imgbb.com](https://imgbb.com/)** — *Highly recommended*. Supports GIF uploads. (API Key Provider For /send_gif)
+- [imghippo.com](https://imghippo.com/) — Supports GIF uploads. (API Key Service Provider)
 - [imgbox.com](https://imgbox.com/) — Supports GIF uploads.
 - [lunapic.com](https://www7.lunapic.com/editor/?action=quick-upload) — Supports GIF uploads.
 - [imagevenue.com](https://www.imagevenue.com/) — Supports GIF uploads.
