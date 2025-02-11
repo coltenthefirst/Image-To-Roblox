@@ -276,7 +276,6 @@ For obtaining direct image urls, I recommended to use [Postimages.org](https://p
 - [prnt.sc](https://prnt.sc/) — Direct Links Are Broken
 - [dropbox.com](https://www.dropbox.com/) — Direct Links Are Broken
 - [imghostr.com](https://imghostr.com/) — Direct Links Are Broken
-- [imagekit.io](https://imagekit.io/) — Direct Links Are Broken
 
 
 ## FAQ
