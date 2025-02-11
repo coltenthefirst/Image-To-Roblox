@@ -329,7 +329,7 @@ For obtaining direct image urls, I recommended to use [Postimages.org](https://p
 
 **Q: Why should I not use Model-3? (Model-3)**
 ######
-**A:** The way I stored the API key for the gif processor, made the API key REALLY VULNERABLE and EASY for exploiters (aka **"hackers"**)** to get ahold of. I recommend you use Model-3.5 since it solves Model-3's issues. Or a later Model.
+**A:** The way I stored the API key for the gif processor, made the API key REALLY VULNERABLE and EASY for exploiters (aka **"hackers"**) to get ahold of. I recommend you use Model-3.5 since it solves Model-3's issues. Or a later Model.
 
 ##### -
 
