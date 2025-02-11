@@ -61,13 +61,16 @@ limitations under the License.
     ~ Made with Lua, Python, Flask, and Vercel! ~
 </h6>
 
-
 <h6 align="center">
     Python Version: 3.12
 </h6>
 
 <h6 align="center">
     Vercel Plan: Hobby (100% Free Plan)
+</h6>
+
+<h6 align="center">
+    Repository Size: 36.51 KB
 </h6>
 
 <br>
