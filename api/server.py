@@ -39,7 +39,9 @@ ALLOWED_DOMAINS = [
     "s3.amazonaws.com",
     "images2.imgbox.com",
     "i.endpot.com",
-    "dc.missuo.ru"
+    "dc.missuo.ru",
+    "s3.gifyu.com",
+    "i2.paste.pics"
 ]
 
 def is_valid_url(url):
