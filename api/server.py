@@ -43,7 +43,8 @@ ALLOWED_DOMAINS = [ # This is the list of the allowed direct link domains thing.
     "i.endpot.com",
     "dc.missuo.ru",
     "s3.gifyu.com",
-    "i2.paste.pics"
+    "i2.paste.pics",
+    "s6.imgcdn.dev"
 ]
 
 def is_valid_url(url):
