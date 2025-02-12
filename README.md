@@ -14,7 +14,8 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-### NOTE! I will not release another model for February. I will post a teaser and work on this README more.
+### ~~NOTE! I will not release another model for February. I will post a teaser and work on this README more.~~
+### There has been some change of plans. A Model WILL release :D
 
 <p align="center">
   <img alt="asset" src="https://cdn.vectorstock.com/i/500p/16/54/checkerboard-black-and-white-background-vector-33401654.jpg" width="5000" height="10" style="max-width: 100%;">
