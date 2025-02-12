@@ -2,6 +2,7 @@ from flask import Flask, request, jsonify
 from flask_cors import CORS
 from PIL import Image, UnidentifiedImageError
 import requests
+import os
 
 app = Flask(__name__)
 CORS(app)
@@ -14,6 +15,9 @@ RESIZE_MAPPINGS = {
     "high": (120, 120),
     "mid": (60, 60),
 }
+
+IMAGE_DIR = "/tmp/input"
+os.makedirs(IMAGE_DIR, exist_ok=True)
 
 @app.route('/gui_send_image', methods=['POST'])
 def process_image():
@@ -34,7 +38,7 @@ def process_image():
         if image_response.status_code != 200:
             return jsonify({'status': 'error', 'message': 'Failed to download the image'}), 400
 
-        image_path = 'downloaded_image.png'
+        image_path = os.path.join(IMAGE_DIR, "downloaded_image.png")
         with open(image_path, 'wb') as f:
             f.write(image_response.content)
 
@@ -68,20 +72,20 @@ def process_image():
 
                     clamped_rgb = tuple(min(255, max(0, value)) for value in rgb)
                     row += f"<stroke color=\"rgb{clamped_rgb}\"><font color=\"rgb{clamped_rgb}\">■</font></stroke>"
-                except Exception as e:
+                except Exception:
                     row += "<stroke color=\"rgb(0,0,0)\"><font color=\"rgb(0,0,0)\">■</font></stroke>"
             lines_to_send.append(row)
 
         return jsonify({
             'status': 'success',
-            'message': 'Image processed and file created',
+            'message': 'Image processed and saved to /tmp/input',
+            'image_path': image_path,
             'output_file': 'Result.lua',
             'lines': lines_to_send
         })
 
     except Exception as e:
         return jsonify({'status': 'error', 'message': str(e)}), 500
-
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5015)
