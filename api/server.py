@@ -23,7 +23,7 @@ SCRIPT_MAPPING = {
     'elow': 'extra-low.py',
 }
 
-CHECK_ALLOWED_DOMAINS = False # I set this to false for testing domains. You can set this to false for your project if you want.
+CHECK_ALLOWED_DOMAINS = True # I set this to false for testing domains. You can set this to false for your project if you want.
 
 ALLOWED_DOMAINS = [ # This is the list of the allowed direct link domains thing. pluh.
     "i.postimg.cc",
@@ -44,7 +44,8 @@ ALLOWED_DOMAINS = [ # This is the list of the allowed direct link domains thing.
     "dc.missuo.ru",
     "s3.gifyu.com",
     "i2.paste.pics",
-    "s6.imgcdn.dev"
+    "s6.imgcdn.dev",
+    "docs.google.com"
 ]
 
 def is_valid_url(url):
