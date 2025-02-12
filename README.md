@@ -268,6 +268,7 @@ For obtaining direct image urls, I recommended to use [Postimages.org](https://p
 - [dc.missuo.ru](https://dc.missuo.ru/) — Supports GIF uploads.
 - [gifyu.com](https://gifyu.com/) — Supports GIF uploads.
 - [freeimage.host](https://freeimage.host/) — Supports GIF uploads.
+- [imgcdn.dev](https://imgcdn.dev/) — Supports GIF uploads.
 
 #### Free, But Limited Functionality:
 - **[snipboard.io](https://snipboard.io/)** — Does *not* support GIF uploads.
