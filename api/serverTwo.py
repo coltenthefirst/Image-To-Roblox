@@ -15,7 +15,7 @@ RESIZE_MAPPINGS = {
     "mid": (60, 60),
 }
 
-@app.route('/process_image', methods=['POST'])
+@app.route('/gui_send_image', methods=['POST'])
 def process_image():
     try:
         data = request.json
