@@ -18,7 +18,6 @@ GIF_NAME = "downloaded.gif"
 MAX_RETRIES = 5
 
 RESIZE_MAPPINGS = {
-    "test": (350, 350),
     "elow": (15, 15),
     "ehigh": (240, 240),
     "low": (30, 30),
