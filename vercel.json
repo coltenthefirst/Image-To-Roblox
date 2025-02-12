@@ -4,12 +4,20 @@
     {
       "src": "api/server.py",
       "use": "@vercel/python"
+    },
+    {
+      "src": "api/serverTwo.py",
+      "use": "@vercel/python"
     }
   ],
   "routes": [
     {
-      "src": "/(.*)",
+      "src": "/server1/(.*)",
       "dest": "api/server.py"
+    },
+    {
+      "src": "/server2/(.*)",
+      "dest": "api/serverTwo.py"
     }
   ]
 }
