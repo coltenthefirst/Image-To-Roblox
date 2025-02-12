@@ -12,11 +12,11 @@
   ],
   "routes": [
     {
-      "src": "/server1/(.*)",
+      "src": "/server1",
       "dest": "api/server.py"
     },
     {
-      "src": "/server2/(.*)",
+      "src": "/server2",
       "dest": "api/serverTwo.py"
     }
   ]
