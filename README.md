@@ -107,8 +107,16 @@ limitations under the License.
 
 ### If you use Model-2. Please read this: [fix](https://github.com/coltenthefirst/image-to-roblox/issues/5)
 
-## I would highly love to credit Netpex for the original script!
-https://devforum.roblox.com/t/converting-image-to-parts-python/2713248
+***
+## I would highly love to credit Netpex, Dallin, and 3xq for the original scripts!
+https://devforum.roblox.com/t/converting-image-to-parts-python/2713248 **(Original Python Script Without Flask)**
+
+https://github.com/3xq/image_bypasser **(Original Python Script Without Flask)**
+
+https://discordlookup.com/user/915329055174307850 **(Original Flask Scripts - My Best Friend btw)**
+
+**I just maintain this project and I work on the Roblox code. Dallin made the original scripts that worked on your local computer and connected to my Roblox code with http in Roblox Studio.**
+***
 
 ## Introduction
 
