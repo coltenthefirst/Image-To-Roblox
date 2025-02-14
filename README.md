@@ -14,9 +14,6 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-### ~~NOTE! I will not release another model for February. I will post a teaser and work on this README more.~~
-### There has been some change of plans. A Model WILL release :D
-
 <p align="center">
   <img alt="asset" src="https://cdn.vectorstock.com/i/500p/16/54/checkerboard-black-and-white-background-vector-33401654.jpg" width="5000" height="10" style="max-width: 100%;">
   <br/>
@@ -55,7 +52,7 @@ limitations under the License.
 </p>
 
 <h1 align="center">
-    Images To Roblox Parts (Current: Model-3.5)
+    Images To Roblox Parts (Current: Model-3.5/Model-1G)
 </h1>
 
 <h6 align="center">
@@ -191,9 +188,8 @@ with your API key, like:
     ~ EXPECT THESE TO CHANGE!!! ~
 </h6>
 
-### Current Tasks (IN ORDER) - Model-3.7/Model-G1/Other Planned
-- [ ] Full GUI Verison (Model-1G)
-- [ ] Add The Automatic Frame By Frame Animation Player to the GUI Version (Model-2G or 1G if I have enough time.)
+### Current Tasks (IN ORDER) - Model-3.7/Model-G2/Other Planned
+- [ ] Add The Automatic Frame By Frame Animation Player to the GUI Version (Model-2G)
 - [ ] Add More Image Options for the Cilent-Side (Model-3.7)
 - [ ] Update The Website (Other)
 
@@ -220,13 +216,12 @@ with your API key, like:
 - [x] Fix vulnerabilitys (Model-4)
 - [x] Fix Part deletion for the Server-Side (Model-4)
 - [x] Cut off Part generation on the Server-Side (Model-4)
+- [x] Full GUI Model (Model-1G)
 
-### Completed Tasks Since Model-3.5 Released
+### Completed Tasks Since Model-3.5/Model-1G Released
 
-- [x] Working Testing GUI Verison Model (Other) - Unreleased Dev Build
-- [x] HUGE SECURITY UPDATE (Github)
-- [x] Update The README.md for Model-3.5 stuff (Github)
-- [x] Clean Up Source Code (Github)
+- [ ] x (x)
+
 
 ## Videos
 | Info                            | Video |
@@ -239,6 +234,7 @@ with your API key, like:
 | Name                            | Link |
 |------------------------------------|--------|
 | Img To Rbx (Demo): |[Img To Rbx Demo Roblox Link](https://www.roblox.com/games/131711989085615/Img-To-Rbx-Demo)|
+| Img To Roblox - GUI Version (Demo): |[Img To Roblox - GUI Version (Demo) Roblox Link](https://www.roblox.com/games/99939943838127/Img-To-Roblox-GUI-Version-Demo)|
 
 <!--
 | Create Your Dreams: |[Create Your Dreams Roblox Link](https://www.roblox.com/games/128560311364952/Create-Your-Dreams) OUTDATED|
@@ -252,6 +248,8 @@ You can download the place files here:
 | Update 2/Model-2: |[Google Drive Link](https://drive.google.com/file/d/1GUnPJWO0sX8VsMysFi1eTUbYXyJKcshk/view?usp=sharing)|
 | Update 3/Model-3 - (⚠️ DO NOT USE! ⚠️): |[Google Drive Link](https://drive.google.com/file/d/17ZLL6-GvSCIvHV76Q4nytUkpEa8sWtXW/view?usp=sharing)|
 | Update 4/Model-3.5: |[Google Drive Link](https://drive.google.com/file/d/1YXN_ACZsuZWUorV84D2IoJtSqGu3a7w1/view?usp=sharing)|
+| | |
+| Update 1/Model-1G: |[Google Drive Link](https://drive.google.com/file/d/1Yga1RLW9s6LPJNklf5HJWv4d5AnU_YqU/view?usp=sharing)|
 
 
 ## Uploading Custom Images
