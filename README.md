@@ -216,7 +216,11 @@ with your API key, like:
 - [x] Fix vulnerabilitys (Model-4)
 - [x] Fix Part deletion for the Server-Side (Model-4)
 - [x] Cut off Part generation on the Server-Side (Model-4)
+- [x] Working Testing GUI Verison Model (Other) - Unreleased Dev Build
 - [x] Full GUI Model (Model-1G)
+- [x] HUGE SECURITY UPDATE (Github)
+- [x] Update The README.md for Model-3.5 stuff (Github)
+- [x] Clean Up Source Code (Github)
 
 ### Completed Tasks Since Model-3.5/Model-1G Released
 
