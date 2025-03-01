@@ -10,7 +10,8 @@ These models/servers are currently being supported or not with security updates.
 | Model-2F | ❌ Discontinued But Fully Functional (**Latest**) |
 | Model-3F (Source Code In Archive Commit History) | ⚠️ NOT FUNCTIONAL ⚠️ |
 |  |  |
-| Model-0.5G (DEV BUILD) | ✅ Not Released Tho (**Latest**) |
+| Model-0.5G (DEV BUILD) | ⚠️ HIGHLY Outdated ⚠️ - Never Released Tho |
+| Model-1G | ✅ Updated (**Latest**) |
 |  |  |
 | Model-0.25 (Netpexs Original Version)| ✅ Shown in the Model-2 Showcase Vid |
 | Model-0.5 (DEV BUILD)| ⚠️ HIGHLY Outdated ⚠️ - Never Released Tho |
