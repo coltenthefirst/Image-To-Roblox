@@ -215,9 +215,9 @@ with your API key, like:
 - [x] Fix Other Bugs (Github/Model-3)
 - [x] Updated README.md #2 (Github)
 - [x] Boring Website (Other)
-- [x] Fix vulnerabilitys (Model-4)
-- [x] Fix Part deletion for the Server-Side (Model-4)
-- [x] Cut off Part generation on the Server-Side (Model-4)
+- [x] Fix vulnerabilitys (Model-3.5)
+- [x] Fix Part deletion for the Server-Side (Model-3.5)
+- [x] Cut off Part generation on the Server-Side (Model-3.5)
 - [x] Working Testing GUI Verison Model (Other) - Unreleased Dev Build
 - [x] Full GUI Model (Model-1G)
 - [x] HUGE SECURITY UPDATE (Github)
