@@ -122,6 +122,14 @@ https://discordlookup.com/user/915329055174307850 **(Original Flask Scripts - My
 This repository contains the backend source code for the **Image To Parts** Roblox Game. This tool allows users to convert image URLs into parts within Roblox. Users are free to use the files provided in this repository for their own purposes.
 
 ## How It Works
+
+
+<p align="center">
+  <img alt="Images To Roblox Parts" src="https://github.com/user-attachments/assets/9b33af71-d1ed-48ff-b5c4-26e5650dab77" width="733" height="422" style="max-width: 100%;">
+  <br/>
+  <br/>
+</p>
+
 Here’s a overview of the process:
 1. Input an image URL and select a quality setting (such as mid, high, low, extra low).
 2. The image URL and selected quality are sent to **Vercel**.
