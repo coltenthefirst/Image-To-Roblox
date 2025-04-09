@@ -7,6 +7,7 @@ import subprocess
 import time
 from urllib.parse import urlparse
 import logging
+import socket
 
 app = Flask(__name__)
 CORS(app)
@@ -94,6 +95,17 @@ def save_image_from_url(image_url, image_path):
             continue
     return False, "Failed to download image"
 
+def is_safe_ip(url):
+    try:
+        hostname = urlparse(url).hostname
+        ip_address = socket.gethostbyname(hostname)
+        # Check if the IP address is private
+        if ip_address.startswith("10.") or ip_address.startswith("172.") or ip_address.startswith("192.168."):
+            return False
+        return True
+    except Exception:
+        return False
+
 def run_script(button_clicked):
     selected_script = SCRIPT_MAPPING.get(button_clicked)
     if selected_script:
@@ -114,6 +126,8 @@ def download_gif(gif_url, temp_folder):
         return None, "Invalid URL format"
     if not is_allowed_domain(gif_url):
         return None, f"Invalid domain. Please use one of the following domains: {', '.join(ALLOWED_DOMAINS)}"
+    if not is_safe_ip(gif_url):
+        return None, "URL resolves to an unsafe IP address"
     os.makedirs(temp_folder, exist_ok=True)
     gif_filename = os.path.join(temp_folder, GIF_NAME)
     response = requests.get(gif_url, timeout=10, verify=True)
