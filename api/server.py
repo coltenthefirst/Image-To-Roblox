@@ -8,6 +8,8 @@ import time
 from urllib.parse import urlparse
 import logging
 import socket
+from urllib.parse import urlparse
+import ipaddress
 
 app = Flask(__name__)
 CORS(app)
@@ -188,8 +190,8 @@ def process_image():
 
         allowed_domains = ["example.com", "anotherdomain.com"]
         parsed_url = urlparse(image_url)
-        if parsed_url.netloc not in allowed_domains:
-            return jsonify({'status': 'error', 'message': 'Domain not allowed'}), 400
+        if parsed_url.netloc not in allowed_domains or not is_public_ip(parsed_url.netloc):
+            return jsonify({'status': 'error', 'message': 'Domain not allowed or IP is not public'}), 400
 
         image_response = requests.get(image_url)
         if image_response.status_code != 200:
@@ -245,6 +247,13 @@ def process_image():
         logging.error("Error processing image: %s", str(e))
         return jsonify({'status': 'error', 'message': 'An internal error has occurred.'}), 500
 
+def is_public_ip(domain):
+    try:
+        ip = socket.gethostbyname(domain)
+        ip_obj = ipaddress.ip_address(ip)
+        return ip_obj.is_global
+    except Exception:
+        return False
 
 @app.route('/send_image', methods=['POST'])
 def send_image():
