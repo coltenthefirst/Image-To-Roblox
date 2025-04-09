@@ -6,9 +6,12 @@ from PIL import Image, UnidentifiedImageError
 import subprocess
 import time
 from urllib.parse import urlparse
+import logging
 
 app = Flask(__name__)
 CORS(app)
+
+logging.basicConfig(level=logging.ERROR)
 
 INPUT_FOLDER = "/tmp/input"
 OUTPUT_FOLDER = "/tmp/output"
@@ -225,7 +228,8 @@ def process_image():
         })
 
     except Exception as e:
-        return jsonify({'status': 'error', 'message': str(e)}), 500
+        logging.error("Error processing image: %s", str(e))
+        return jsonify({'status': 'error', 'message': 'An internal error has occurred.'}), 500
 
 
 @app.route('/send_image', methods=['POST'])
