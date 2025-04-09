@@ -169,6 +169,11 @@ def process_image():
 
         max_size = RESIZE_MAPPINGS[button_name]
 
+        allowed_domains = ["example.com", "anotherdomain.com"]
+        parsed_url = urlparse(image_url)
+        if parsed_url.netloc not in allowed_domains:
+            return jsonify({'status': 'error', 'message': 'Domain not allowed'}), 400
+
         image_response = requests.get(image_url)
         if image_response.status_code != 200:
             return jsonify({'status': 'error', 'message': 'Failed to download the image'}), 400
