@@ -275,7 +275,7 @@ For obtaining direct image urls, I recommended to use [Postimages.org](https://p
 - **[Postimages.org](https://postimages.org/)** — *Highly recommended*. Supports GIF uploads.
 - **[imgbb.com](https://imgbb.com/)** — *Highly recommended*. Supports GIF uploads. **(API Key Provider For /send_gif)**
 - [imghippo.com](https://imghippo.com/) — Supports GIF uploads. **(API Key Service Provider)**
-- [softgateon.herokuapp.com/directlink/](http://softgateon.herokuapp.com/directlink/) — Supports GIF uploads. **(For Google Drive Files)**
+- [softgateon.herokuapp.com/](http://softgateon.herokuapp.com/directlink/) — Supports GIF uploads. **(For Google Drive Files)**
 - [imgbox.com](https://imgbox.com/) — Supports GIF uploads.
 - [lunapic.com](https://www7.lunapic.com/editor/?action=quick-upload) — Supports GIF uploads.
 - [imagevenue.com](https://www.imagevenue.com/) — Supports GIF uploads.
