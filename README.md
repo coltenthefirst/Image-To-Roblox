@@ -197,10 +197,8 @@ with your API key, like:
 </h6>
 
 ### Current Tasks (NOT IN ORDER) - Model-3.8/Model-4 Planned
-- [ ] Better UI (Model-3.8)
 - [ ] Add More Image Options for the Cilent-Side (Model-3.8)
 - [ ] Image/Gif Placement System - ***if its possible*** (Model-4)
-- [ ] Slow or Quick Image Generating Options for Low End Devices. (Model-3.8)
 - [ ] I will add more to this list soon. I have a lot planned for these 2 models but I somehow forget 💀
 
 ### Completed Tasks
@@ -235,6 +233,8 @@ with your API key, like:
 ### Completed Tasks Since Model-3.5/Model-1G Released
 
 - [x] Update The Website (Other)
+- [x] Slow or Quick Image Generating Options for Low End Devices. (Model-3.8)
+- [x] Better UI (Model-3.8)
 
 
 ## Videos
