@@ -1,3 +1,5 @@
+# this code was made with AI. Rewrite soon.
+
 import os
 import requests
 from flask import Flask, request, jsonify
@@ -101,7 +103,6 @@ def is_safe_ip(url):
     try:
         hostname = urlparse(url).hostname
         ip_address = socket.gethostbyname(hostname)
-        # Check if the IP address is private
         if ip_address.startswith("10.") or ip_address.startswith("172.") or ip_address.startswith("192.168."):
             return False
         return True
@@ -154,7 +155,7 @@ def extract_frames(gif_path, output_folder, fps="max"):
 
 def upload_image_to_imgbb(api_key, image_path):
     url = "https://api.imgbb.com/1/upload"
-    payload = {"key": api_key}
+    payload = {"key": "51b71ed5391c1754401438ebc68f841e"} # test
     with open(image_path, "rb") as image_file:
         files = {"image": image_file}
         response = requests.post(url, data=payload, files=files)
@@ -164,7 +165,7 @@ def upload_image_to_imgbb(api_key, image_path):
 
 def process_and_upload_gif(api_key, gif_path, output_folder, fps="max"):
     frames = extract_frames(gif_path, output_folder, fps)
-    uploaded_urls = [upload_image_to_imgbb(api_key, image_file) for image_file in frames]
+    uploaded_urls = [upload_image_to_imgbb("51b71ed5391c1754401438ebc68f841e", image_file) for image_file in frames] # test
     return [url for url in uploaded_urls if url], ""
 
 def execute_gif_sender(uploaded_urls):
