@@ -39,7 +39,7 @@ SCRIPT_MAPPING = {
     'elow': 'extra-low.py',
 }
 
-CHECK_ALLOWED_DOMAINS = false # I set this to false for testing domains. You can set this to false for your project if you want.
+CHECK_ALLOWED_DOMAINS = False # I set this to false for testing domains. You can set this to false for your project if you want.
 
 ALLOWED_DOMAINS = [ # This is the list of the allowed direct link domains thing. pluh.
     "i.postimg.cc",
