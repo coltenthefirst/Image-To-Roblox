@@ -33,7 +33,7 @@ SIZES = {
     "nocompression": (500, 500) # ts new btw 🤑 (coming next model)
 }
 
-COMPRESSION = {,
+COMPRESSION = {
     "ehigh": (1.6, 25),
     "high": (3.2, 50),
     "mid": (6.4, 100),
