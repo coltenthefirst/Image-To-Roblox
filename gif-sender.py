@@ -6,7 +6,6 @@ os.makedirs("/tmp/output", exist_ok=True)
 uploaded_urls = sys.argv[1:]
 
 if not uploaded_urls:
-    print("No uploaded URLs provided.")
     sys.exit(1)
 
 output_filename = "output_lua_urls"
