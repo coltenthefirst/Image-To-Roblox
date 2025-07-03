@@ -1,52 +1,33 @@
 from PIL import Image
-import os
-import time
+import os, time
 
-factor = 0
 rate = 0
-
 os.makedirs("/tmp/output", exist_ok=True)
 
-for filename in os.listdir("/tmp/input"):
-    image_path = os.path.join("/tmp/input", filename)
-    if os.path.isfile(image_path):
-        image = Image.open(image_path)
-        if image.mode != "RGB":
-            image = image.convert("RGB")
-        
-        image = image.resize((int(image.size[0] / factor), int(image.size[1] / factor)))
-        pixels = image.load()
-        output_filename = os.path.splitext(filename)[0]
-        
-        max_retries = 5
-        retry_delay = 1
-        success = False
+for name in os.listdir("/tmp/input"):
+    path = os.path.join("/tmp/input", name)
+    if not os.path.isfile(path): continue
 
-        for attempt in range(max_retries):
+    try:
+        img = Image.open(path)
+        if img.mode != "RGB":
+            img = img.convert("RGB")
+
+        w, h = img.size
+        px = img.load()
+        base = os.path.splitext(name)[0]
+
+        for _ in range(5):
             try:
-                with open(f"{os.path.join('/tmp/output', output_filename)}.lua", 'w') as f:
+                with open(f"/tmp/output/{base}.lua", "w") as f:
                     bits = []
-                    for y in range(image.size[1]):
-                        for x in range(image.size[0]):
-                            p = pixels[x, y]
-                            p = ("{:03d}".format(p[0]), "{:03d}".format(p[1]), "{:03d}".format(p[2]))
-                            bits.append(''.join(map(str, p)))
-
-                    f.write("require(script.Parent.Parent):Draw(" + str(rate) + 
-                            ", Vector3.new(0,0,0), {" + str(image.size[0]) + "," + str(image.size[1]) + 
-                            "}, '" + ''.join(bits) + "')")
-                print(f"Processed: {filename}")
-                success = True
+                    for y in range(h):
+                        for x in range(w):
+                            r, g, b = px[x, y]
+                            bits.append(f"{r:03d}{g:03d}{b:03d}")
+                    f.write(f"require(script.Parent.Parent):Draw({rate}, Vector3.new(0,0,0), {{{w},{h}}}, '{''.join(bits)}')")
                 break
-            except FileNotFoundError as e:
-                print(f"Error opening file for {filename}: {e}")
-                if attempt < max_retries - 1:
-                    print(f"Retrying in {retry_delay} seconds...")
-                    time.sleep(retry_delay)
-                else:
-                    print(f"Failed to process {filename} after {max_retries} attempts.")
-
-if success:
-    print("All files processed successfully!")
-else:
-    print("Some files could not be processed after multiple attempts.")
+            except Exception:
+                time.sleep(1)
+    except:
+        pass
