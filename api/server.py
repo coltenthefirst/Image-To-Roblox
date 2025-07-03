@@ -170,7 +170,7 @@ def download_gif(gifURL, dumpPath):
     if not is_domain_allowed(gifURL):
         return None, "domain not whitelisted"
     if not is_ip_safe(gifURL):
-        return None, "unsafe IP" } # 🤨
+        return None, "unsafe IP" # 🤨
     os.makedirs(dumpPath, exist_ok=True)
     out = os.path.join(dumpPath, GIF_NAME)
     r = requests.get(gifURL, timeout=10)
