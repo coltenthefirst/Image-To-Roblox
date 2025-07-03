@@ -43,7 +43,7 @@ SCRIPT_MAPPING = {
     'ehigh': 'extra-high.py',
     'elow': 'extra-low.py',
     'test': 'test.py',
-    'testOne': 'testO.py',
+    'testTwo': 'testO.py',
     'testThree': 'testT.py'
 }
 
