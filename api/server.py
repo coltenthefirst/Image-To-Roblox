@@ -33,13 +33,12 @@ SIZES = {
     "nocompression": (500, 500) # ts new btw 🤑 (coming next model)
 }
 
-SCRIPTS = {
-    "low": "low.py",
-    "mid": "mid.py",
-    "high": "high.py",
-    "elow": "extra-low.py",
-    "ehigh": "extra-high.py",
-    "nocompression": "no-compression.py" # new (coming next model)
+COMPRESSION = {
+    "elow": (30, 400),
+    "low": (12.8, 200),
+    "mid": (6.4, 100),
+    "high": (3.2, 50),
+    "ehigh": (1.6, 25)
 }
 
 TRUSTED_DOMAINS = [ # skidded from the last ai code 
@@ -147,12 +146,18 @@ def gif_sender(listOfUrls):
         return result.stdout
     return None
 
-def run_script(scriptKey):
-    file = SCRIPTS.get(scriptKey)
-    if not file:
-        return False
+def run_script(key):
+    if key == "nocompression":
+        try:
+            subprocess.run(["python3", "no-compression.py"], check=True)
+            return True
+        except:
+            return False
+
+    cfg = COMPRESSION.get(key)
+    if not cfg: return False
     try:
-        subprocess.run(["python3", file], check=True)
+        subprocess.run(["python3", "render_image.py", str(cfg[0]), str(cfg[1])], check=True)
         return True
     except:
         return False
