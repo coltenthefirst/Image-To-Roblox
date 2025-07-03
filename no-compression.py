@@ -2,8 +2,8 @@ from PIL import Image
 import os
 import time
 
-factor = 1
-rate = 12.5
+factor = 0
+rate = 0
 
 os.makedirs("/tmp/output", exist_ok=True)
 
