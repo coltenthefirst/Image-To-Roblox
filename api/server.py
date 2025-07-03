@@ -25,12 +25,12 @@ logging.basicConfig(level=logging.ERROR)
 
 
 SIZES = {
-    "low": (30, 30),
-    "mid": (60, 60),
-    "high": (120, 120),
-    "elow": (15, 15),
+    "nocompression": (500, 500), # ts new btw 🤑 (coming next model)
     "ehigh": (240, 240),
-    "nocompression": (500, 500) # ts new btw 🤑 (coming next model)
+    "high": (120, 120),
+    "mid": (60, 60),
+    "low": (30, 30),
+    "elow": (15, 15)
 }
 
 COMPRESSION = {
@@ -157,7 +157,7 @@ def run_script(key):
     cfg = COMPRESSION.get(key)
     if not cfg: return False
     try:
-        subprocess.run(["python3", "render_image.py", str(cfg[0]), str(cfg[1])], check=True)
+        subprocess.run(["python3", "render-image.py", str(cfg[0]), str(cfg[1])], check=True)
         return True
     except:
         return False
