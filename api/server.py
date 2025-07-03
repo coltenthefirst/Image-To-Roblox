@@ -26,11 +26,14 @@ GIF_NAME = "downloaded.gif"
 MAX_RETRIES = 5
 
 RESIZE_MAPPINGS = {
+    "test": (15, 15),
     "elow": (15, 15),
     "ehigh": (240, 240),
     "low": (30, 30),
     "high": (120, 120),
     "mid": (60, 60),
+    "testTwo": (350, 350),
+    "testThree": (500, 500)
 }
 
 SCRIPT_MAPPING = {
@@ -39,6 +42,9 @@ SCRIPT_MAPPING = {
     'mid': 'mid.py',
     'ehigh': 'extra-high.py',
     'elow': 'extra-low.py',
+    'test': 'test.py',
+    'testOne': 'testO.py',
+    'testThree': 'testT.py'
 }
 
 CHECK_ALLOWED_DOMAINS = False # I set this to false for testing domains. You can set this to false for your project if you want.
