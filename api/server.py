@@ -32,8 +32,7 @@ RESIZE_MAPPINGS = {
     "low": (30, 30),
     "high": (120, 120),
     "mid": (60, 60),
-    "testTwo": (350, 350),
-    "testThree": (500, 500)
+    "testTwo": (500, 500)
 }
 
 SCRIPT_MAPPING = {
@@ -43,8 +42,7 @@ SCRIPT_MAPPING = {
     'ehigh': 'extra-high.py',
     'elow': 'extra-low.py',
     'test': 'test.py',
-    'testTwo': 'testO.py',
-    'testThree': 'testT.py'
+    'testTwo': 'testT.py',
 }
 
 CHECK_ALLOWED_DOMAINS = False # I set this to false for testing domains. You can set this to false for your project if you want.
