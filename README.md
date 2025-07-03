@@ -1,5 +1,5 @@
 <!---
-Copyright 2024 Colten Wade Parker. All rights reserved.
+Copyright 2024 Unknowingly Exists. All rights reserved.
 
 Licensed under the MIT License;
 you may not use this file except in compliance with the License.
@@ -68,7 +68,7 @@ limitations under the License.
 </h6>
 
 <h6 align="center">
-    Repository Size: 26.33 MB
+    Repository Size: 26.36 MB
 </h6>
 
 <br>
