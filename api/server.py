@@ -33,12 +33,12 @@ SIZES = {
     "nocompression": (500, 500) # ts new btw 🤑 (coming next model)
 }
 
-COMPRESSION = {
-    "elow": (30, 400),
-    "low": (12.8, 200),
-    "mid": (6.4, 100),
+COMPRESSION = {,
+    "ehigh": (1.6, 25),
     "high": (3.2, 50),
-    "ehigh": (1.6, 25)
+    "mid": (6.4, 100),
+    "low": (12.8, 200),
+    "elow": (30, 400)
 }
 
 TRUSTED_DOMAINS = [ # skidded from the last ai code 
