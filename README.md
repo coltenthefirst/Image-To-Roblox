@@ -68,7 +68,7 @@ limitations under the License.
 </h6>
 
 <h6 align="center">
-    Repository Size: 36.51 KB
+    Repository Size: 26.33 MB
 </h6>
 
 <br>
