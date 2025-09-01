@@ -14,7 +14,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-# UPDATE SOON! (MY GITHUB ACCOUNT IS SUSPENDED! PLEASE CONTACT @unknowingly_exists ON DISCORD FOR THE SOURCE CODE!
+# MY ACCOUNT IS BACK!
 
 <p align="center">
   <img alt="asset" src="https://cdn.vectorstock.com/i/500p/16/54/checkerboard-black-and-white-background-vector-33401654.jpg" width="5000" height="10" style="max-width: 100%;">
