@@ -6,13 +6,27 @@ import logging
 import subprocess
 import ipaddress
 import requests
+import shlex
+import hashlib
+import hmac
+import time
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 from PIL import Image, UnidentifiedImageError
 from urllib.parse import urlparse
+import mimetypes
 
 app = Flask(__name__)
 CORS(app)
+
+# Security configuration
+app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY', 'your-secret-key-change-this-in-production')
+app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024  # 16MB limit
+
+# Simple rate limiting storage (in production use Redis)
+request_counts = {}
+RATE_LIMIT_REQUESTS = 100  # requests per window
+RATE_LIMIT_WINDOW = 300   # 5 minutes
 
 INPUT = "/tmp/input"
 OUTPUT = "/tmp/output"
@@ -22,6 +36,24 @@ os.makedirs(INPUT, exist_ok=True)
 os.makedirs(OUTPUT, exist_ok=True)
 
 logging.basicConfig(level=logging.ERROR)
+
+# Security headers
+@app.after_request
+def add_security_headers(response):
+    response.headers['X-Content-Type-Options'] = 'nosniff'
+    response.headers['X-Frame-Options'] = 'DENY'
+    response.headers['X-XSS-Protection'] = '1; mode=block'
+    response.headers['Strict-Transport-Security'] = 'max-age=31536000; includeSubDomains'
+    return response
+
+# Error handlers for security
+@app.errorhandler(413)
+def request_entity_too_large(error):
+    return jsonify({"status": "error", "message": "request too large"}), 413
+
+@app.errorhandler(400)
+def bad_request(error):
+    return jsonify({"status": "error", "message": "invalid request format"}), 400
 
 
 SIZES = {
@@ -64,6 +96,12 @@ TRUSTED_DOMAINS = [ # skidded from the last ai code
     "docs.google.com"
 ]
 
+ALLOWED_IMAGE_TYPES = {
+    'image/jpeg', 'image/jpg', 'image/png', 'image/gif', 'image/webp', 'image/bmp'
+}
+
+ALLOWED_EXTENSIONS = {'.jpg', '.jpeg', '.png', '.gif', '.webp', '.bmp'}
+
 
 
 
@@ -91,6 +129,50 @@ def is_ip_safe(url):
     except:
         return False
 
+def validate_content_type(response):
+    """Validate content-type of downloaded content"""
+    content_type = response.headers.get('content-type', '').lower()
+    return any(allowed_type in content_type for allowed_type in ALLOWED_IMAGE_TYPES)
+
+def validate_file_extension(url):
+    """Validate file extension from URL"""
+    parsed = urlparse(url)
+    path = parsed.path.lower()
+    return any(path.endswith(ext) for ext in ALLOWED_EXTENSIONS)
+
+def sanitize_filename(filename):
+    """Sanitize filename to prevent path traversal"""
+    import re
+    # Remove directory traversal patterns and dangerous characters
+    filename = re.sub(r'[^\w\-_\.]', '', filename)
+    filename = re.sub(r'\.\.+', '.', filename)
+    return filename[:255]  # Limit length
+
+def check_rate_limit():
+    """Simple IP-based rate limiting"""
+    client_ip = request.environ.get('HTTP_X_FORWARDED_FOR', request.remote_addr)
+    if not client_ip:
+        client_ip = 'unknown'
+        
+    current_time = int(time.time())
+    window_start = current_time - (current_time % RATE_LIMIT_WINDOW)
+    
+    key = f"{client_ip}:{window_start}"
+    
+    # Clean old entries
+    keys_to_delete = [k for k in request_counts.keys() 
+                     if int(k.split(':')[1]) < window_start - RATE_LIMIT_WINDOW]
+    for k in keys_to_delete:
+        del request_counts[k]
+    
+    # Check current count
+    current_count = request_counts.get(key, 0)
+    if current_count >= RATE_LIMIT_REQUESTS:
+        return False
+        
+    request_counts[key] = current_count + 1
+    return True
+
 
 
 
@@ -99,12 +181,26 @@ def download_img(imageURL, outPath, tries=5):
         return False, "bad url" # yeah bad fucking boy >:(
     if not is_domain_allowed(imageURL):
         return False, "blocked domain" # wat da fuk is dat domain bro?? 😭✌️
+    if not is_ip_safe(imageURL):
+        return False, "unsafe IP"
+    if not validate_file_extension(imageURL):
+        return False, "invalid file extension"
+    
     for _ in range(tries):
         try:
-            r = requests.get(imageURL, timeout=10)
+            r = requests.get(imageURL, timeout=10, stream=True)
             if r.status_code == 200:
+                if not validate_content_type(r):
+                    return False, "invalid content type"
+                
+                # Check file size
+                content_length = r.headers.get('content-length')
+                if content_length and int(content_length) > 16 * 1024 * 1024:  # 16MB
+                    return False, "file too large"
+                
                 with open(outPath, "wb") as f:
-                    f.write(r.content)
+                    for chunk in r.iter_content(chunk_size=8192):
+                        f.write(chunk)
                 return True, ""
         except:
             pass
@@ -141,24 +237,53 @@ def gif_to_links(fuckingApiKey, gifPath, outputDir, fps="max"):
 
 
 def gif_sender(listOfUrls):
-    result = subprocess.run(["python3", "gif-sender.py"] + listOfUrls, capture_output=True, text=True)
+    # Sanitize URLs to prevent injection
+    sanitized_urls = []
+    for url in listOfUrls:
+        if isinstance(url, str) and is_url_good(url):
+            sanitized_urls.append(shlex.quote(url))
+        else:
+            return None  # Invalid URL detected
+    
+    if not sanitized_urls:
+        return None
+        
+    cmd = ["python3", "gif-sender.py"] + sanitized_urls
+    result = subprocess.run(cmd, capture_output=True, text=True, cwd="/home/engine/project")
     if result.returncode == 0:
         return result.stdout
     return None
 
 def run_script(key):
+    # Validate key against allowed values to prevent injection
+    if key not in SIZES and key != "nocompression":
+        return False
+        
     if key == "nocompression":
         try:
-            subprocess.run(["python3", "no-compression.py"], check=True)
+            subprocess.run(["python3", "no-compression.py"], check=True, cwd="/home/engine/project")
             return True
         except:
             return False
 
     cfg = COMPRESSION.get(key)
-    if not cfg: return False
+    if not cfg: 
+        return False
+    
     try:
-        subprocess.run(["python3", "render-image.py", str(cfg[0]), str(cfg[1])], check=True)
+        # Validate numeric parameters
+        factor = float(cfg[0])
+        rate = int(cfg[1])
+        if factor <= 0 or rate <= 0:
+            return False
+            
+        subprocess.run([
+            "python3", "render-image.py", 
+            str(factor), str(rate)
+        ], check=True, cwd="/home/engine/project")
         return True
+    except (ValueError, TypeError):
+        return False
     except:
         return False
 
@@ -176,13 +301,29 @@ def download_gif(gifURL, dumpPath):
         return None, "domain not whitelisted"
     if not is_ip_safe(gifURL):
         return None, "unsafe IP" # 🤨
+    if not validate_file_extension(gifURL):
+        return None, "invalid file extension"
+        
     os.makedirs(dumpPath, exist_ok=True)
-    out = os.path.join(dumpPath, GIF_NAME)
-    r = requests.get(gifURL, timeout=10)
-    if r.status_code == 200:
-        with open(out, "wb") as f:
-            f.write(r.content)
-        return out, ""
+    out = os.path.join(dumpPath, sanitize_filename(GIF_NAME))
+    
+    try:
+        r = requests.get(gifURL, timeout=10, stream=True)
+        if r.status_code == 200:
+            if not validate_content_type(r):
+                return None, "invalid content type"
+                
+            # Check file size
+            content_length = r.headers.get('content-length')
+            if content_length and int(content_length) > 16 * 1024 * 1024:  # 16MB
+                return None, "file too large"
+                
+            with open(out, "wb") as f:
+                for chunk in r.iter_content(chunk_size=8192):
+                    f.write(chunk)
+            return out, ""
+    except Exception:
+        pass
     return None, "gif fetch failed"
 
 
@@ -190,12 +331,29 @@ def download_gif(gifURL, dumpPath):
 
 @app.route("/send_gif", methods=["POST"])
 def send_gif():
-    data = request.get_json()
-    gifURL = data.get("gif_url")
-    fuckingApiKey = data.get("api_key")
+    # Rate limiting check
+    if not check_rate_limit():
+        return jsonify({"status": "error", "message": "rate limit exceeded"}), 429
+    try:
+        data = request.get_json()
+        if not data:
+            return jsonify({"status": "error", "message": "invalid JSON"}), 400
+            
+        gifURL = data.get("gif_url")
+        fuckingApiKey = data.get("api_key")
 
-    if not gifURL or not fuckingApiKey:
-        return jsonify({"status": "error", "message": "missing data"}), 400
+        if not gifURL or not fuckingApiKey:
+            return jsonify({"status": "error", "message": "missing data"}), 400
+            
+        # Validate input types
+        if not isinstance(gifURL, str) or not isinstance(fuckingApiKey, str):
+            return jsonify({"status": "error", "message": "invalid data types"}), 400
+            
+        # Validate URL length
+        if len(gifURL) > 2048 or len(fuckingApiKey) > 512:
+            return jsonify({"status": "error", "message": "input too long"}), 400
+    except Exception:
+        return jsonify({"status": "error", "message": "invalid request format"}), 400
 
     gifPath, msg = download_gif(gifURL, "/tmp/processed_gif")
     if not gifPath:
@@ -216,12 +374,29 @@ def send_gif():
 
 @app.route("/send_image", methods=["POST"]) # my beloved...
 def send_image():
-    data = request.get_json()
-    imageURL = data.get("image_url")
-    scriptKey = data.get("button_clicked")
+    # Rate limiting check
+    if not check_rate_limit():
+        return jsonify({"status": "error", "message": "rate limit exceeded"}), 429
+    try:
+        data = request.get_json()
+        if not data:
+            return jsonify({"status": "error", "message": "invalid JSON"}), 400
+            
+        imageURL = data.get("image_url")
+        scriptKey = data.get("button_clicked")
 
-    if not imageURL or not scriptKey:
-        return jsonify({"status": "error", "message": "need image_url and button_clicked"}), 400
+        if not imageURL or not scriptKey:
+            return jsonify({"status": "error", "message": "need image_url and button_clicked"}), 400
+            
+        # Validate input types
+        if not isinstance(imageURL, str) or not isinstance(scriptKey, str):
+            return jsonify({"status": "error", "message": "invalid data types"}), 400
+            
+        # Validate input lengths
+        if len(imageURL) > 2048 or len(scriptKey) > 64:
+            return jsonify({"status": "error", "message": "input too long"}), 400
+    except Exception:
+        return jsonify({"status": "error", "message": "invalid request format"}), 400
 
     imagePath = os.path.join(INPUT, "image.png")
     ok, msg = download_img(imageURL, imagePath)
@@ -242,23 +417,51 @@ def send_image():
 
 
 @app.route("/gui_send_image", methods=["POST"]) # my hated!!!0
-
 def gui_send_image():
+    # Rate limiting check
+    if not check_rate_limit():
+        return jsonify({"status": "error", "message": "rate limit exceeded"}), 429
     try:
-        data = request.json
+        data = request.get_json()
+        if not data:
+            return jsonify({"status": "error", "message": "invalid JSON"}), 400
+            
         imageURL = data.get("image_url")
         button = data.get("button_name")
 
-        if not imageURL or button not in SIZES:
-            return jsonify({"status": "error", "message": "bad request"}), 400
+        if not imageURL or not button:
+            return jsonify({"status": "error", "message": "missing required fields"}), 400
+            
+        # Validate input types
+        if not isinstance(imageURL, str) or not isinstance(button, str):
+            return jsonify({"status": "error", "message": "invalid data types"}), 400
+            
+        # Validate input lengths
+        if len(imageURL) > 2048 or len(button) > 64:
+            return jsonify({"status": "error", "message": "input too long"}), 400
 
-        rawPath = os.path.join(INPUT, "raw.png")
-        r = requests.get(imageURL)
-        if r.status_code != 200:
-            return jsonify({"status": "error", "message": "img fetch failed"}), 400
+        if button not in SIZES:
+            return jsonify({"status": "error", "message": "invalid button name"}), 400
 
-        with open(rawPath, "wb") as f:
-            f.write(r.content)
+        # Apply same security validations as other endpoints
+        if not is_url_good(imageURL):
+            return jsonify({"status": "error", "message": "invalid URL"}), 400
+        
+        if not is_domain_allowed(imageURL):
+            return jsonify({"status": "error", "message": "domain not allowed"}), 403
+            
+        if not is_ip_safe(imageURL):
+            return jsonify({"status": "error", "message": "unsafe IP address"}), 403
+            
+        if not validate_file_extension(imageURL):
+            return jsonify({"status": "error", "message": "invalid file extension"}), 400
+
+        rawPath = os.path.join(INPUT, sanitize_filename("raw.png"))
+        
+        # Use secure download with proper validation
+        success, error_msg = download_img(imageURL, rawPath)
+        if not success:
+            return jsonify({"status": "error", "message": error_msg}), 400
 
         try:
             img = Image.open(rawPath)
