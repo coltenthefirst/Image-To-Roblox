@@ -111,6 +111,8 @@ def safe_download(url, dest_path, timeout=10):
             with open(dest_path, "wb") as f:
                 f.write(r.content)
             return True, ""
+        else:
+            return False
     except requests.RequestException as e:
         return False
 
