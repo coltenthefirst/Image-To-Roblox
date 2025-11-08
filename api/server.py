@@ -100,11 +100,11 @@ def is_ip_safe(url):
 
 def safe_download(url, dest_path, timeout=10):
     if not is_url_good(url):
-        return False
+        return False, "Invalid URL"
     if not is_domain_allowed(url):
-        return False
+        return False, "Domain not allowed"
     if not is_ip_safe(url):
-        return False
+        return False, "Unsafe IP"
     try:
         r = requests.get(url, timeout=timeout)
         if r.status_code == 200:
@@ -112,9 +112,9 @@ def safe_download(url, dest_path, timeout=10):
                 f.write(r.content)
             return True, ""
         else:
-            return False
+            return False, f"HTTP {r.status_code}"
     except requests.RequestException as e:
-        return False
+        return False, f"Download failed: {e}"
 
 def extract_gif_frames(gif_path, out_dir, fps="max"):
     os.makedirs(out_dir, exist_ok=True)
