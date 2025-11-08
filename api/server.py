@@ -18,8 +18,16 @@ CORS(app)
 
 # config - this was requested by one if my friends to make things a bit easlier
 class Config:
-    INPUT = tempfile.mkdtemp(prefix="input_")
-    OUTPUT = tempfile.mkdtemp(prefix="output_")
+
+
+    # I did this because the server is hosted with vercel
+    INPUT = "/tmp/input"
+    OUTPUT = "/tmp/output"
+    
+    os.makedirs(INPUT, exist_ok=True)
+    os.makedirs(OUTPUT, exist_ok=True)
+    
+    
     GIF_NAME = "downloaded.gif"
 
     SIZES = {
