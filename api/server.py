@@ -6,6 +6,7 @@ import logging
 import subprocess
 import ipaddress
 import requests
+import tempfile
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 from PIL import Image, UnidentifiedImageError
@@ -14,296 +15,259 @@ from urllib.parse import urlparse
 app = Flask(__name__)
 CORS(app)
 
-INPUT = "/tmp/input"
-OUTPUT = "/tmp/output"
-GIF_NAME = "downloaded.gif"
+# config - this was requested by one if my friends to make things a bit easlier
+class Config:
+    INPUT = tempfile.mkdtemp(prefix="input_")
+    OUTPUT = tempfile.mkdtemp(prefix="output_")
+    GIF_NAME = "downloaded.gif"
 
-os.makedirs(INPUT, exist_ok=True)
-os.makedirs(OUTPUT, exist_ok=True)
+    SIZES = {
+        "nocompression": (500, 500),  # ts new btw 🤑
+        "ehigh": (240, 240),
+        "high": (120, 120),
+        "mid": (60, 60),
+        "low": (30, 30),
+        "elow": (15, 15),
+    }
 
-logging.basicConfig(level=logging.ERROR)
+    COMPRESSION = {
+        "ehigh": (1.6, 25),
+        "high": (3.2, 50),
+        "mid": (6.4, 100),
+        "low": (12.8, 200),
+        "elow": (30, 400),
+    }
 
+    TRUSTED_DOMAINS = [ # I'll add more domains later on
+        "i.postimg.cc",
+        "i.ibb.co",
+        "i.imghippo.com",
+        "www2.lunapic.com",
+        "cdn-images.imagevenue.com",
+        "pictr.com",
+        "images4.imagebam.com",
+        "imgbly.com",
+        "picsur.org",
+        "img86.pixhost.to",
+        "files.catbox.moe",
+        "litter.catbox.moe",
+        "s3.amazonaws.com",
+        "images2.imgbox.com",
+        "i.endpot.com",
+        "dc.missuo.ru",
+        "s3.gifyu.com",
+        "i2.paste.pics",
+        "s6.imgcdn.dev",
+        "docs.google.com",
+    ]
 
-SIZES = {
-    "nocompression": (500, 500), # ts new btw 🤑 (coming next model)
-    "ehigh": (240, 240),
-    "high": (120, 120),
-    "mid": (60, 60),
-    "low": (30, 30),
-    "elow": (15, 15)
-}
+    ALLOWED_SCRIPTS = {
+        "nocompression": ["python3", "no-compression.py"],
+        "ehigh": ["python3", "render-image.py", "1.6", "25"],
+        "high": ["python3", "render-image.py", "3.2", "50"],
+        "mid": ["python3", "render-image.py", "6.4", "100"],
+        "low": ["python3", "render-image.py", "12.8", "200"],
+        "elow": ["python3", "render-image.py", "30", "400"],
+    }
 
-COMPRESSION = {
-    "ehigh": (1.6, 25),
-    "high": (3.2, 50),
-    "mid": (6.4, 100),
-    "low": (12.8, 200),
-    "elow": (30, 400)
-}
-
-TRUSTED_DOMAINS = [ # skidded from the last ai code 
-    "i.postimg.cc",
-    "i.ibb.co",
-    "i.imghippo.com",
-    "www2.lunapic.com",
-    "cdn-images.imagevenue.com",
-    "pictr.com",
-    "images4.imagebam.com",
-    "imgbly.com",
-    "picsur.org",
-    "img86.pixhost.to",
-    "files.catbox.moe",
-    "litter.catbox.moe",
-    "s3.amazonaws.com",
-    "images2.imgbox.com",
-    "i.endpot.com",
-    "dc.missuo.ru",
-    "s3.gifyu.com",
-    "i2.paste.pics",
-    "s6.imgcdn.dev",
-    "docs.google.com"
-]
-
-
+logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(message)s")
 
 
 
-def is_url_good(url): 
+def is_url_good(url):
     try:
         p = urlparse(url)
         return p.scheme in ["http", "https"] and p.netloc
-        # yes very good url
-        # I just realized how better it is to add comments into your code fr
-    except:
+    except Exception:
         return False
 
-def is_domain_allowed(url, check=True):
-    if not check:
-        return True
+def is_domain_allowed(url):
     domain = urlparse(url).netloc
-    return any(domain.endswith(ok) for ok in TRUSTED_DOMAINS)
+    return any(domain.endswith(ok) for ok in Config.TRUSTED_DOMAINS)
 
 def is_ip_safe(url):
     try:
         host = urlparse(url).hostname
         ip = socket.gethostbyname(host)
         return ipaddress.ip_address(ip).is_global
-    except:
+    except Exception:
         return False
 
+def safe_download(url, dest_path, timeout=10):
+    if not is_url_good(url):
+        return False
+    if not is_domain_allowed(url):
+        return False
+    if not is_ip_safe(url):
+        return False
+    try:
+        r = requests.get(url, timeout=timeout)
+        if r.status_code == 200:
+            with open(dest_path, "wb") as f:
+                f.write(r.content)
+            return True, ""
+    except requests.RequestException as e:
+        return False
 
+def extract_gif_frames(gif_path, out_dir, fps="max"):
+    os.makedirs(out_dir, exist_ok=True)
+    with Image.open(gif_path) as gif:
+        total = gif.n_frames
 
-
-def download_img(imageURL, outPath, tries=5):
-    if not is_url_good(imageURL):
-        return False, "bad url" # yeah bad fucking boy >:(
-    if not is_domain_allowed(imageURL):
-        return False, "blocked domain" # wat da fuk is dat domain bro?? 😭✌️
-    for _ in range(tries):
-        try:
-            r = requests.get(imageURL, timeout=10)
-            if r.status_code == 200:
-                with open(outPath, "wb") as f:
-                    f.write(r.content)
-                return True, ""
-        except:
-            pass
-    return False, "couldn't fetch image"
-
-def extract_gif_frames(gifPath, toDir, fps="max"):
-    os.makedirs(toDir, exist_ok=True)
-    with Image.open(gifPath) as g:
-        total = g.n_frames
+        # yuh fixed fps system
+        if fps != "max":
+            try:
+                fps = int(fps)
+            except ValueError:
+                fps = "max"
         skip = 1 if fps == "max" else max(1, total // int(fps))
+
         frames = []
         for i in range(0, total, skip):
-            g.seek(i)
-            p = os.path.join(toDir, f"frame_{i}.png")
-            g.save(p, format="PNG")
-            frames.append(p)
+            gif.seek(i)
+            frame_path = os.path.join(out_dir, f"frame_{i}.png")
+            gif.save(frame_path, format="PNG")
+            frames.append(frame_path)
         return frames
 
-def upload_img(fuckingApiKey, path): # reminder: change this var to like "fucking api key" or something in the future
+def upload_img(api_key, path):
     r = requests.post(
         "https://api.imgbb.com/1/upload",
-        data={"key": fuckingApiKey},
+        data={"key": api_key},
         files={"image": open(path, "rb")}
     )
     if r.status_code == 200:
         return r.json().get("data", {}).get("url")
     return None
 
-def gif_to_links(fuckingApiKey, gifPath, outputDir, fps="max"):
-    frames = extract_gif_frames(gifPath, outputDir, fps)
-    return [upload_img(fuckingApiKey, f) for f in frames if upload_img(fuckingApiKey, f)]
-
-
-
-
-def gif_sender(listOfUrls):
-    result = subprocess.run(["python3", "gif-sender.py"] + listOfUrls, capture_output=True, text=True)
-    if result.returncode == 0:
-        return result.stdout
-    return None
+def gif_to_links(api_key, gif_path, output_dir, fps="max"):
+    frames = extract_gif_frames(gif_path, output_dir, fps)
+    links = []
+    for f in frames:
+        url = upload_img(api_key, f)
+        if url:
+            links.append(url)
+    return links
 
 def run_script(key):
-    if key == "nocompression":
-        try:
-            subprocess.run(["python3", "no-compression.py"], check=True)
-            return True
-        except:
-            return False
-
-    cfg = COMPRESSION.get(key)
-    if not cfg: return False
+    cmd = ALLOWED_SCRIPTS.get(key)
+    if not cmd:
+        return False
     try:
-        subprocess.run(["python3", "render-image.py", str(cfg[0]), str(cfg[1])], check=True)
+        subprocess.run(cmd, check=True)
         return True
-    except:
+    except subprocess.CalledProcessError as e:
         return False
 
 def get_lua(filepath):
     try:
         with open(filepath, "r") as f:
             return f.read()
-    except:
+    except Exception:
         return None
 
-def download_gif(gifURL, dumpPath):
-    if not is_url_good(gifURL):
-        return None, "bad url"
-    if not is_domain_allowed(gifURL):
-        return None, "domain not whitelisted"
-    if not is_ip_safe(gifURL):
-        return None, "unsafe IP" # 🤨
-    os.makedirs(dumpPath, exist_ok=True)
-    out = os.path.join(dumpPath, GIF_NAME)
-    r = requests.get(gifURL, timeout=10)
-    if r.status_code == 200:
-        with open(out, "wb") as f:
-            f.write(r.content)
-        return out, ""
-    return None, "gif fetch failed"
 
+
+# TODO: possibly merge this function in the render-image.py script
+def convert_image_to_strokes(image_url, button):
+    raw_path = os.path.join(Config.INPUT, "raw.png")
+    ok, msg = safe_download(image_url, raw_path)
+    if not ok:
+        return None, msg
+
+    try:
+        img = Image.open(raw_path)
+    except UnidentifiedImageError:
+        return None,
+
+    img = img.convert("RGB")
+    img.thumbnail(Config.SIZES[button], Image.Resampling.BICUBIC)
+
+    pixels = img.load()
+    w, h = img.size
+    result = []
+
+    for y in range(h):
+        row = ""
+        for x in range(w):
+            try:
+                px = pixels[x, y]
+                px = tuple(max(0, min(255, v)) for v in px)
+                row += f'<stroke color="rgb{px}"><font color="rgb{px}">■</font></stroke>'
+            except Exception:
+                row += '<stroke color="rgb(0,0,0)"><font color="rgb(0,0,0)">■</font></stroke>'
+        result.append(row)
+
+    return {
+        "image_path": raw_path,
+        "output_file": "Result.lua",
+        "lines": result
+    }, ""
 
 
 
 @app.route("/send_gif", methods=["POST"])
 def send_gif():
     data = request.get_json()
-    gifURL = data.get("gif_url")
-    fuckingApiKey = data.get("api_key")
+    gif_url = data.get("gif_url")
+    api_key = data.get("api_key")
 
-    if not gifURL or not fuckingApiKey:
+    if not gif_url or not api_key:
         return jsonify({"status": "error", "message": "missing data"}), 400
 
-    gifPath, msg = download_gif(gifURL, "/tmp/processed_gif")
-    if not gifPath:
-        return jsonify({"status": "error", "message": msg}), 400
-
-    links = gif_to_links(fuckingApiKey, gifPath, OUTPUT)
-    if not links:
-        return jsonify({"status": "error", "message": "upload failed"}), 400
-
-    sent = gif_sender(links)
-    if sent:
-        return jsonify({"status": "success", "uploaded_urls": links, "gif_sender_output": sent})
-
-    return jsonify({"status": "error", "message": "sender broke"}), 500
-
-
-
-
-@app.route("/send_image", methods=["POST"]) # my beloved...
-def send_image():
-    data = request.get_json()
-    imageURL = data.get("image_url")
-    scriptKey = data.get("button_clicked")
-
-    if not imageURL or not scriptKey:
-        return jsonify({"status": "error", "message": "need image_url and button_clicked"}), 400
-
-    imagePath = os.path.join(INPUT, "image.png")
-    ok, msg = download_img(imageURL, imagePath)
+    gif_path = os.path.join(Config.INPUT, Config.GIF_NAME)
+    ok, msg = safe_download(gif_url, gif_path)
     if not ok:
         return jsonify({"status": "error", "message": msg}), 400
 
-    if not run_script(scriptKey):
+    links = gif_to_links(api_key, gif_path, Config.OUTPUT)
+    if not links:
+        return jsonify({"status": "error", "message": "upload failed"}), 400
+
+    result = subprocess.run(["python3", "gif-sender.py"] + links, capture_output=True, text=True)
+    if result.returncode == 0:
+        return jsonify({"status": "success", "uploaded_urls": links, "gif_sender_output": result.stdout})
+
+    return jsonify({"status": "error", "message": "sender broke"}), 500
+
+@app.route("/send_image", methods=["POST"])
+def send_image():
+    data = request.get_json()
+    image_url = data.get("image_url")
+    script_key = data.get("button_clicked")
+
+    if not image_url or not script_key:
+        return jsonify({"status": "error", "message": "need image_url and button_clicked"}), 400
+
+    image_path = os.path.join(Config.INPUT, "image.png")
+    ok, msg = safe_download(image_url, image_path)
+    if not ok:
+        return jsonify({"status": "error", "message": msg}), 400
+
+    if not run_script(script_key):
         return jsonify({"status": "error", "message": "script failed"}), 500
 
-    luaPath = os.path.join(OUTPUT, "image.lua")
-    scriptText = get_lua(luaPath)
-    if scriptText:
-        return jsonify({"status": "success", "lua_script": scriptText})
+    lua_path = os.path.join(Config.OUTPUT, "image.lua")
+    script_text = get_lua(lua_path)
+    if script_text:
+        return jsonify({"status": "success", "lua_script": script_text})
 
     return jsonify({"status": "error", "message": "lua not found"}), 500
 
-
-
-
-@app.route("/gui_send_image", methods=["POST"]) # my hated!!!0
-
+@app.route("/gui_send_image", methods=["POST"])
 def gui_send_image():
-    try:
-        data = request.json
-        imageURL = data.get("image_url")
-        button = data.get("button_name")
+    data = request.get_json()
+    image_url = data.get("image_url")
+    button = data.get("button_name")
 
-        if not imageURL or button not in SIZES:
-            return jsonify({"status": "error", "message": "bad request"}), 400
+    if not image_url or button not in Config.SIZES:
+        return jsonify({"status": "error", "message": "bad request"}), 400
 
-        rawPath = os.path.join(INPUT, "raw.png")
-        r = requests.get(imageURL)
-        if r.status_code != 200:
-            return jsonify({"status": "error", "message": "img fetch failed"}), 400
+    result, msg = convert_image_to_strokes(image_url, button)
+    if not result:
+        return jsonify({"status": "error", "message": msg}), 400
 
-        with open(rawPath, "wb") as f:
-            f.write(r.content)
-
-        try:
-            img = Image.open(rawPath)
-        except UnidentifiedImageError:
-            return jsonify({"status": "error", "message": "not an image"}), 400
-
-        if img.mode not in ("RGB", "RGBA", "L"):
-            img = img.convert("RGB")
-        elif img.mode != "RGB":
-            img = img.convert("RGB")
-
-        img.thumbnail(SIZES[button], Image.Resampling.BICUBIC)
-        pixels = img.load()
-        w, h = img.size
-        result = []
-
-        for y in range(h):
-            row = ""
-            for x in range(w):
-                try:
-                    px = pixels[x, y]
-                    if isinstance(px, int):
-                        px = (px, px, px)
-                    elif isinstance(px, tuple) and len(px) != 3:
-                        px = px[:3] if len(px) >= 3 else (0, 0, 0)
-                    elif not isinstance(px, tuple):
-                        px = (0, 0, 0)
-                    px = tuple(max(0, min(255, v)) for v in px)
-                    row += f'<stroke color="rgb{px}"><font color="rgb{px}">■</font></stroke>'
-                except:
-                    row += '<stroke color="rgb(0,0,0)"><font color="rgb(0,0,0)">■</font></stroke>'
-            result.append(row)
-
-        return jsonify({
-            "status": "success",
-            "message": "image good",
-            "image_path": rawPath,
-            "output_file": "Result.lua",
-            "lines": result
-        })
-
-    except Exception as e:
-        logging.error(str(e))
-        return jsonify({"status": "error", "message": "shit broke"}), 500
-
+    return jsonify({"status": "success", "message": "image good", **result})
 
 
 
@@ -311,5 +275,3 @@ if __name__ == "__main__":
     debug = os.environ.get("FLASK_DEBUG", "0") in ["1", "true", "yes"]
     port = int(os.environ.get("PORT", "5000"))
     app.run(host="0.0.0.0", port=port, debug=debug)
-
-# I finally fucking finished the rewite 💔
