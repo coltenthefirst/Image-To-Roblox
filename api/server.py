@@ -1,6 +1,7 @@
 # hello fr
 
 import os
+import re
 import socket
 import logging
 import subprocess
@@ -76,10 +77,14 @@ logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(me
 
 def is_url_good(url):
     try:
-        p = urlparse(url)
-        return p.scheme in ["http", "https"] and p.netloc
+        parsed = urlparse(url)
+        if parsed.scheme not in ("http", "https"):
+            return False
+        path = parsed.path.lower() # imgur bug fix
+        return bool(re.search(r"\.(png|jpg|jpeg|gif|webp|bmp|tiff)$", path))
     except Exception:
         return False
+
 
 def is_domain_allowed(url):
     domain = urlparse(url).netloc
