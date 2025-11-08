@@ -157,13 +157,14 @@ def gif_to_links(api_key, gif_path, output_dir, fps="max"):
     return links
 
 def run_script(key):
-    cmd = ALLOWED_SCRIPTS.get(key)
+    cmd = Config.ALLOWED_SCRIPTS.get(key)
     if not cmd:
         return False
     try:
         subprocess.run(cmd, check=True)
         return True
     except subprocess.CalledProcessError as e:
+        logging.error(f"Script failed: {e}")
         return False
 
 def get_lua(filepath):
