@@ -1,5 +1,6 @@
 from PIL import Image
-import os, time
+import os
+import time
 
 rate = 0
 os.makedirs("/tmp/output", exist_ok=True)
